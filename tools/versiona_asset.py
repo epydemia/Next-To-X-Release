@@ -1,8 +1,9 @@
 """Aggiunge ?v=<versione> ai CSS e agli script delle pagine e a ogni import relativo dei moduli.
 
-Lo usa il workflow di pubblicazione (.github/workflows/static.yml) sulla copia da pubblicare,
-non sul repository: a ogni rilascio cambiano gli URL, quindi i browser scaricano subito i
-file nuovi invece di aspettare la scadenza della cache di GitHub Pages (10 minuti).
+Lo usa il workflow di pubblicazione di Next-To-X-Release (.github/workflows/static.yml,
+qui in release/) sulla copia da pubblicare, non sul repository: a ogni rilascio cambiano
+gli URL, quindi i browser scaricano subito i file nuovi invece di aspettare la scadenza
+della cache di GitHub Pages (10 minuti).
 Tutti i file ricevono la stessa versione: un modulo importato con due URL diversi verrebbe
 caricato due volte, con due stati separati.
 
