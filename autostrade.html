@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Panoramica Autostrade</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; margin: 2em; }
+    #visual-bar-container {
+      margin: 2em auto;
+      max-width: 90%;
+      height: 20px;
+      background: #ddd;
+      position: relative;
+      border-radius: 10px;
+    }
+    #visual-bar-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 0.9em;
+      color: #444;
+      background: transparent;
+    }
+    .visual-bar {
+      height: 20px;
+      background: #ccc;
+      position: relative;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+    .marker-icon {
+      position: absolute;
+      top: -6px;
+      width: 16px;
+      height: 16px;
+      background: red;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+  </style>
+</head>
+<body>
+  <h1>📊 Panoramica Colonnine per Autostrada</h1>
+
+  <label for="autostradaSelect">Scegli un'autostrada:</label>
+  <select id="autostradaSelect"></select>
+
+  <div id="visual-bar-container">
+    <div id="visual-bar-labels">
+      <span id="label-inizio"></span>
+      <span id="label-fine"></span>
+    </div>
+    <div id="visual-bar-top" class="visual-bar"></div>
+    <div id="visual-bar-bottom" class="visual-bar"></div>
+  </div>
+
+  <script type="module" src="js/pages/autostrade.js"></script>
+</body>
+</html>

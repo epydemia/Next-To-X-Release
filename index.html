@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Next-To-X</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#0d1117" />
+  <meta name="apple-mobile-web-app-title" content="Next-To-X" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+
+<!-- Pannello impostazioni (slide da destra) -->
+<div id="options-panel">
+  <div id="options-header">
+    <div id="options-brand">
+      <img src="img/icona-192.png" alt="" width="32" height="32" />
+      <div>
+        <div id="options-app">Next-To-X</div>
+        <div id="options-title" data-i18n="impostazioni">Impostazioni</div>
+      </div>
+    </div>
+    <button id="options-close">✕</button>
+  </div>
+  <label class="setting-row" id="riga-simulazione" hidden>
+    <span class="setting-label" data-i18n="simulaPosizione">Simula posizione</span>
+    <input type="checkbox" id="toggleDebug" class="toggle-input" />
+    <span class="toggle-track"></span>
+  </label>
+  <label class="setting-row" id="riga-cursore" hidden>
+    <span class="setting-label" data-i18n="mostraCursore">Mostra cursore simulazione</span>
+    <input type="checkbox" id="toggleCursore" class="toggle-input" />
+    <span class="toggle-track"></span>
+  </label>
+  <div id="csv-debug-section" hidden>
+    <p class="setting-hint" data-i18n="tracciaCsv">Traccia GPS (CSV)</p>
+    <input type="file" id="csvInput" accept=".csv" />
+    <div id="csvStatus"></div>
+  </div>
+  <label class="setting-row">
+    <span class="setting-label" data-i18n="mostraTutte">Mostra tutte le stazioni</span>
+    <input type="checkbox" id="toggleNearest" class="toggle-input" />
+    <span class="toggle-track"></span>
+  </label>
+  <label class="setting-row">
+    <span class="setting-label" data-i18n="soloAree">Solo aree di servizio</span>
+    <input type="checkbox" id="toggleSoloAree" class="toggle-input" />
+    <span class="toggle-track"></span>
+  </label>
+  <p class="setting-hint" data-i18n="soloAreeSpiegazione">Nasconde le colonnine fuori dal casello (⚠️ uscita), per non dover uscire dall'autostrada.</p>
+  <label class="setting-row">
+    <span class="setting-label" data-i18n="statistiche">Statistiche anonime</span>
+    <input type="checkbox" id="toggleStatistiche" class="toggle-input" />
+    <span class="toggle-track"></span>
+  </label>
+  <p class="setting-hint" data-i18n="statisticheSpiegazione">Senza cookie e senza la tua posizione: si contano solo le aperture e quali operatori vengono suggeriti. Aiuta a decidere come migliorare l'app.</p>
+  <a class="setting-row setting-link" href="info.html">
+    <span class="setting-label" data-i18n="infoPrivacy">Info, avvertenze e privacy</span>
+    <span aria-hidden="true">›</span>
+  </a>
+</div>
+
+<!-- Avvertenze al primo avvio (js/app/avvertenze.js) -->
+<div id="avvertenze" role="dialog" aria-modal="true" aria-labelledby="avvertenze-titolo" hidden>
+  <div id="avvertenze-box">
+    <h2 id="avvertenze-titolo" data-i18n="avvertenzeTitolo">Prima di partire</h2>
+    <ul>
+      <li><span aria-hidden="true">📵</span> <span data-i18n-html="avvertenzaTelefono"><strong>Non usare il telefono mentre guidi:</strong> affidalo al passeggero o fissalo a un supporto.</span></li>
+      <li><span aria-hidden="true">⚡</span> <span data-i18n-html="avvertenzaDati"><strong>Dati indicativi:</strong> una colonnina può mancare, essere guasta o occupata. Verifica con l'app dell'operatore e tieni un margine di autonomia.</span></li>
+      <li><span aria-hidden="true">🔒</span> <span data-i18n-html="avvertenzaPosizione"><strong>La tua posizione non viene salvata.</strong> Si usa sul telefono; fuori dall'autostrada le coordinate vanno a OpenStreetMap solo per il nome della strada.</span></li>
+      <li><span aria-hidden="true">ℹ️</span> <span data-i18n-html="avvertenzaIndipendente">App indipendente, <strong>non affiliata</strong> a Free To X, Autostrade per l'Italia, Autostrada del Brennero né agli operatori citati.</span></li>
+    </ul>
+    <button id="avvertenze-ok" type="button" data-i18n="hoCapito">Ho capito</button>
+    <a id="avvertenze-info" href="info.html" data-i18n="infoBreve">Info e privacy</a>
+  </div>
+</div>
+
+<!-- Mappa con overlay HUD -->
+<div id="map-wrapper">
+  <div id="hud-top">
+    <div id="strada">🛣️</div>
+    <div id="direzione">🧭</div>
+    <button id="options-toggle" aria-label="Impostazioni" data-i18n-aria="impostazioni">⚙</button>
+  </div>
+  <div id="map"></div>
+  <div id="sim-cursore" hidden>
+    <input type="range" id="simSlider" min="0" max="0" step="1" value="0" aria-label="Posizione nella traccia simulata" data-i18n-aria="cursoreSimulazione" />
+    <span id="simTempo"></span>
+  </div>
+  <div id="next-station">
+    <span class="next-station-info">–</span>
+  </div>
+</div>
+
+<!-- Pannello inferiore -->
+<div id="bottom-panel">
+  <div id="distance-bar-container">
+    <div class="bar-posizione" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><polygon points="12,1 22,23 12,18 2,23" fill="#3b9eff" stroke="#ffffff" stroke-width="2" stroke-linejoin="round" /></svg>
+    </div>
+    <div id="distance-bar"></div>
+  </div>
+  <button id="stations-toggle-btn">
+    <span id="stations-count-label" data-i18n="stazioniVicine">Stazioni nelle vicinanze</span>
+    <span id="stations-chevron">▼</span>
+  </button>
+  <div id="stations-list" hidden>
+    <table id="stations-table">
+      <thead>
+        <tr>
+          <th data-i18n="colonnaArea">Area</th>
+          <th data-i18n="colonnaStrada">Strada</th>
+          <th class="th-dist">km</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<script type="module" src="js/app/main.js"></script>
+</body>
+</html>

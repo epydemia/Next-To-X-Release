@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Info e privacy – Next-To-X</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0d1117" />
+  <link rel="stylesheet" href="css/app.css" />
+  <script type="module" src="js/pages/info.js"></script>
+</head>
+<body class="pagina-info">
+<main>
+<article lang="it" data-titolo="Info e privacy – Next-To-X">
+    <a class="torna" href="./">‹ Torna all'app</a>
+
+    <header>
+      <img src="img/icona-192.png" alt="" width="48" height="48" />
+      <div>
+        <h1>Next-To-X</h1>
+        <p>La prossima colonnina di ricarica lungo l'autostrada, sulla tua carreggiata.</p>
+      </div>
+    </header>
+
+    <section id="uso">
+      <h2>Avvertenze</h2>
+      <ul>
+        <li><strong>Non usare il telefono mentre guidi.</strong> Affidalo al passeggero oppure fissalo a un supporto e impostalo prima di partire. Il Codice della Strada vieta di usare il telefono con le mani durante la guida.</li>
+        <li><strong>I dati sono indicativi.</strong> Vengono da fonti pubbliche e da OpenStreetMap, aggiornate periodicamente: una colonnina può mancare, essere stata spostata, guasta, occupata o riservata. Prima di contare su una ricarica verifica con l'app dell'operatore o sul posto.</li>
+        <li><strong>Nessuna garanzia.</strong> L'app è gratuita e fornita così com'è, senza garanzie di completezza, correttezza o disponibilità del servizio. Pianifica sempre un margine di autonomia.</li>
+        <li><strong>⚠️ uscita</strong> indica una colonnina fuori dal casello: si esce dall'autostrada e si rientra, con eventuale pedaggio.</li>
+      </ul>
+    </section>
+
+    <section id="indipendenza">
+      <h2>App indipendente</h2>
+      <p>Next-To-X è un progetto personale e indipendente. <strong>Non è affiliata, sponsorizzata né approvata</strong> da Free To X, Autostrade per l'Italia, Autostrada del Brennero o da nessuno degli operatori di ricarica e delle società autostradali citate. I nomi e i marchi citati appartengono ai rispettivi titolari e servono solo a indicare chi gestisce ogni colonnina.</p>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacy</h2>
+      <p>Non ci sono account, cookie, pubblicità o profilazione. L'app non salva da nessuna parte i tuoi spostamenti.</p>
+      <h3>La tua posizione</h3>
+      <ul>
+        <li>La posizione GPS si usa sul telefono, nel browser, per trovare l'autostrada e la prossima colonnina. <strong>Non la riceviamo e non la salviamo.</strong></li>
+        <li>In autostrada la strada si riconosce con una mappa delle autostrade scaricata insieme all'app, senza inviare nulla.</li>
+        <li>Fuori dall'autostrada, per conoscere il nome della strada, l'app invia le coordinate a <a href="https://nominatim.org/">Nominatim</a> di OpenStreetMap, al massimo ogni 10 secondi mentre ti muovi. Si applica la <a href="https://osmfoundation.org/wiki/Privacy_Policy">privacy policy della OpenStreetMap Foundation</a>.</li>
+        <li>Le immagini della mappa arrivano dai server di <a href="https://www.esri.com/">Esri</a>, che come ogni servizio di mappe vede quale zona viene mostrata.</li>
+      </ul>
+      <h3>Statistiche anonime</h3>
+      <p>Con l'opzione "Statistiche anonime" attiva, l'app conta con <a href="https://www.goatcounter.com/">GoatCounter</a>, senza cookie, solo: le aperture delle pagine, con il sito da cui arrivi (solo il dominio, per esempio facebook.com) e le dimensioni dello schermo; se l'app è aperta dalla schermata Home o dal browser; se il GPS era disponibile all'avvio e, se no, perché (permesso negato, non ancora concesso, nessun segnale); e quali operatori (con il paese) vengono suggeriti come prossima stazione o toccati nella barra delle distanze. <strong>Mai coordinate, percorsi, nomi di stazioni o identificativi.</strong> Si disattivano dalle impostazioni (⚙) e non partono mai con "Do Not Track" attivo.</p>
+      <h3>Sul telefono</h3>
+      <p>Le impostazioni (per esempio "Solo aree di servizio") restano salvate solo nel browser del telefono. Si cancellano con i dati del sito.</p>
+      <h3>Hosting</h3>
+      <p>Il sito è ospitato da <a href="https://docs.github.com/it/site-policy/privacy-policies/github-general-privacy-statement">GitHub Pages</a>, che come ogni server riceve l'indirizzo IP di chi lo visita.</p>
+    </section>
+
+    <section id="fonti">
+      <h2>Fonti dei dati e licenze</h2>
+      <ul>
+        <li>Colonnine e mappa delle autostrade: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, licenza ODbL 1.0.</li>
+        <li>Aree di servizio Free To X: dati pubblicati da Autostrade per l'Italia.</li>
+        <li>Colonnine dell'A22: dati pubblicati da Autostrada del Brennero.</li>
+        <li>Mappe di sfondo: © Esri e fornitori indicati sulla mappa.</li>
+        <li>Mappa interattiva: <a href="https://leafletjs.com/">Leaflet</a> (BSD-2-Clause). Carattere: Inter (SIL Open Font License).</li>
+        <li>Codice dell'app: licenza MIT, su <a href="https://github.com/epydemia/Next-To-X">GitHub</a>.</li>
+      </ul>
+      <p>Manca una colonnina o un dato è sbagliato? La correzione più rapida è su <a href="https://www.openstreetmap.org">openstreetmap.org</a>, oppure segnalalo su <a href="https://github.com/epydemia/Next-To-X/issues">GitHub</a>. Se rappresenti una delle fonti citate e hai richieste sull'uso dei tuoi dati, scrivi sulla stessa pagina.</p>
+    </section>
+
+    <p class="aggiornato">Ultimo aggiornamento: novembre 2026</p>
+</article>
+
+<article lang="en" data-titolo="About and privacy – Next-To-X" hidden>
+  <a class="torna" href="./">‹ Back to the app</a>
+
+  <header>
+    <img src="img/icona-192.png" alt="" width="48" height="48" />
+    <div>
+      <h1>Next-To-X</h1>
+      <p>The next EV charger along the motorway, on your side of the road.</p>
+    </div>
+  </header>
+
+  <section>
+    <h2>Notices</h2>
+    <ul>
+      <li><strong>Don't use your phone while driving.</strong> Hand it to a passenger, or put it in a holder and set it up before you leave. Holding a phone while driving is forbidden in Italy, Germany, Switzerland and Austria.</li>
+      <li><strong>The data is indicative.</strong> It comes from public sources and OpenStreetMap, updated periodically: a charger may be missing, moved, out of order, busy or reserved. Before relying on a charge, check the operator's app or on site.</li>
+      <li><strong>No warranty.</strong> The app is free and provided as is, with no guarantee of completeness, accuracy or availability. Always keep some range in reserve.</li>
+      <li><strong>⚠️ exit</strong> marks a charger outside the toll gate: you leave the motorway and get back on, possibly paying a toll.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Independent app</h2>
+    <p>Next-To-X is a personal, independent project. It is <strong>not affiliated with, sponsored or endorsed by</strong> Free To X, Autostrade per l'Italia, Autostrada del Brennero or any charging operator or motorway company mentioned. Names and trademarks belong to their owners and are used only to show who runs each charger.</p>
+  </section>
+
+  <section>
+    <h2>Privacy</h2>
+    <p>No accounts, cookies, ads or profiling. The app never stores your journeys anywhere.</p>
+    <h3>Your location</h3>
+    <ul>
+      <li>Your GPS position is used on your phone, in the browser, to find the motorway and the next charger. <strong>We never receive or store it.</strong></li>
+      <li>On the motorway the road is recognised with a motorway map downloaded with the app, without sending anything.</li>
+      <li>Off the motorway, to get the road name, the app sends the coordinates to OpenStreetMap's <a href="https://nominatim.org/">Nominatim</a>, at most every 10 seconds while you move. The <a href="https://osmfoundation.org/wiki/Privacy_Policy">OpenStreetMap Foundation privacy policy</a> applies.</li>
+      <li>Map images come from <a href="https://www.esri.com/">Esri</a>'s servers, which, like any map service, see which area is shown.</li>
+    </ul>
+    <h3>Anonymous statistics</h3>
+    <p>With "Anonymous statistics" on, the app counts with <a href="https://www.goatcounter.com/">GoatCounter</a>, without cookies, only: page opens, with the site you came from (only the domain, for example facebook.com) and the screen size; whether the app was opened from the home screen or the browser; whether GPS was available at start and, if not, why (permission denied, not yet granted, no signal); and which operators (with the country) are suggested as next station or tapped in the distance bar. <strong>Never coordinates, routes, station names or identifiers.</strong> Turn them off in the settings (⚙); they never run with "Do Not Track" on.</p>
+    <h3>On your phone</h3>
+    <p>Settings (for example "Service areas only") are saved only in your phone's browser and are deleted with the site data.</p>
+    <h3>Hosting</h3>
+    <p>The site is hosted by <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Pages</a>, which, like any server, receives the IP address of visitors.</p>
+  </section>
+
+  <section>
+    <h2>Data sources and licenses</h2>
+    <ul>
+      <li>Chargers and motorway map: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, ODbL 1.0 license.</li>
+      <li>Free To X service areas: data published by Autostrade per l'Italia.</li>
+      <li>A22 chargers: data published by Autostrada del Brennero.</li>
+      <li>Background maps: © Esri and the providers shown on the map.</li>
+      <li>Interactive map: <a href="https://leafletjs.com/">Leaflet</a> (BSD-2-Clause). Font: Inter (SIL Open Font License).</li>
+      <li>App code: MIT license, on <a href="https://github.com/epydemia/Next-To-X">GitHub</a>.</li>
+    </ul>
+    <p>A charger is missing or something is wrong? The quickest fix is on <a href="https://www.openstreetmap.org">openstreetmap.org</a>, or report it on <a href="https://github.com/epydemia/Next-To-X/issues">GitHub</a>. If you represent one of the sources mentioned and have requests about the use of your data, write on the same page.</p>
+  </section>
+
+  <p class="aggiornato">Last updated: November 2026</p>
+</article>
+
+<article lang="fr" data-titolo="Infos et confidentialité – Next-To-X" hidden>
+  <a class="torna" href="./">‹ Retour à l'application</a>
+
+  <header>
+    <img src="img/icona-192.png" alt="" width="48" height="48" />
+    <div>
+      <h1>Next-To-X</h1>
+      <p>La prochaine borne de recharge sur l'autoroute, de votre côté de la chaussée.</p>
+    </div>
+  </header>
+
+  <section>
+    <h2>Avertissements</h2>
+    <ul>
+      <li><strong>N'utilisez pas votre téléphone en conduisant.</strong> Confiez-le au passager, ou fixez-le sur un support et réglez-le avant de partir. Tenir son téléphone en conduisant est interdit en Italie, en Allemagne, en Suisse et en Autriche.</li>
+      <li><strong>Les données sont indicatives.</strong> Elles proviennent de sources publiques et d'OpenStreetMap, mises à jour périodiquement : une borne peut manquer, avoir été déplacée, être en panne, occupée ou réservée. Avant de compter sur une recharge, vérifiez dans l'application de l'opérateur ou sur place.</li>
+      <li><strong>Aucune garantie.</strong> L'application est gratuite et fournie telle quelle, sans garantie d'exhaustivité, d'exactitude ou de disponibilité. Gardez toujours une marge d'autonomie.</li>
+      <li><strong>⚠️ sortie</strong> signale une borne située après le péage : il faut sortir de l'autoroute puis y revenir, avec un éventuel péage.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Application indépendante</h2>
+    <p>Next-To-X est un projet personnel et indépendant. Elle <strong>n'est ni affiliée, ni sponsorisée, ni approuvée</strong> par Free To X, Autostrade per l'Italia, Autostrada del Brennero ni par aucun des opérateurs de recharge ou sociétés d'autoroute cités. Les noms et marques appartiennent à leurs propriétaires et servent uniquement à indiquer qui exploite chaque borne.</p>
+  </section>
+
+  <section>
+    <h2>Confidentialité</h2>
+    <p>Pas de compte, de cookies, de publicité ni de profilage. L'application n'enregistre vos trajets nulle part.</p>
+    <h3>Votre position</h3>
+    <ul>
+      <li>Votre position GPS est utilisée sur votre téléphone, dans le navigateur, pour trouver l'autoroute et la prochaine borne. <strong>Nous ne la recevons pas et ne l'enregistrons pas.</strong></li>
+      <li>Sur l'autoroute, la route est reconnue grâce à une carte des autoroutes téléchargée avec l'application, sans rien envoyer.</li>
+      <li>Hors autoroute, pour connaître le nom de la route, l'application envoie les coordonnées à <a href="https://nominatim.org/">Nominatim</a> d'OpenStreetMap, au plus toutes les 10 secondes lorsque vous vous déplacez. La <a href="https://osmfoundation.org/wiki/Privacy_Policy">politique de confidentialité de l'OpenStreetMap Foundation</a> s'applique.</li>
+      <li>Les images de la carte proviennent des serveurs d'<a href="https://www.esri.com/">Esri</a>, qui, comme tout service de cartes, voient quelle zone est affichée.</li>
+    </ul>
+    <h3>Statistiques anonymes</h3>
+    <p>Avec l'option « Statistiques anonymes » activée, l'application compte avec <a href="https://www.goatcounter.com/">GoatCounter</a>, sans cookies, uniquement : les ouvertures des pages, avec le site d'où vous venez (seulement le domaine, par exemple facebook.com) et la taille de l'écran ; si l'application est ouverte depuis l'écran d'accueil ou le navigateur ; si le GPS était disponible au démarrage et, sinon, pourquoi (autorisation refusée, pas encore accordée, pas de signal) ; et quels opérateurs (avec le pays) sont proposés comme prochaine station ou touchés dans la barre des distances. <strong>Jamais de coordonnées, de trajets, de noms de stations ni d'identifiants.</strong> Elles se désactivent dans les réglages (⚙) et ne s'activent jamais avec « Do Not Track ».</p>
+    <h3>Sur votre téléphone</h3>
+    <p>Les réglages (par exemple « Aires de service uniquement ») sont enregistrés uniquement dans le navigateur de votre téléphone et s'effacent avec les données du site.</p>
+    <h3>Hébergement</h3>
+    <p>Le site est hébergé par <a href="https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement">GitHub Pages</a>, qui, comme tout serveur, reçoit l'adresse IP des visiteurs.</p>
+  </section>
+
+  <section>
+    <h2>Sources des données et licences</h2>
+    <ul>
+      <li>Bornes et carte des autoroutes : © <a href="https://www.openstreetmap.org/copyright">contributeurs d'OpenStreetMap</a>, licence ODbL 1.0.</li>
+      <li>Aires de service Free To X : données publiées par Autostrade per l'Italia.</li>
+      <li>Bornes de l'A22 : données publiées par Autostrada del Brennero.</li>
+      <li>Fonds de carte : © Esri et les fournisseurs indiqués sur la carte.</li>
+      <li>Carte interactive : <a href="https://leafletjs.com/">Leaflet</a> (BSD-2-Clause). Police : Inter (SIL Open Font License).</li>
+      <li>Code de l'application : licence MIT, sur <a href="https://github.com/epydemia/Next-To-X">GitHub</a>.</li>
+    </ul>
+    <p>Une borne manque ou une donnée est erronée ? La correction la plus rapide se fait sur <a href="https://www.openstreetmap.org">openstreetmap.org</a>, ou signalez-la sur <a href="https://github.com/epydemia/Next-To-X/issues">GitHub</a>. Si vous représentez l'une des sources citées et avez des demandes concernant l'utilisation de vos données, écrivez sur la même page.</p>
+  </section>
+
+  <p class="aggiornato">Dernière mise à jour : novembre 2026</p>
+</article>
+
+<article lang="de" data-titolo="Info und Datenschutz – Next-To-X" hidden>
+  <a class="torna" href="./">‹ Zurück zur App</a>
+
+  <header>
+    <img src="img/icona-192.png" alt="" width="48" height="48" />
+    <div>
+      <h1>Next-To-X</h1>
+      <p>Die nächste Ladesäule an der Autobahn, auf deiner Fahrbahnseite.</p>
+    </div>
+  </header>
+
+  <section>
+    <h2>Hinweise</h2>
+    <ul>
+      <li><strong>Benutze das Handy nicht während der Fahrt.</strong> Gib es dem Beifahrer oder setze es in eine Halterung und richte es vor der Abfahrt ein. Das Handy während der Fahrt in der Hand zu halten ist in Italien, Deutschland, der Schweiz und Österreich verboten.</li>
+      <li><strong>Die Daten sind unverbindlich.</strong> Sie stammen aus öffentlichen Quellen und aus OpenStreetMap und werden regelmäßig aktualisiert: eine Ladesäule kann fehlen, versetzt, defekt, belegt oder reserviert sein. Bevor du dich auf eine Ladung verlässt, prüfe in der App des Betreibers oder vor Ort.</li>
+      <li><strong>Keine Gewähr.</strong> Die App ist kostenlos und wird ohne Gewähr für Vollständigkeit, Richtigkeit oder Verfügbarkeit bereitgestellt. Plane immer eine Reichweitenreserve ein.</li>
+      <li><strong>⚠️ Ausfahrt</strong> kennzeichnet eine Ladesäule nach der Ausfahrt bzw. Mautstelle: du verlässt die Autobahn und fährst wieder auf, ggf. mit Maut.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Unabhängige App</h2>
+    <p>Next-To-X ist ein persönliches, unabhängiges Projekt. Die App ist <strong>weder verbunden mit noch gesponsert oder genehmigt von</strong> Free To X, Autostrade per l'Italia, Autostrada del Brennero oder einem der genannten Ladesäulenbetreiber und Autobahngesellschaften. Namen und Marken gehören ihren Inhabern und dienen nur dazu, anzugeben, wer welche Ladesäule betreibt.</p>
+  </section>
+
+  <section>
+    <h2>Datenschutz</h2>
+    <p>Keine Konten, keine Cookies, keine Werbung, kein Profiling. Die App speichert deine Fahrten nirgendwo.</p>
+    <h3>Dein Standort</h3>
+    <ul>
+      <li>Dein GPS-Standort wird auf dem Handy, im Browser, verwendet, um die Autobahn und die nächste Ladesäule zu finden. <strong>Wir erhalten und speichern ihn nicht.</strong></li>
+      <li>Auf der Autobahn wird die Straße mit einer Autobahnkarte erkannt, die mit der App geladen wird, ohne etwas zu senden.</li>
+      <li>Abseits der Autobahn sendet die App die Koordinaten an <a href="https://nominatim.org/">Nominatim</a> von OpenStreetMap, um den Straßennamen zu erfahren, höchstens alle 10 Sekunden während der Fahrt. Es gilt die <a href="https://osmfoundation.org/wiki/Privacy_Policy">Datenschutzerklärung der OpenStreetMap Foundation</a>.</li>
+      <li>Die Kartenbilder kommen von den Servern von <a href="https://www.esri.com/">Esri</a>, die wie jeder Kartendienst sehen, welcher Bereich angezeigt wird.</li>
+    </ul>
+    <h3>Anonyme Statistiken</h3>
+    <p>Mit der Option „Anonyme Statistiken“ zählt die App mit <a href="https://www.goatcounter.com/">GoatCounter</a>, ohne Cookies, nur: Seitenaufrufe, mit der Website, von der du kommst (nur die Domain, zum Beispiel facebook.com), und der Bildschirmgröße; ob die App vom Home-Bildschirm oder im Browser geöffnet wurde; ob GPS beim Start verfügbar war und, falls nicht, warum (Berechtigung verweigert, noch nicht erteilt, kein Signal); und welche Betreiber (mit Land) als nächste Station vorgeschlagen oder in der Distanzleiste angetippt werden. <strong>Nie Koordinaten, Strecken, Stationsnamen oder Kennungen.</strong> Sie lassen sich in den Einstellungen (⚙) abschalten und laufen nie mit „Do Not Track“.</p>
+    <h3>Auf dem Handy</h3>
+    <p>Die Einstellungen (zum Beispiel „Nur Raststätten“) werden nur im Browser deines Handys gespeichert und mit den Websitedaten gelöscht.</p>
+    <h3>Hosting</h3>
+    <p>Die Website wird von <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement">GitHub Pages</a> gehostet, das wie jeder Server die IP-Adresse der Besucher erhält.</p>
+  </section>
+
+  <section>
+    <h2>Datenquellen und Lizenzen</h2>
+    <ul>
+      <li>Ladesäulen und Autobahnkarte: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap-Mitwirkende</a>, Lizenz ODbL 1.0.</li>
+      <li>Free-To-X-Raststätten: von Autostrade per l'Italia veröffentlichte Daten.</li>
+      <li>Ladesäulen der A22: von der Autostrada del Brennero veröffentlichte Daten.</li>
+      <li>Hintergrundkarten: © Esri und die auf der Karte angegebenen Anbieter.</li>
+      <li>Interaktive Karte: <a href="https://leafletjs.com/">Leaflet</a> (BSD-2-Clause). Schrift: Inter (SIL Open Font License).</li>
+      <li>Code der App: MIT-Lizenz, auf <a href="https://github.com/epydemia/Next-To-X">GitHub</a>.</li>
+    </ul>
+    <p>Fehlt eine Ladesäule oder stimmt etwas nicht? Am schnellsten korrigierst du es auf <a href="https://www.openstreetmap.org">openstreetmap.org</a>, oder melde es auf <a href="https://github.com/epydemia/Next-To-X/issues">GitHub</a>. Wenn du eine der genannten Quellen vertrittst und Anliegen zur Nutzung deiner Daten hast, schreibe auf derselben Seite.</p>
+  </section>
+
+  <p class="aggiornato">Zuletzt aktualisiert: November 2026</p>
+</article>
+</main>
+</body>
+</html>

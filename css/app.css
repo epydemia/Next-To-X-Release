@@ -1,0 +1,698 @@
+/* Inter servito dal sito (non da Google Fonts: nessuna richiesta a terzi). SIL OFL 1.1, font/OFL.txt */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(font/inter-latin-wght-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(font/inter-latin-ext-wght-normal.woff2) format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface2: #21262d;
+  --border: #30363d;
+  --text: #e6edf3;
+  --muted: #7d8590;
+  --green: #00c853;
+  --amber: #f59e0b;
+  --red: #ef4444;
+  --blue: #3b9eff;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── Options panel ──────────────────────────────── */
+#options-panel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -100%;
+  width: min(300px, 85vw);
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  box-shadow: -8px 0 32px rgba(0,0,0,.5);
+  transition: right .25s ease;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+#options-panel.open { right: 0; }
+
+#options-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 16px 16px;
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+}
+
+#options-brand { display: flex; align-items: center; gap: 10px; }
+#options-brand img { border-radius: 8px; }
+#options-app { font-weight: 700; letter-spacing: .02em; }
+#options-title { font-size: .8em; font-weight: 500; color: var(--muted); }
+
+#options-close {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1.1em;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  line-height: 1;
+}
+#options-close:active { background: var(--surface2); }
+
+.setting-row[hidden] { display: none; }
+.setting-row {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  gap: 12px;
+  user-select: none;
+  min-height: 56px;
+}
+.setting-label { flex: 1; font-size: .95em; }
+.setting-link { color: var(--text); text-decoration: none; }
+.setting-link span[aria-hidden] { color: var(--muted); font-size: 1.3em; }
+.setting-hint { padding: 8px 16px 4px; font-size: .8em; color: var(--muted); }
+
+/* Toggle switch */
+.toggle-input { display: none; }
+.toggle-track {
+  flex-shrink: 0;
+  width: 44px;
+  height: 24px;
+  background: var(--border);
+  border-radius: 12px;
+  position: relative;
+  transition: background .2s;
+}
+.toggle-track::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  transition: transform .2s;
+}
+.toggle-input:checked + .toggle-track { background: var(--green); }
+.toggle-input:checked + .toggle-track::after { transform: translateX(20px); }
+
+#csv-debug-section {
+  padding: 4px 16px 12px;
+  border-bottom: 1px solid var(--border);
+}
+#csv-debug-section input[type="file"] { width: 100%; font-size: .85em; color: var(--muted); }
+#csvStatus { font-size: .8em; margin-top: 4px; color: var(--green); }
+
+/* Cursore della simulazione: sotto l'HUD, a sinistra della barra distanze verticale */
+#sim-cursore[hidden] { display: none; }
+#sim-cursore {
+  position: absolute;
+  top: 64px;
+  left: 10px;
+  right: 84px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: rgba(13,17,23,.8);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+#simSlider { flex: 1; min-width: 0; accent-color: var(--green); }
+#simTempo { font-size: .75em; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* ── Map wrapper ────────────────────────────────── */
+#map-wrapper {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* fallback per browser che non supportano 100dvh */
+@supports not (height: 100dvh) {
+  body { height: 100vh; }
+}
+
+#map { width: 100%; height: 100%; }
+
+/* HUD overlay – top */
+#hud-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* a sinistra lascia spazio ai tasti dello zoom di Leaflet */
+  padding: 14px 14px 36px 56px;
+  background: linear-gradient(to bottom,
+    rgba(0,0,0,.75) 0%,
+    rgba(0,0,0,.35) 60%,
+    transparent 100%);
+  pointer-events: none;
+}
+#hud-top > * { pointer-events: auto; }
+
+#strada {
+  flex: 1;
+  font-size: 1em;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 1px 4px rgba(0,0,0,.6);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#direzione {
+  font-size: .85em;
+  color: rgba(255,255,255,.85);
+  text-shadow: 0 1px 3px rgba(0,0,0,.6);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+#options-toggle {
+  width: 40px;
+  height: 40px;
+  background: rgba(0,0,0,.5);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 50%;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* HUD overlay – next station (bottom of map) */
+#next-station {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  /* in fondo resta una riga per i crediti della mappa (vedi .leaflet-control-attribution) */
+  padding: 32px 16px 26px;
+  background: linear-gradient(to top,
+    rgba(0,0,0,.85) 0%,
+    rgba(0,0,0,.5) 55%,
+    transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.next-station-info { color: rgba(255,255,255,.45); font-size: 1em; }
+
+.next-station-name {
+  font-weight: 700;
+  font-size: 1.15em;
+  color: white;
+  flex: 1;
+  text-shadow: 0 1px 4px rgba(0,0,0,.7);
+}
+.next-station-titolo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.next-station-op {
+  font-size: .85em;
+  font-weight: 500;
+  color: rgba(255,255,255,.7);
+  text-shadow: 0 1px 4px rgba(0,0,0,.7);
+}
+.next-station-dir {
+  font-size: .9em;
+  color: rgba(255,255,255,.7);
+  align-self: flex-end;
+}
+.next-station-exit {
+  font-size: .8em;
+  background: rgba(245,158,11,.2);
+  color: var(--amber);
+  padding: 2px 8px;
+  border-radius: 20px;
+  border: 1px solid rgba(245,158,11,.35);
+  align-self: flex-end;
+}
+.next-station-dist {
+  font-size: 2em;
+  font-weight: 700;
+  color: var(--green);
+  text-shadow: 0 0 20px rgba(0,200,83,.4);
+  align-self: flex-end;
+  white-space: nowrap;
+}
+
+/* ── Bottom panel ───────────────────────────────── */
+#bottom-panel {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+  /* il fumetto della barra distanze sale sopra la mappa e i suoi overlay */
+  position: relative;
+  z-index: 1100;
+}
+
+/* ── Barra distanze ──────────────────────────────
+   Orizzontale nel pannello in basso (schermo in orizzontale), verticale sul bordo
+   destro della mappa (schermo in verticale): hud.js sposta il contenitore e aggiunge
+   .verticale. Ogni elemento ha --pos, la posizione lungo la barra in %. */
+#distance-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* spazio per l'etichetta della prossima stazione sopra e le tacche sotto */
+  padding: 36px 16px 24px;
+  border-bottom: 1px solid var(--border);
+}
+.bar-posizione {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(59,158,255,.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bar-posizione svg { width: 16px; height: 16px; transform: rotate(90deg); }
+
+#distance-bar {
+  flex: 1;
+  position: relative;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border);
+}
+.bar-percorso {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: var(--pos);
+  border-radius: 3px;
+  background: var(--green);
+  opacity: .55;
+}
+.bar-tacca {
+  position: absolute;
+  left: var(--pos);
+  top: 12px;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: #8b949e;
+  white-space: nowrap;
+}
+.bar-tacca--fine { transform: translateX(-100%); }
+.bar-tacca--fine::after { content: ' km'; }
+
+.bar-punto {
+  position: absolute;
+  left: var(--pos);
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.bar-punto::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--green);
+}
+.bar-punto--uscita::before { border-color: var(--amber); }
+.bar-punto--prossima { pointer-events: none; }
+.bar-punto--prossima::before {
+  width: 12px;
+  height: 12px;
+  border: none;
+  background: var(--green);
+  box-shadow: 0 0 0 3px var(--surface);
+}
+.bar-punto--prossima.bar-punto--uscita::before { background: var(--amber); }
+
+.bar-etichetta {
+  position: absolute;
+  left: var(--pos);
+  bottom: 14px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px 5px 8px;
+  border: none;
+  border-radius: 999px;
+  background: var(--green);
+  color: var(--bg);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.bar-etichetta--uscita { background: var(--amber); }
+.bar-etichetta svg { width: 14px; height: 14px; fill: currentColor; }
+
+.bar-tooltip {
+  position: absolute;
+  bottom: 52px;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 160px;
+  max-width: min(280px, 90vw);
+  padding: 8px 12px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.5);
+  font-size: .82em;
+  color: var(--muted);
+  line-height: 1.35;
+}
+.bar-tooltip strong { color: var(--text); font-size: 1.05em; }
+.bar-tooltip-dist { color: var(--green); font-weight: 600; }
+
+/* Schermo in verticale: striscia sul bordo destro della mappa, si sale verso la meta */
+#distance-bar-container.verticale {
+  position: absolute;
+  right: 10px;
+  top: 76px;
+  bottom: 112px;
+  z-index: 1000;
+  width: 64px;
+  box-sizing: border-box;
+  flex-direction: column-reverse;
+  gap: 10px;
+  padding: 16px 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(13,17,23,.82);
+}
+.verticale .bar-posizione svg { transform: none; }
+.verticale #distance-bar { width: 6px; height: auto; }
+.verticale .bar-percorso { top: auto; bottom: 0; width: 100%; height: var(--pos); }
+.verticale .bar-tacca { left: auto; top: auto; right: 14px; bottom: var(--pos); transform: translateY(50%); }
+.verticale .bar-tacca--fine::after { content: ''; }
+.verticale .bar-punto { left: 50%; top: auto; bottom: var(--pos); transform: translate(-50%, 50%); }
+.verticale .bar-etichetta {
+  left: auto;
+  right: 44px;
+  bottom: var(--pos);
+  transform: translateY(50%);
+  box-shadow: 0 2px 10px rgba(0,0,0,.45);
+}
+.verticale .bar-tooltip {
+  left: auto !important;
+  right: 44px;
+  min-width: 220px;
+  bottom: var(--pos);
+  transform: translateY(50%);
+}
+
+#stations-toggle-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--muted);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: .85em;
+  font-family: inherit;
+  min-height: 48px;
+}
+#stations-toggle-btn:active { background: var(--surface2); }
+#stations-chevron { font-size: .75em; transition: transform .2s; }
+#stations-chevron.open { transform: rotate(180deg); }
+
+#stations-list {
+  max-height: 40vh;
+  overflow-y: auto;
+  border-top: 1px solid var(--border);
+}
+
+#stations-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .85em;
+}
+#stations-table thead th {
+  padding: 8px 12px;
+  text-align: left;
+  color: var(--muted);
+  font-weight: 500;
+  font-size: .78em;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  position: sticky;
+  top: 0;
+}
+.th-dist { text-align: right; }
+#stations-table tbody tr { border-bottom: 1px solid var(--border); }
+#stations-table tbody tr:active { background: var(--surface2); }
+#stations-table td { padding: 10px 12px; vertical-align: middle; }
+#stations-table td:first-child { font-weight: 500; }
+#stations-table .td-road { color: var(--muted); }
+#stations-table .td-dist {
+  color: var(--green);
+  font-weight: 600;
+  text-align: right;
+  white-space: nowrap;
+}
+#stations-table .td-exit {
+  color: var(--amber);
+  font-weight: 600;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ── Markers ────────────────────────────────────── */
+.marker-grigio {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #7d8590;
+  border: 2px solid rgba(255,255,255,.6);
+}
+.marker-rosso {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--red);
+  border: 2px solid rgba(255,255,255,.8);
+}
+.marker-prossima {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--green);
+  border: 3px solid white;
+  box-shadow: 0 0 12px rgba(0,200,83,.7);
+}
+.marker-uscita {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--amber);
+  border: 2px solid rgba(255,255,255,.8);
+}
+.marker-uscita-prossima {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--amber);
+  border: 3px solid white;
+  box-shadow: 0 0 12px rgba(245,158,11,.7);
+}
+
+/* ── User marker (arrow) ────────────────────────── */
+.marker-blu {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.marker-blu .freccia {
+  display: block;
+  width: 32px;
+  height: 32px;
+  transition: transform .3s ease;
+}
+.marker-blu .freccia svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--blue);
+  stroke: white;
+  stroke-width: 2;
+}
+
+/* ── Leaflet dark overrides ─────────────────────── */
+.leaflet-popup-content-wrapper {
+  background: var(--surface2);
+  color: var(--text);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.4);
+  border: 1px solid var(--border);
+}
+.leaflet-popup-tip { background: var(--surface2); }
+.leaflet-popup-close-button { color: var(--muted) !important; }
+/* Attribuzione dei dati: discreta, senza fondo chiaro, leggibile sul tema scuro */
+.leaflet-container .leaflet-control-attribution {
+  background: transparent;
+  color: rgba(255,255,255,.5);
+  font-size: 10px;
+  line-height: 1.4;
+  padding: 0 6px 2px;
+}
+.leaflet-container .leaflet-control-attribution a { color: rgba(255,255,255,.65); }
+/* sopra la sfumatura del pannello "prossima stazione", che altrimenti la nasconde */
+#map .leaflet-bottom { z-index: 1001; }
+/* Una riga sola, sotto il nome della stazione; un tocco la apre per intero */
+#map .leaflet-bottom.leaflet-left { right: 0; }
+#map .leaflet-control-attribution {
+  float: none;
+  margin: 0;
+  max-width: 100%;
+  padding: 0 10px 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+#map .leaflet-control-attribution.aperta {
+  white-space: normal;
+  padding: 6px 10px;
+  background: rgba(0,0,0,.9);
+}
+
+.leaflet-control-zoom a {
+  background: var(--surface2) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+.leaflet-bar {
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,.3) !important;
+}
+
+/* ── Avvertenze al primo avvio ──────────────────── */
+#avvertenze {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(1, 4, 9, .75);
+}
+#avvertenze[hidden] { display: none; }
+#avvertenze-box {
+  width: 100%;
+  max-width: 420px;
+  max-height: 100%;
+  overflow-y: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.5);
+}
+#avvertenze h2 { font-size: 1.2em; margin-bottom: 12px; }
+#avvertenze ul { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
+#avvertenze li { display: flex; gap: 10px; font-size: .9em; line-height: 1.4; color: var(--muted); }
+#avvertenze li strong { color: var(--text); font-weight: 600; }
+#avvertenze-ok {
+  width: 100%;
+  padding: 12px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--green);
+  color: #04130a;
+  font: inherit;
+  font-weight: 600;
+  font-size: 1em;
+  cursor: pointer;
+}
+#avvertenze-info { display: block; text-align: center; margin-top: 12px; font-size: .85em; color: var(--blue); }
+
+/* ── Pagina info (info.html) ────────────────────── */
+body.pagina-info { height: auto; min-height: 100dvh; display: block; overflow: auto; }
+.pagina-info main { max-width: 680px; margin: 0 auto; padding: 16px 16px 48px; line-height: 1.55; }
+.pagina-info a { color: var(--blue); }
+.pagina-info .torna { display: inline-block; margin-bottom: 16px; text-decoration: none; font-weight: 500; }
+.pagina-info header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.pagina-info header img { border-radius: 10px; flex-shrink: 0; }
+.pagina-info h1 { font-size: 1.4em; }
+.pagina-info header p { color: var(--muted); font-size: .9em; }
+.pagina-info h2 { font-size: 1.1em; margin: 28px 0 8px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+.pagina-info h3 { font-size: .95em; margin: 16px 0 4px; }
+.pagina-info p, .pagina-info li { font-size: .92em; }
+.pagina-info ul { padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+.pagina-info ul + p { margin-top: 12px; }
+.pagina-info .aggiornato { margin-top: 32px; color: var(--muted); font-size: .8em; }

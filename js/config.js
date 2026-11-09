@@ -1,0 +1,75 @@
+// Configurazione condivisa da tutte le pagine.
+
+export const CARTELLA_DATI = './data/';
+
+// Tutte le aree, unite e nel formato unico: generato da tools/Compila_Aree.py
+// a partire dai file delle singole fonti (free_to_x_reverse.json, ionity_osm.json…)
+export const FILE_AREE = 'aree.json';
+export const FILE_AUTOSTRADE = 'autostrade.json';
+
+// Fonti possibili nel campo "fonti" di un'area: etichetta e classe CSS nell'editor
+export const FONTI = {
+  free_to_x: { label: 'Free To X',       classe: 'ftx' },
+  a22:       { label: 'A22 Brennero',    classe: 'a22' },
+  test:      { label: 'Test',            classe: 'test' },
+  ionity:    { label: 'IONITY',          classe: 'ionity' },
+  osm:       { label: 'Altri operatori', classe: 'osm' },
+};
+
+// Decisioni della revisione manuale fatta nell'editor stazioni
+export const FILE_REVISIONI = 'revisioni.json';
+
+const ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services';
+
+// Mappe di sfondo Esri. Esri chiede di citare tutti i fornitori dei dati di ogni mappa:
+// il testo esatto lo dichiara il servizio stesso (campo copyrightText) e js/sfondi.js lo
+// legge al caricamento; "attribuzione" è la riserva se la lettura fallisce
+// (testi da leaflet-providers, BSD-2-Clause).
+export const TILE_GUIDA = {
+  servizio: `${ESRI}/Canvas/World_Dark_Gray_Base/MapServer`,
+  attribuzione: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
+  options: { maxZoom: 16 },
+};
+
+export const TILE_EDITOR = {
+  servizio: `${ESRI}/World_Street_Map/MapServer`,
+  attribuzione: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012',
+  options: { maxZoom: 18 },
+};
+
+export const TILE_SATELLITE = {
+  servizio: `${ESRI}/World_Imagery/MapServer`,
+  attribuzione: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+  options: { maxZoom: 19 },
+};
+
+// Strade (Nominatim) e colonnine da OSM: attribuzione richiesta dalla licenza ODbL
+export const ATTRIBUZIONE_OSM = 'Dati &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>';
+
+export const CENTRO_ITALIA = { lat: 41.9, lon: 12.5 };
+export const ZOOM_GUIDA = 15;
+
+// Stazioni oltre questo raggio vengono ignorate (salvo "Mostra tutte")
+export const RAGGIO_STAZIONI_KM = 100;
+
+// Riconoscimento locale dell'autostrada (data/autostrade.json): distanza massima dalla
+// carreggiata, scarto massimo tra heading e verso della carreggiata, e per quanti km
+// dall'ultimo aggancio si resta sulla stessa autostrada (aree di servizio, svincoli, GPS impreciso)
+export const AUTOSTRADA_DISTANZA_MAX_M = 35;
+export const AUTOSTRADA_ANGOLO_MAX = 60;
+export const AUTOSTRADA_TENUTA_KM = 1.5;
+
+// Reverse geocoding (Nominatim), usato solo fuori autostrada: al massimo una chiamata ogni N ms o ogni N km percorsi
+export const REVERSE_GEOCODING_INTERVALLO_MS = 10000;
+export const REVERSE_GEOCODING_DISTANZA_KM = 0.1;
+// Mai più di una chiamata al secondo (policy Nominatim), anche trascinando il cursore della simulazione
+export const REVERSE_GEOCODING_PAUSA_MINIMA_MS = 1100;
+
+// Sotto questo spostamento l'heading stimato non viene ricalcolato (rumore GPS a veicolo fermo)
+export const HEADING_SPOSTAMENTO_MINIMO_KM = 0.01;
+
+export const ATTESA_GPS_MS = 15000;
+
+// La simulazione riproduce le tracce CSV N volte più veloce del tempo reale
+export const SIMULAZIONE_ACCELERAZIONE = 10;
+export const SIMULAZIONE_PASSO_MINIMO_MS = 500;
