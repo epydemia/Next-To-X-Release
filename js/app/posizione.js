@@ -7,6 +7,7 @@ import {
   REVERSE_GEOCODING_DISTANZA_KM,
   REVERSE_GEOCODING_PAUSA_MINIMA_MS,
   HEADING_SPOSTAMENTO_MINIMO_KM,
+  HEADING_VELOCITA_MINIMA_MS,
   AUTOSTRADA_TENUTA_KM,
 } from '../config.js';
 
@@ -46,7 +47,7 @@ export function avviaPosizione({ simulazione, onAggiornamento: callback }) {
   if (simulazione) {
     avviaSimulazione((lat, lon, salto) => {
       if (salto) dimenticaTraccia();
-      nuovaPosizione(lat, lon, null);
+      nuovaPosizione(lat, lon);
     });
     return;
   }
@@ -59,7 +60,7 @@ export function avviaPosizione({ simulazione, onAggiornamento: callback }) {
   }
 
   navigator.geolocation.watchPosition(
-    pos => nuovaPosizione(pos.coords.latitude, pos.coords.longitude, pos.coords.heading),
+    pos => nuovaPosizione(pos.coords.latitude, pos.coords.longitude, pos.coords),
     err => {
       console.warn('Errore geolocalizzazione:', err);
       if (err.code === err.PERMISSION_DENIED) {
@@ -104,9 +105,10 @@ export async function motivoSenzaPosizione() {
   return 'nessun-segnale';
 }
 
-function nuovaPosizione(lat, lon, headingDispositivo) {
+/** gps: heading, speed e accuracy del dispositivo, se ci sono (la simulazione non li ha). */
+function nuovaPosizione(lat, lon, gps = {}) {
   stato.coords = { lat, lon };
-  aggiornaHeading(lat, lon, headingDispositivo);
+  aggiornaHeading(lat, lon, gps);
   if (!riconosciAutostrada(lat, lon)) aggiornaStradaSeNecessario(lat, lon);
   onAggiornamento(stato);
 }
@@ -158,7 +160,13 @@ let ultimaPosizioneHeading = null;
 // False finché l'heading non viene dal dispositivo o da uno spostamento reale (all'avvio vale 0)
 let headingNoto = false;
 
-function aggiornaHeading(lat, lon, headingDispositivo) {
+/**
+ * Da fermi (coda, casello, area di servizio) il telefono non dà più l'heading e la posizione
+ * oscilla di qualche metro: ricalcolarlo da quegli spostamenti darebbe direzioni a caso, e con
+ * loro stazioni alle spalle come "prossime". Si tiene quindi l'ultimo heading valido finché il
+ * dispositivo dice che si è fermi o finché lo spostamento non supera l'incertezza del GPS.
+ */
+function aggiornaHeading(lat, lon, { heading: headingDispositivo, speed, accuracy } = {}) {
   if (headingDispositivo != null && !isNaN(headingDispositivo)) {
     stato.heading = headingDispositivo;
     stato.headingStimato = false;
@@ -166,14 +174,16 @@ function aggiornaHeading(lat, lon, headingDispositivo) {
     ultimaPosizioneHeading = { lat, lon };
     return;
   }
+  stato.headingStimato = true;
+  if (speed != null && !isNaN(speed) && speed < HEADING_VELOCITA_MINIMA_MS) return;
 
   if (ultimaPosizioneHeading) {
     const { lat: lat0, lon: lon0 } = ultimaPosizioneHeading;
-    if (distanzaKm(lat0, lon0, lat, lon) < HEADING_SPOSTAMENTO_MINIMO_KM) return;
+    const soglia = Math.max(HEADING_SPOSTAMENTO_MINIMO_KM, 2 * (accuracy ?? 0) / 1000);
+    if (distanzaKm(lat0, lon0, lat, lon) < soglia) return;
     stato.heading = bearing(lat0, lon0, lat, lon);
     headingNoto = true;
   }
-  stato.headingStimato = true;
   ultimaPosizioneHeading = { lat, lon };
 }
 

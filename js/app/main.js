@@ -10,6 +10,7 @@ import {
 import { attendiAvvertenze } from './avvertenze.js';
 import { collegaOperatori, impostaAreeOperatori, passaFiltroOperatori, filtroOperatoriAttivo } from './operatori.js';
 import { t, traduciPagina } from '../i18n.js';
+import { VERSIONE_APP } from '../versione.js';
 import { ATTESA_GPS_MS, CENTRO_ITALIA } from '../config.js';
 import {
   contaPagina, contaEvento, slugOperatori, statisticheAttive, impostaStatistiche, segnaSimulazione,
@@ -64,7 +65,7 @@ function ridisegna() {
 function mostraSenzaPosizione() {
   const stazioni = tutteLeStazioni(areeVisibili(), CENTRO_ITALIA);
   disegnaStazioni(stazioni);
-  aggiornaPannelli(stazioni);
+  aggiornaPannelli(stazioni, { conPosizione: false });
 }
 
 // Stazioni già conteggiate come "prossima" in questa visita: ognuna una volta sola
@@ -104,6 +105,11 @@ function aggiorna(stato) {
   aggiornaPannelli(stazioni, { ripiego });
   const prossima = stazioni.find(s => s.isNearest);
   if (prossima) contaProssima(prossima);
+}
+
+/** In fondo alle impostazioni: versione dell'app (tag della release, "sviluppo" in locale). */
+function mostraVersioneApp() {
+  document.getElementById('versione-app').textContent = t('versioneApp', { versione: VERSIONE_APP ?? t('versioneSviluppo') });
 }
 
 /** In fondo alle impostazioni: da quale compilazione di data/aree.json vengono le stazioni. */
@@ -198,6 +204,7 @@ window.addEventListener('load', async () => {
   // I controlli vanno collegati prima di ogni await, così rispondono anche senza GPS
   collegaPannelli();
   collegaImpostazioni(simulazione);
+  mostraVersioneApp();
   creaMappa('map');
   segnaSimulazione(simulazione);
   contaPagina('/app', 'App di guida');

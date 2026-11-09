@@ -65,8 +65,12 @@ export const REVERSE_GEOCODING_DISTANZA_KM = 0.1;
 // Mai più di una chiamata al secondo (policy Nominatim), anche trascinando il cursore della simulazione
 export const REVERSE_GEOCODING_PAUSA_MINIMA_MS = 1100;
 
-// Sotto questo spostamento l'heading stimato non viene ricalcolato (rumore GPS a veicolo fermo)
-export const HEADING_SPOSTAMENTO_MINIMO_KM = 0.01;
+// Heading stimato dagli spostamenti (quando il dispositivo non lo dà, per esempio da fermi):
+// si ricalcola solo dopo almeno questo spostamento, o il doppio dell'incertezza del GPS se
+// maggiore. Con 10 m il rumore di un'auto ferma bastava a farlo girare a caso.
+export const HEADING_SPOSTAMENTO_MINIMO_KM = 0.05;
+// Sotto questa velocità (m/s, circa 7 km/h) l'heading resta quello di prima
+export const HEADING_VELOCITA_MINIMA_MS = 2;
 
 export const ATTESA_GPS_MS = 15000;
 

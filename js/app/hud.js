@@ -48,20 +48,22 @@ export function mostraDirezione({ heading, headingStimato }) {
 // Ultime stazioni ricevute: per ridisegnare quando si apre o si chiude un bivio senza attendere il GPS
 let ultimeStazioni = [];
 let ultimoRipiego = null;
+let ultimaConPosizione = true;
 
 /**
  * ripiego: con il filtro per operatore e nessuna stazione davanti, la più vicina di qualsiasi
  * operatore (calcolata senza filtro), da indicare comunque.
  */
-export function aggiornaPannelli(stazioni, { ripiego = null } = {}) {
+export function aggiornaPannelli(stazioni, { ripiego = null, conPosizione = true } = {}) {
   ultimeStazioni = stazioni;
   ultimoRipiego = ripiego;
+  ultimaConPosizione = conPosizione;
   const avanti = stazioni.filter(s => s.isAvanti);
   const bivi = biviDavanti(avanti);
   aggiornaBivioAperto(bivi);
   mostraProssimaStazione(stazioni.find(s => s.isNearest), righeBivioAperto(bivi), ripiego);
   aggiornaBarraDistanze(avanti, bivi);
-  aggiornaTabella(stazioni);
+  aggiornaTabella(stazioni, conPosizione);
 }
 
 // Bivio aperto sulla barra (le sue diramazioni sono visibili): uno alla volta.
@@ -103,7 +105,7 @@ function aggiornaBivioAperto(bivi) {
 
 function apriChiudiBivio(id) {
   bivioAperto = bivioAperto === id ? null : id;
-  aggiornaPannelli(ultimeStazioni, { ripiego: ultimoRipiego });
+  aggiornaPannelli(ultimeStazioni, { ripiego: ultimoRipiego, conPosizione: ultimaConPosizione });
   // Il ridisegno ricrea i pulsanti: il focus torna su quello appena toccato
   document.querySelector(`#distance-bar .bar-bivio[data-id="${CSS.escape(id)}"]`)?.focus();
 }
@@ -352,19 +354,39 @@ function chiudiFumetto() {
   if (fumettoAperto && !e.target.closest('.bar-tooltip, .bar-punto, .bar-etichetta')) chiudiFumetto();
 }, { passive: true }));
 
-function aggiornaTabella(stazioni) {
+/**
+ * Elenco delle stazioni vicine. Con la posizione in cima quelle davanti, le sole raggiungibili;
+ * sotto, in grigio, quelle già superate o su altre strade, che altrimenti si confondono con le
+ * prime (distanze in linea d'aria, senza senso di marcia). Senza posizione tutte, per distanza.
+ */
+function aggiornaTabella(stazioni, conPosizione) {
   const tbody = document.querySelector('#stations-table tbody');
   tbody.innerHTML = '';
-  stazioni.forEach(s => {
-    const riga = document.createElement('tr');
-    riga.innerHTML = `
+  const riga = (s, classe = '') => {
+    const tr = document.createElement('tr');
+    if (classe) tr.className = classe;
+    tr.innerHTML = `
       <td>${s.nome}</td>
       <td class="td-road">${s.bivio ? `<span class="td-bivio">${s.bivio.lato === 'sx' ? '↖' : '↗'}</span> ` : ''}${s.strada}</td>
       <td class="${s.exitRequired ? 'td-exit' : 'td-dist'}">${s.exitRequired ? '⚠️ ' : ''}${km(s.distanza)}</td>
     `;
-    tbody.appendChild(riga);
-  });
-
-  const n = stazioni.length;
-  document.getElementById('stations-count-label').textContent = t('stazioni', { n });
+    tbody.appendChild(tr);
+  };
+  const etichetta = document.getElementById('stations-count-label');
+  if (!conPosizione) {
+    stazioni.forEach(s => riga(s));
+    etichetta.textContent = t('stazioni', { n: stazioni.length });
+    return;
+  }
+  const davanti = stazioni.filter(s => s.isAvanti);
+  const altre = stazioni.filter(s => !s.isAvanti);
+  davanti.forEach(s => riga(s));
+  if (altre.length) {
+    const separatore = document.createElement('tr');
+    separatore.className = 'tr-separatore';
+    separatore.innerHTML = `<td colspan="3">${t('nonDavanti')}</td>`;
+    tbody.appendChild(separatore);
+    altre.forEach(s => riga(s, 'tr-non-davanti'));
+  }
+  etichetta.textContent = t('stazioniDavanti', { n: davanti.length });
 }

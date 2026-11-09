@@ -104,6 +104,8 @@ body {
 .setting-link { color: var(--text); text-decoration: none; }
 .setting-link span[aria-hidden] { color: var(--muted); font-size: 1.3em; }
 .setting-hint { padding: 8px 16px 4px; font-size: .8em; color: var(--muted); }
+.versioni span { display: block; }
+.versioni span + span { margin-top: 2px; }
 button.setting-row {
   width: 100%;
   background: none;
@@ -823,6 +825,19 @@ button.setting-row {
   text-align: right;
   white-space: nowrap;
 }
+/* Già superate o su altre strade: sotto quelle davanti, spente */
+#stations-table .tr-separatore td {
+  padding: 8px 12px 6px;
+  color: var(--muted);
+  font-size: .78em;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  background: var(--surface);
+}
+#stations-table .tr-non-davanti { opacity: .45; }
+#stations-table .tr-non-davanti td { font-weight: 400; }
+#stations-table .tr-non-davanti .td-dist,
+#stations-table .tr-non-davanti .td-exit { color: var(--muted); }
 
 /* ── Markers ────────────────────────────────────── */
 .marker-grigio {
