@@ -1,6 +1,6 @@
 {
   "versione": 2,
-  "generato": "2026-11-07T16:52:52+00:00",
+  "generato": "2026-11-09T10:07:32+00:00",
   "licenza": "Contiene dati © OpenStreetMap contributors, disponibili con licenza ODbL 1.0 (https://opendatacommons.org/licenses/odbl/1-0/). Dettagli per fonte: data/README.md",
   "aree": [
     {
@@ -15,7 +15,7 @@
       "lat": 45.04137,
       "lon": 11.71065,
       "km": 65.3,
-      "indirizzo": "Esso, Autostrada Bologna-Padova, Costa di Rovigo, Rovigo, Veneto, 45030, Italia",
+      "indirizzo": "Esso, Autostrada Bologna-Padova, Preguerre, Villamarzana, Costa di Rovigo, Rovigo, Veneto, 45030, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -185,7 +185,7 @@
       "lat": 45.46185,
       "lon": 9.27611,
       "km": 0.0,
-      "indirizzo": "Via Forlanini, Peschiera Borromeo, Milano, Lombardia, 20054, Italia",
+      "indirizzo": "Free To X, Circonvallazione Idroscalo, Novegro, Segrate, Rodano, Milano, Lombardia, 20054, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -326,7 +326,7 @@
       "lat": 45.4536711,
       "lon": 9.2607326,
       "km": 0.0,
-      "indirizzo": "Viale dell'Aviazione, Parco Monluè - Ponte Lambro, Municipio 4, Milano, Lombardia, 21771, Italia",
+      "indirizzo": "Viale dell'Aviazione, Parco Monluè - Ponte Lambro, Municipio 4, Milano, Rodano, Milano, Lombardia, 21771, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -558,10 +558,10 @@
       "carreggiata": null,
       "destinazione": "Allacc. Diramazione Capodichino",
       "accesso": "area_servizio",
-      "lat": 40.83764,
-      "lon": 14.11988,
+      "lat": 40.8385,
+      "lon": 14.1203,
       "km": 3.5,
-      "indirizzo": "Esso, Tangenziale di Napoli, Rione La Solfatara, Cigliano, Pozzuoli, Napoli, Campania, 80078, Italia",
+      "indirizzo": "Q8, Tangenziale di Napoli, Rione La Solfatara, Cigliano, Pozzuoli, Napoli, Campania, 80078, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -648,7 +648,7 @@
       "lat": 44.96338,
       "lon": 9.90495,
       "km": 73.3,
-      "indirizzo": "Area d'Arda Est, Autostrada del Sole, Portone, Fiorenzuola d'Arda, Piacenza, Emilia-Romagna, 29017, Italia",
+      "indirizzo": "Eni, Autostrada del Sole, Borgo Paglia di Sopra, Roveleto, Fiorenzuola d'Arda, Piacenza, Emilia-Romagna, 29010, Italia",
       "distanzaAutostradaM": 91,
       "operatori": [
         "Free To X"
@@ -764,7 +764,7 @@
       "lat": 44.962,
       "lon": 9.90577,
       "km": 73.3,
-      "indirizzo": "Autostrada del Sole, Portone, Fiorenzuola d'Arda, Piacenza, Emilia-Romagna, 29017, Italia",
+      "indirizzo": "Autostrada del Sole, Portone, Baselicaduce, Fiorenzuola d'Arda, Piacenza, Emilia-Romagna, 29017, Italia",
       "distanzaAutostradaM": 35,
       "operatori": [
         "Free To X"
@@ -927,7 +927,7 @@
       "lat": 43.58331,
       "lon": 11.52186,
       "km": 330.8,
-      "indirizzo": "Arno Est, Autostrada del Sole, San Giovanni Valdarno, Figline e Incisa Valdarno, Arezzo, Toscana, 52027, Italia",
+      "indirizzo": "Agip Eni, Autostrada del Sole, Restone, San Giovanni Valdarno, Figline e Incisa Valdarno, Arezzo, Toscana, 52027, Italia",
       "distanzaAutostradaM": 51,
       "operatori": [
         "Free To X"
@@ -1179,12 +1179,12 @@
       "autostrada": "A10",
       "tratta": "Genova-Ventimiglia",
       "carreggiata": "NORDEST",
-      "destinazione": "Savona",
+      "destinazione": "Genova",
       "accesso": "area_servizio",
       "lat": 44.28693,
       "lon": 8.44247,
       "km": 44.8,
-      "indirizzo": "Area di Aurelia Sud, SS1dir/A, Zinola, Savona, Liguria, 17047, Italia",
+      "indirizzo": "Area di Aurelia Sud, Strada di scorrimento veloce Savona – Vado Ligure, Zinola, Savona, Liguria, 17047, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -1258,7 +1258,7 @@
       ],
       "correzioni": {
         "carreggiata": {
-          "da": null,
+          "da": "EST",
           "nota": "crosscheck OSM"
         }
       },
@@ -1399,7 +1399,7 @@
       "lat": 43.4078,
       "lon": 11.76318,
       "km": 362.3,
-      "indirizzo": "Badia al Pino ovest, Autostrada del Sole, Tuori, Viciomaggio, Civitella in Val di Chiana, Arezzo, Toscana, 52041, Italia",
+      "indirizzo": "Free to X, Area Servizio, Badia al Pino, Civitella in Val di Chiana, Arezzo, Toscana, 52041, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -1522,7 +1522,7 @@
       "lat": 44.14759,
       "lon": 11.1931,
       "km": 17.9,
-      "indirizzo": "Variante di Valico, Badia Vecchia, Castiglione dei Pepoli, Unione dell'Appennino Bolognese, Bologna, Emilia-Romagna, 40035, Italia",
+      "indirizzo": "Variante di Valico, Setta di Sotto, Baragazza, Castiglione dei Pepoli, Unione dell'Appennino Bolognese, Bologna, Emilia-Romagna, 40035, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -1609,7 +1609,7 @@
       "lat": 44.2175,
       "lon": 12.17712,
       "km": 89.5,
-      "indirizzo": "Bevano est, 2741p, Autostrada Adriatica, Quartiere Dismano, Santa Maria Nuova Spallicci, Bertinoro, Unione di Comuni della Romagna Forlivese, Forlì-Cesena, Emilia-Romagna, 47032, Italia",
+      "indirizzo": "Eni, 2741p, Autostrada Adriatica, Quartiere Dismano, Santa Maria Nuova Spallicci, Bertinoro, Unione di Comuni della Romagna Forlivese, Forlì-Cesena, Emilia-Romagna, 47032, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -1694,7 +1694,7 @@
       "lat": 45.6323,
       "lon": 9.59832,
       "km": 165.7,
-      "indirizzo": "Brembo nord, Autostrada Serenissima, Osio Sopra, Bergamo, Lombardia, 24040, Italia",
+      "indirizzo": "Esso, Autostrada Serenissima, Osio Sopra, Bergamo, Lombardia, 24040, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -1813,7 +1813,7 @@
       "lat": 45.57526,
       "lon": 9.39445,
       "km": 148.4,
-      "indirizzo": "Brianza Nord, Via Cascina Trivulzina, Omate, Agrate Brianza, Monza e della Brianza, Lombardia, 20864, Italia",
+      "indirizzo": "Free to X, Autostrada Serenissima, Caponago, Monza e della Brianza, Lombardia, 20867, Italia",
       "distanzaAutostradaM": 101,
       "operatori": [
         "Free To X"
@@ -1947,7 +1947,7 @@
       "lat": 45.57468,
       "lon": 9.39485,
       "km": 148.4,
-      "indirizzo": "Brianza Sud, Tangenziale Est Esterna, Caponago, Monza e della Brianza, Lombardia, 20867, Italia",
+      "indirizzo": "Eni, Autostrada Serenissima, Caponago, Monza e della Brianza, Lombardia, 20867, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -2070,7 +2070,7 @@
       "lat": 45.76248,
       "lon": 8.81113,
       "km": 40.7,
-      "indirizzo": "Autostrada dei Laghi, Castellazzo, Cascine Maggio, Castronno, Varese, Lombardia, 21040, Italia",
+      "indirizzo": "Free To X, Autostrada dei Laghi, Castellazzo, Cascine Maggio, Castronno, Varese, Lombardia, 21040, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -2193,7 +2193,7 @@
       "lat": 45.76277,
       "lon": 8.80955,
       "km": 40.7,
-      "indirizzo": "Autostrada dei Laghi, Castellazzo, Cascine Maggio, Castronno, Varese, Lombardia, 21040, Italia",
+      "indirizzo": "Free To X, Autostrada dei Laghi, Castellazzo, Cascine Maggio, Castronno, Varese, Lombardia, 21040, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -2280,7 +2280,7 @@
       "lat": 41.06648,
       "lon": 15.31572,
       "km": 106.5,
-      "indirizzo": "Calaggio Nord, Autostrada dei Due Mari, Vallata, Avellino, Campania, 83059, Italia",
+      "indirizzo": "Tamoil, Autostrada dei Due Mari, Vallata, Avellino, Campania, 83059, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -2367,7 +2367,7 @@
       "lat": 41.06508,
       "lon": 15.3147,
       "km": 106.5,
-      "indirizzo": "Calaggio Sud, Autostrada dei Due Mari, Vallata, Avellino, Campania, 83059, Italia",
+      "indirizzo": "Eni, Autostrada dei Due Mari, Vallata, Avellino, Campania, 83059, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -2454,7 +2454,7 @@
       "lat": 41.2516,
       "lon": 16.21953,
       "km": 620.36,
-      "indirizzo": "Area di Servizio Canne della Battaglia Est, Autostrada Adriatica, Andria, Barletta-Andria-Trani, Puglia, 76123, Italia",
+      "indirizzo": "Sarni, Autostrada Adriatica, Andria, Barletta-Andria-Trani, Puglia, 76123, Italia",
       "distanzaAutostradaM": 54,
       "operatori": [
         "Free To X"
@@ -2552,7 +2552,7 @@
       "lat": 41.25094,
       "lon": 16.21982,
       "km": 620.36,
-      "indirizzo": "Area di Servizio Canne della Battaglia Ovest, Autostrada Adriatica, Andria, Barletta-Andria-Trani, Puglia, 76123, Italia",
+      "indirizzo": "Agip Eni, Autostrada Adriatica, Andria, Barletta-Andria-Trani, Puglia, 76123, Italia",
       "distanzaAutostradaM": 52,
       "operatori": [
         "Free To X"
@@ -2650,7 +2650,7 @@
       "lat": 44.4566,
       "lon": 11.2804,
       "km": 198.9,
-      "indirizzo": "Cantagallo Est, Autostrada del Sole, Villa del Curto, Pontecchio Marconi, Casalecchio di Reno, Unione dei comuni Valli del Reno, Lavino e Samoggia, Bologna, Emilia-Romagna, 40050, Italia",
+      "indirizzo": "Eni, Autostrada del Sole, San Biagio, Casalecchio di Reno, Unione dei comuni Valli del Reno, Lavino e Samoggia, Bologna, Emilia-Romagna, 40033, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -2737,7 +2737,7 @@
       "lat": 44.45562,
       "lon": 11.28013,
       "km": 198.9,
-      "indirizzo": "Cantagallo Ovest, Autostrada del Sole, Villa del Curto, Pontecchio Marconi, Casalecchio di Reno, Unione dei comuni Valli del Reno, Lavino e Samoggia, Bologna, Emilia-Romagna, 40050, Italia",
+      "indirizzo": "50, Via Pietro Micca, San Biagio, Casalecchio di Reno, Unione dei comuni Valli del Reno, Lavino e Samoggia, Bologna, Emilia-Romagna, 40033, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -2824,7 +2824,7 @@
       "lat": 41.4973,
       "lon": 13.68375,
       "km": 659.5,
-      "indirizzo": "Casilina Est, Via Saudoni, Castrocielo, Frosinone, Lazio, 03031, Italia",
+      "indirizzo": "Free to X, Via Latina I, Castrocielo, Frosinone, Lazio, 03031, Italia",
       "distanzaAutostradaM": 87,
       "operatori": [
         "Free To X"
@@ -2922,7 +2922,7 @@
       "lat": 41.4967,
       "lon": 13.68387,
       "km": 659.5,
-      "indirizzo": "Casilina Ovest, Via Saudoni, Castrocielo, Frosinone, Lazio, 03031, Italia",
+      "indirizzo": "Burger King, Autostrada del Sole, Castrocielo, Frosinone, Lazio, 03038, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -3045,7 +3045,7 @@
       "lat": 44.62175,
       "lon": 11.42025,
       "km": 11.7,
-      "indirizzo": "Castel Bentivoglio Est, Autostrada Bologna-Padova, Bentivoglio, Unione Reno Galliera, Bologna, Emilia-Romagna, 40010, Italia",
+      "indirizzo": "Agip, Autostrada Bologna-Padova, San Marino di Bentivoglio, Bentivoglio, Unione Reno Galliera, Bologna, Emilia-Romagna, 40010, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -3132,7 +3132,7 @@
       "lat": 44.62182,
       "lon": 11.41882,
       "km": 11.7,
-      "indirizzo": "Castel Bentivoglio Ovest, Autostrada Bologna-Padova, Bentivoglio, Unione Reno Galliera, Bologna, Emilia-Romagna, 40010, Italia",
+      "indirizzo": "Autostrada Bologna-Padova, San Marino di Bentivoglio, Bentivoglio, Unione Reno Galliera, Bologna, Emilia-Romagna, 40010, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -3311,7 +3311,7 @@
       "lat": 43.48117,
       "lon": 13.59507,
       "km": 239.0,
-      "indirizzo": "area servizio Conero ovest, Autostrada Adriatica, Numana, Ancona, 60026, Italia",
+      "indirizzo": "Autostrada Adriatica, Numana, Ancona, Marche, 60020, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -3394,7 +3394,7 @@
       "lat": 40.87252,
       "lon": 14.27946,
       "km": 19.5,
-      "indirizzo": "Area di Servizio Doganella ovest, Doganella, Municipalità 3, Capodichino, Napoli, Campania, 80141, Italia",
+      "indirizzo": "Area di Servizio Doganella ovest, Doganella, Capodichino, Municipalità 3, Napoli, Campania, 80141, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -3459,7 +3459,7 @@
       "lat": 43.62749,
       "lon": 13.33516,
       "km": 208.7,
-      "indirizzo": "Esino Est, Autostrada Adriatica, Chiaravalle, Ancona, 60033, Italia",
+      "indirizzo": "Free to X, Autostrada Adriatica, Chiaravalle, Ancona, Marche, 60033, Italia",
       "distanzaAutostradaM": 50,
       "operatori": [
         "Free To X"
@@ -3593,7 +3593,7 @@
       "lat": 43.62661,
       "lon": 13.33395,
       "km": 208.7,
-      "indirizzo": "Esino Ovest, Autostrada Adriatica, Chiaravalle, Ancona, 60033, Italia",
+      "indirizzo": "Autostrada Adriatica, Chiaravalle, Ancona, Marche, 60033, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -3931,7 +3931,7 @@
       "lat": 46.49885,
       "lon": 13.37615,
       "km": 96.9,
-      "indirizzo": "Area servizio Fella Est, Autostrada Alpe-Adria, Bagni di Lusnizza, Malborghetto Valbruna, Udine, Friuli-Venezia Giulia, 33010, Italia",
+      "indirizzo": "Esso, Autostrada Alpe-Adria, Bagni di Lusnizza, Malborghetto-Valbruna, Udine, Friuli-Venezia Giulia, 33010, Italia",
       "distanzaAutostradaM": 27,
       "operatori": [
         "Free To X",
@@ -4029,8 +4029,8 @@
       "accesso": "area_servizio",
       "lat": 43.83248,
       "lon": 11.16032,
-      "km": 4.6,
-      "indirizzo": "Firenze Nord, Via di Limite, Padule, Sesto Fiorentino, Firenze, Toscana, 50041, Italia",
+      "km": 4.95,
+      "indirizzo": "Auto3, Via di Limite, Padule, Sesto Fiorentino, Firenze, Toscana, 50019, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -4158,7 +4158,7 @@
       "lat": 42.31623,
       "lon": 12.49277,
       "km": 509.1,
-      "indirizzo": "Flaminia Est, Autostrada del Sole, Foglia, Magliano Sabina, Rieti, Lazio, Italia",
+      "indirizzo": "Autogrill, Autostrada del Sole, Foglia, Magliano Sabina, Rieti, Lazio, 02046, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -4223,7 +4223,7 @@
       "lat": 42.31638,
       "lon": 12.49197,
       "km": 509.1,
-      "indirizzo": "Flaminia Ovest, Autostrada del Sole, Foglia, Magliano Sabina, Rieti, Lazio, Italia",
+      "indirizzo": "Eni, Autostrada del Sole, Foglia, Magliano Sabina, Rieti, Lazio, 02042, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -4310,7 +4310,7 @@
       "lat": 41.59137,
       "lon": 15.5014,
       "km": 542.23,
-      "indirizzo": "Autostrada Adriatica, Foggia, Puglia, Italia",
+      "indirizzo": "Sarni, Autostrada Adriatica, Foggia, Puglia, 71016, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -4397,7 +4397,7 @@
       "lat": 41.59069,
       "lon": 15.50058,
       "km": 542.0,
-      "indirizzo": "Autostrada Adriatica, Foggia, Puglia, Italia",
+      "indirizzo": "Sarni, Autostrada Adriatica, Foggia, Puglia, 71016, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -4484,7 +4484,7 @@
       "lat": 42.49945,
       "lon": 12.31172,
       "km": 481.1,
-      "indirizzo": "Giove ovest, Autostrada del Sole, Giove, Terni, Umbria, 05024, Italia",
+      "indirizzo": "Ladestation, Autostrada del Sole, Giove, Terni, Umbria, 05024, Italia",
       "distanzaAutostradaM": 66,
       "operatori": [
         "Free To X"
@@ -4578,7 +4578,7 @@
       "lat": 44.60418,
       "lon": 8.95415,
       "km": 106.1,
-      "indirizzo": "Area di Giovi est, Autostrada dei Giovi - Serravalle, Case Mereta, Ronco Scrivia, Genova, Liguria, 16019, Italia",
+      "indirizzo": "Tamoil, Autostrada dei Giovi - Serravalle, Isolabuona, Ronco Scrivia, Genova, Liguria, 16019, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -4665,7 +4665,7 @@
       "lat": 44.60455,
       "lon": 8.95327,
       "km": 106.1,
-      "indirizzo": "Autostrada dei Giovi - Serravalle, Case Mereta, Ronco Scrivia, Genova, Liguria, 16019, Italia",
+      "indirizzo": "A7 dir. Genova - Isola del Cantone/Ronco Scrivia, Isolabuona, Ronco Scrivia, Genova, Liguria, 16019, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -4752,7 +4752,7 @@
       "lat": 40.9264,
       "lon": 14.78272,
       "km": 44.2,
-      "indirizzo": "Area di Servizio Irpinia nord, Autostrada dei Due Mari, Partenio, Avellino, Campania, 83100, Italia",
+      "indirizzo": "Autostrada dei Due Mari, Partenio, Avellino, Campania, 83100, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -4839,7 +4839,7 @@
       "lat": 40.92609,
       "lon": 14.78388,
       "km": 44.2,
-      "indirizzo": "Area di Servizio Irpinia sud, Autostrada dei Due Mari, Partenio, Avellino, Campania, 83100, Italia",
+      "indirizzo": "Area di Servizio Irpinia Sud, Partenio, Avellino, Campania, 83100, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -4926,7 +4926,7 @@
       "lat": 41.68609,
       "lon": 13.18865,
       "km": 610.9,
-      "indirizzo": "La Macchia Est, Autostrada del Sole, Monte Trave, Cartiera-Stazione, Anagni, Frosinone, Lazio, Italia",
+      "indirizzo": "Free to X, Autostrada del Sole, Monte Trave, Cartiera-Stazione, Anagni, Frosinone, Lazio, 03017, Italia",
       "distanzaAutostradaM": 52,
       "operatori": [
         "Free To X"
@@ -5060,7 +5060,7 @@
       "lat": 41.68585,
       "lon": 13.18803,
       "km": 610.9,
-      "indirizzo": "La Macchia ovest, Autostrada del Sole, Monte Trave, Cartiera-Stazione, Anagni, Frosinone, Lazio, Italia",
+      "indirizzo": "Autostrada del Sole, Monte Trave, Cartiera-Stazione, Anagni, Frosinone, Lazio, 03017, Italia",
       "distanzaAutostradaM": 35,
       "operatori": [
         "Free To X"
@@ -5194,7 +5194,7 @@
       "lat": 44.51975,
       "lon": 11.2148,
       "km": 2.3,
-      "indirizzo": "La Pioppa Est, Autostrada Adriatica, Madonna dei Prati di Tomba, Zola Predosa, Unione dei comuni Valli del Reno, Lavino e Samoggia, Bologna, Emilia-Romagna, 40069, Italia",
+      "indirizzo": "Autostrada Adriatica, Madonna dei Prati di Tomba, Ponte Ronca, Zola Predosa, Unione dei comuni Valli del Reno, Lavino e Samoggia, Bologna, Emilia-Romagna, 40069, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -5317,7 +5317,7 @@
       "lat": 44.5189,
       "lon": 11.21482,
       "km": 2.3,
-      "indirizzo": "La Pioppa ovest, Autostrada Adriatica, Madonna dei Prati di Tomba, Zola Predosa, Unione dei comuni Valli del Reno, Lavino e Samoggia, Bologna, Emilia-Romagna, 40069, Italia",
+      "indirizzo": "Carrefour Express, McDrive, Madonna dei Prati di Tomba, Ponte Ronca, Zola Predosa, Unione dei comuni Valli del Reno, Lavino e Samoggia, Bologna, Emilia-Romagna, 40069, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -5440,7 +5440,7 @@
       "lat": 45.5483,
       "lon": 9.20835,
       "km": 133.6,
-      "indirizzo": "Area di Lambro Sud, A4, Campo dei Fiori, Cinisello, Cinisello Balsamo, Zona Omogenea Milano Nord, Milano, Lombardia, 20092, Italia",
+      "indirizzo": "IP, A4, Campo dei Fiori, Cinisello Balsamo, Zona Omogenea Milano Nord, Milano, Lombardia, 20092, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -5527,7 +5527,7 @@
       "lat": 45.7293,
       "lon": 9.02912,
       "km": 27.6,
-      "indirizzo": "Tamoil, Autostrada dei Laghi, Cadorago, Como, Lombardia, 22071, Italia",
+      "indirizzo": "Tamoil Lario Est, Autostrada dei Laghi, Caslino al Piano, Cadorago, Como, Lombardia, 22071, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -5592,7 +5592,7 @@
       "lat": 45.72968,
       "lon": 9.02782,
       "km": 27.6,
-      "indirizzo": "Area di Lario Ovest, Autostrada dei Laghi, Cadorago, Como, Lombardia, 22071, Italia",
+      "indirizzo": "Autostrada dei Laghi, Caslino al Piano, Cadorago, Como, Lombardia, 22071, Italia",
       "distanzaAutostradaM": 46,
       "operatori": [
         "Free To X"
@@ -5796,7 +5796,7 @@
       "lat": 42.12313,
       "lon": 12.61725,
       "km": 535.6,
-      "indirizzo": "Area di servizio Mascherone Ovest, Autostrada del Sole, Capena, Roma Capitale, Lazio, Italia",
+      "indirizzo": "FREE TO X, Autostrada del Sole, Capena, Roma Capitale, Lazio, 00065, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -5883,7 +5883,7 @@
       "lat": 41.06008,
       "lon": 15.0141,
       "km": 77.3,
-      "indirizzo": "Mirabella Sud, Via Bosco San Prisco, Passo di Mirabella, Mirabella Eclano, Avellino, Campania, 83036, Italia",
+      "indirizzo": "Q8, Autostrada dei Due Mari, Mirabella Eclano, Terre dell’Ufita, Avellino, Campania, 83036, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -5970,7 +5970,7 @@
       "lat": 45.0747,
       "lon": 8.5109,
       "km": 83.5,
-      "indirizzo": "Area di Monferrato Est, Autostrada dei Trafori, Occimiano, Alessandria, Piemonte, Italia",
+      "indirizzo": "Free to X, Autostrada dei Trafori, Occimiano, Alessandria, Piemonte, 15036, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -6057,7 +6057,7 @@
       "lat": 45.07457,
       "lon": 8.5098,
       "km": 83.0,
-      "indirizzo": "Area di Monferrato Ovest, Autostrada dei Trafori, Occimiano, Alessandria, Piemonte, Italia",
+      "indirizzo": "Chef Express, Autostrada dei Trafori, Occimiano, Alessandria, Piemonte, 15036, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -6144,7 +6144,7 @@
       "lat": 43.99435,
       "lon": 12.61873,
       "km": 133.6,
-      "indirizzo": "Area di servizio Montefeltro Ovest, Autostrada Adriatica, Riccione, Rimini, Emilia-Romagna, 47838, Italia",
+      "indirizzo": "Free to X, Autostrada Adriatica, Riccione, Rimini, Emilia-Romagna, 47036, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -6267,7 +6267,7 @@
       "lat": 41.0958,
       "lon": 16.76915,
       "km": 671.44,
-      "indirizzo": "Area di Servizio Murge est, Autostrada Adriatica, Modugno, Bari, Puglia, 70026, Italia",
+      "indirizzo": "Eni Murge Est, Autostrada Adriatica, Modugno, Bari, Puglia, 70026, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -6419,7 +6419,7 @@
       "lat": 45.53007,
       "lon": 9.14917,
       "km": 128.5,
-      "indirizzo": "Area di Novate Nord, Via Polveriera, Novate Milanese, Milano, Lombardia, 20026, Italia",
+      "indirizzo": "Varco C2 Ovest, Novate Milanese, Milano, Lombardia, 20026, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -6511,7 +6511,7 @@
       "lat": 43.81885,
       "lon": 11.1726,
       "km": 3.0,
-      "indirizzo": "Peretola Sud, Autostrada Firenze-Mare, Ponte a Giogoli, Sesto Fiorentino, Firenze, Toscana, 50145, Italia",
+      "indirizzo": "Free to X, Autostrada Firenze-Mare, Ponte a Giogoli, Sesto Fiorentino, Firenze, Toscana, 50145, Italia",
       "distanzaAutostradaM": 50,
       "operatori": [
         "Free To X"
@@ -6609,7 +6609,7 @@
       "lat": 43.0754,
       "lon": 13.8442,
       "km": 290.8,
-      "indirizzo": "Autostrada Adriatica, Tre Camini, Campofilone, Fermo, 63827, Italia",
+      "indirizzo": "Autostrada Adriatica, Tre Camini, Campofilone, Fermo, Marche, 63827, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -6696,7 +6696,7 @@
       "lat": 43.0749,
       "lon": 13.84292,
       "km": 290.8,
-      "indirizzo": "Piceno ovest, Autostrada Adriatica, Tre Camini, Campofilone, Fermo, 63827, Italia",
+      "indirizzo": "Free to X, Autostrada Adriatica, Tre Camini, Campofilone, Fermo, Marche, 63827, Italia",
       "distanzaAutostradaM": 46,
       "operatori": [
         "Free To X"
@@ -6794,7 +6794,7 @@
       "lat": 44.87991,
       "lon": 11.5709,
       "km": 43.4,
-      "indirizzo": "Area di servizio Po Est, Autostrada Bologna-Padova, Ferrara, Emilia-Romagna, Italia",
+      "indirizzo": "Erg, Autostrada Bologna-Padova, Castel Trivellino, Ferrara, Emilia-Romagna, 44123, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -6913,7 +6913,7 @@
       "lat": 44.87952,
       "lon": 11.56918,
       "km": 43.4,
-      "indirizzo": "Area di Servizio Po Ovest, Autostrada Bologna-Padova, Ferrara, Emilia-Romagna, Italia",
+      "indirizzo": "Autogrill Po Ovest, Autostrada Bologna-Padova, Castel Trivellino, Porotto, Ferrara, Emilia-Romagna, 44124, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -7036,7 +7036,7 @@
       "lat": 41.8918,
       "lon": 12.75835,
       "km": 566.1,
-      "indirizzo": "Autogrill Prenestina Est, Autostrada del Sole, Gallicano nel Lazio, Roma Capitale, Lazio, Italia",
+      "indirizzo": "Autostrada del Sole, Gallicano nel Lazio, Roma Capitale, Lazio, 00077, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -7123,7 +7123,7 @@
       "lat": 41.88879,
       "lon": 12.75945,
       "km": 566.1,
-      "indirizzo": "Autogrill Prenestina Ovest, Autostrada del Sole, Gallicano nel Lazio, Roma Capitale, Lazio, 00077, Italia",
+      "indirizzo": "IP, Autostrada del Sole, Gallicano nel Lazio, Roma Capitale, Lazio, 00077, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -7210,7 +7210,7 @@
       "lat": 44.1169,
       "lon": 12.4084,
       "km": 111.3,
-      "indirizzo": "Esso, Autostrada Adriatica, Savignano sul Rubicone, Unione Rubicone e mare, Forlì-Cesena, Emilia-Romagna, 47043, Italia",
+      "indirizzo": "Esso, Autostrada Adriatica, Savignano sul Rubicone, Unione Rubicone e mare, Forlì-Cesena, Emilia-Romagna, 47030, Italia",
       "distanzaAutostradaM": 29,
       "operatori": [
         "Free To X"
@@ -7306,182 +7306,8 @@
       "esclusa": false
     },
     {
-      "id": "ftx:L90",
-      "nome": "S.Ilario Nord",
-      "paese": "IT",
-      "autostrada": "A12",
-      "tratta": "Genova-Roma",
-      "carreggiata": "NORDOVEST",
-      "destinazione": "Genova",
-      "accesso": "area_servizio",
-      "lat": 44.39305,
-      "lon": 9.04568,
-      "km": 14.5,
-      "indirizzo": "Sant'Ilario Nord, A12 dir. Genova - Recco/Genova Nervi, Molinetti, Levante, Genova, Liguria, 16167, Italia",
-      "distanzaAutostradaM": null,
-      "operatori": [
-        "Free To X"
-      ],
-      "colonnine": [
-        {
-          "id": "F2XITL9001",
-          "operatore": "Free To X",
-          "modello": "HPC 300 kW",
-          "potenzaKw": 300.0,
-          "attivaDal": "2022-07-31",
-          "guasti": null,
-          "connettori": [
-            {
-              "tipo": "CCS",
-              "potenzaKw": null
-            },
-            {
-              "tipo": "CCS",
-              "potenzaKw": null
-            }
-          ]
-        },
-        {
-          "id": "F2XITL9002",
-          "operatore": "Free To X",
-          "modello": "HPC 300 kW",
-          "potenzaKw": 300.0,
-          "attivaDal": "2022-07-31",
-          "guasti": null,
-          "connettori": [
-            {
-              "tipo": "CCS",
-              "potenzaKw": null
-            },
-            {
-              "tipo": "CCS",
-              "potenzaKw": null
-            }
-          ]
-        },
-        {
-          "id": "F2XITL9051",
-          "operatore": "Free To X",
-          "modello": "Fast Charging 64 kW",
-          "potenzaKw": 64.0,
-          "attivaDal": "2023-04-03",
-          "guasti": null,
-          "connettori": [
-            {
-              "tipo": "CCS",
-              "potenzaKw": null
-            },
-            {
-              "tipo": "CHAdeMO",
-              "potenzaKw": null
-            },
-            {
-              "tipo": "Type 2",
-              "potenzaKw": 22.0
-            }
-          ]
-        }
-      ],
-      "verifica": null,
-      "fonti": [
-        "free_to_x"
-      ],
-      "codiciOrigine": [
-        "L90"
-      ],
-      "correzioni": {},
-      "esclusa": false
-    },
-    {
-      "id": "ftx:L91",
-      "nome": "S.Ilario Sud",
-      "paese": "IT",
-      "autostrada": "A12",
-      "tratta": "Genova-Roma",
-      "carreggiata": "SUDEST",
-      "destinazione": "Livorno",
-      "accesso": "area_servizio",
-      "lat": 44.39249,
-      "lon": 9.04562,
-      "km": 14.5,
-      "indirizzo": "Sant'Ilario Sud, Salita da San Rocco ai Molinetti, Molinetti, Levante, Genova, Liguria, 16167, Italia",
-      "distanzaAutostradaM": null,
-      "operatori": [
-        "Free To X"
-      ],
-      "colonnine": [
-        {
-          "id": "F2XITL9101",
-          "operatore": "Free To X",
-          "modello": "HPC 300 kW",
-          "potenzaKw": 300.0,
-          "attivaDal": "2023-01-15",
-          "guasti": null,
-          "connettori": [
-            {
-              "tipo": "CCS",
-              "potenzaKw": null
-            },
-            {
-              "tipo": "CCS",
-              "potenzaKw": null
-            }
-          ]
-        },
-        {
-          "id": "F2XITL9102",
-          "operatore": "Free To X",
-          "modello": "HPC 300 kW",
-          "potenzaKw": 300.0,
-          "attivaDal": "2023-01-15",
-          "guasti": null,
-          "connettori": [
-            {
-              "tipo": "CCS",
-              "potenzaKw": null
-            },
-            {
-              "tipo": "CCS",
-              "potenzaKw": null
-            }
-          ]
-        },
-        {
-          "id": "F2XITL9151",
-          "operatore": "Free To X",
-          "modello": "Fast Charging 64 kW",
-          "potenzaKw": 64.0,
-          "attivaDal": "2023-04-03",
-          "guasti": null,
-          "connettori": [
-            {
-              "tipo": "CCS",
-              "potenzaKw": null
-            },
-            {
-              "tipo": "CHAdeMO",
-              "potenzaKw": null
-            },
-            {
-              "tipo": "Type 2",
-              "potenzaKw": 22.0
-            }
-          ]
-        }
-      ],
-      "verifica": null,
-      "fonti": [
-        "free_to_x"
-      ],
-      "codiciOrigine": [
-        "L91"
-      ],
-      "correzioni": {},
-      "esclusa": false
-    },
-    {
       "id": "ftx:A25",
-      "nome": "S.Martino Est",
+      "nome": "San Martino Est",
       "paese": "IT",
       "autostrada": "A1",
       "tratta": "Milano-Napoli",
@@ -7491,7 +7317,7 @@
       "lat": 44.82742,
       "lon": 10.37895,
       "km": 114.1,
-      "indirizzo": "Cortile San Martino, Autostrada del Sole, San Martino, Pedrignano, Parma, Emilia-Romagna, 43122, Italia",
+      "indirizzo": "Strada Corte di Pedrignano, Ugozzolo, San Martino, Pedrignano, Parma, Emilia-Romagna, 43122, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -7568,7 +7394,7 @@
     },
     {
       "id": "ftx:A26",
-      "nome": "S.Martino Ovest",
+      "nome": "San Martino Ovest",
       "paese": "IT",
       "autostrada": "A1",
       "tratta": "Milano-Napoli",
@@ -7578,7 +7404,7 @@
       "lat": 44.82606,
       "lon": 10.3786,
       "km": 114.1,
-      "indirizzo": "Cortile San Martino, Autostrada del Sole, San Lazzaro, Pedrignano, Parma, Emilia-Romagna, 43122, Italia",
+      "indirizzo": "Autostrada del Sole, San Lazzaro, Pedrignano, Parma, Emilia-Romagna, 43122, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -7655,7 +7481,7 @@
     },
     {
       "id": "ftx:B55",
-      "nome": "S.Nicola Est",
+      "nome": "San Nicola Est",
       "paese": "IT",
       "autostrada": "A1",
       "tratta": "Milano-Napoli",
@@ -7665,7 +7491,7 @@
       "lat": 41.04985,
       "lon": 14.32246,
       "km": 737.2,
-      "indirizzo": "Area servizio San Nicola Est, Autostrada del Sole, San Nicola La Strada, Caserta, Campania, 81022, Italia",
+      "indirizzo": "Eni, Autostrada del Sole, San Nicola La Strada, Caserta, Campania, 81020, Italia",
       "distanzaAutostradaM": 57,
       "operatori": [
         "Free To X"
@@ -7695,6 +7521,42 @@
           "modello": "HPC 300 kW",
           "potenzaKw": 300.0,
           "attivaDal": "2022-08-24",
+          "guasti": null,
+          "connettori": [
+            {
+              "tipo": "CCS",
+              "potenzaKw": null
+            },
+            {
+              "tipo": "CCS",
+              "potenzaKw": null
+            }
+          ]
+        },
+        {
+          "id": "F2XITB5503",
+          "operatore": "Free To X",
+          "modello": "HPC 300 kW",
+          "potenzaKw": 300.0,
+          "attivaDal": "2024-12-20",
+          "guasti": null,
+          "connettori": [
+            {
+              "tipo": "CCS",
+              "potenzaKw": null
+            },
+            {
+              "tipo": "CCS",
+              "potenzaKw": null
+            }
+          ]
+        },
+        {
+          "id": "F2XITB5504",
+          "operatore": "Free To X",
+          "modello": "HPC 300 kW",
+          "potenzaKw": 300.0,
+          "attivaDal": "2024-12-20",
           "guasti": null,
           "connettori": [
             {
@@ -7762,7 +7624,7 @@
     },
     {
       "id": "ftx:A10",
-      "nome": "S.Zenone Est",
+      "nome": "San Zenone Est",
       "paese": "IT",
       "autostrada": "A1",
       "tratta": "Milano-Napoli",
@@ -7772,7 +7634,7 @@
       "lat": 45.3217,
       "lon": 9.37615,
       "km": 15.1,
-      "indirizzo": "Area di servizio San Zenone est, Autostrada del Sole, Cascina Codazza, San Zenone al Lambro, Milano, Lombardia, 26858, Italia",
+      "indirizzo": "Amazon Hub Locker, Autostrada del Sole, Ceregallo, San Zenone al Lambro, Milano, Lombardia, 26838, Italia",
       "distanzaAutostradaM": 60,
       "operatori": [
         "Free To X"
@@ -7913,7 +7775,7 @@
     },
     {
       "id": "ftx:A11",
-      "nome": "S.Zenone Ovest",
+      "nome": "San Zenone Ovest",
       "paese": "IT",
       "autostrada": "A1",
       "tratta": "Milano-Napoli",
@@ -7923,7 +7785,7 @@
       "lat": 45.32133,
       "lon": 9.3757,
       "km": 15.1,
-      "indirizzo": "Area di servizio San Zenone ovest, Autostrada del Sole, Cascina Codazza, San Zenone al Lambro, Milano, Lombardia, 26858, Italia",
+      "indirizzo": "Autostrada del Sole, Ceregallo, San Zenone al Lambro, Milano, Lombardia, 26838, Italia",
       "distanzaAutostradaM": 65,
       "operatori": [
         "Free To X"
@@ -8085,8 +7947,8 @@
       "accesso": "area_servizio",
       "lat": 42.20058,
       "lon": 14.56275,
-      "km": 428.8,
-      "indirizzo": "Area di servizio Sangro Est, Autostrada Adriatica, Torino di Sangro, Chieti, Italia",
+      "km": 428.0,
+      "indirizzo": "Sarni, Molinella, Ruzzo, Torino di Sangro, Chieti, Abruzzo, 66021, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -8168,8 +8030,8 @@
       "accesso": "area_servizio",
       "lat": 42.19988,
       "lon": 14.5623,
-      "km": 428.8,
-      "indirizzo": "Autostrada Adriatica, Villalfonsina, Chieti, Italia",
+      "km": 428.0,
+      "indirizzo": "Autostrada Adriatica, Suvaro, Villalfonsina, Chieti, Abruzzo, 66021, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -8240,6 +8102,180 @@
       ],
       "codiciOrigine": [
         "N91"
+      ],
+      "correzioni": {},
+      "esclusa": false
+    },
+    {
+      "id": "ftx:L90",
+      "nome": "Sant'Ilario Nord",
+      "paese": "IT",
+      "autostrada": "A12",
+      "tratta": "Genova-Roma",
+      "carreggiata": "NORDOVEST",
+      "destinazione": "Genova",
+      "accesso": "area_servizio",
+      "lat": 44.39305,
+      "lon": 9.04568,
+      "km": 14.5,
+      "indirizzo": "IP, A12 dir. Genova - Recco/Genova Nervi, Molinetti, Levante, Genova, Liguria, 16167, Italia",
+      "distanzaAutostradaM": null,
+      "operatori": [
+        "Free To X"
+      ],
+      "colonnine": [
+        {
+          "id": "F2XITL9001",
+          "operatore": "Free To X",
+          "modello": "HPC 300 kW",
+          "potenzaKw": 300.0,
+          "attivaDal": "2022-07-31",
+          "guasti": null,
+          "connettori": [
+            {
+              "tipo": "CCS",
+              "potenzaKw": null
+            },
+            {
+              "tipo": "CCS",
+              "potenzaKw": null
+            }
+          ]
+        },
+        {
+          "id": "F2XITL9002",
+          "operatore": "Free To X",
+          "modello": "HPC 300 kW",
+          "potenzaKw": 300.0,
+          "attivaDal": "2022-07-31",
+          "guasti": null,
+          "connettori": [
+            {
+              "tipo": "CCS",
+              "potenzaKw": null
+            },
+            {
+              "tipo": "CCS",
+              "potenzaKw": null
+            }
+          ]
+        },
+        {
+          "id": "F2XITL9051",
+          "operatore": "Free To X",
+          "modello": "Fast Charging 64 kW",
+          "potenzaKw": 64.0,
+          "attivaDal": "2023-04-03",
+          "guasti": null,
+          "connettori": [
+            {
+              "tipo": "CCS",
+              "potenzaKw": null
+            },
+            {
+              "tipo": "CHAdeMO",
+              "potenzaKw": null
+            },
+            {
+              "tipo": "Type 2",
+              "potenzaKw": 22.0
+            }
+          ]
+        }
+      ],
+      "verifica": null,
+      "fonti": [
+        "free_to_x"
+      ],
+      "codiciOrigine": [
+        "L90"
+      ],
+      "correzioni": {},
+      "esclusa": false
+    },
+    {
+      "id": "ftx:L91",
+      "nome": "Sant'Ilario Sud",
+      "paese": "IT",
+      "autostrada": "A12",
+      "tratta": "Genova-Roma",
+      "carreggiata": "SUDEST",
+      "destinazione": "Livorno",
+      "accesso": "area_servizio",
+      "lat": 44.39249,
+      "lon": 9.04562,
+      "km": 14.5,
+      "indirizzo": "Q8, A12 dir. Livorno - Genova Nervi/Recco, Molinetti, Levante, Genova, Liguria, 16167, Italia",
+      "distanzaAutostradaM": null,
+      "operatori": [
+        "Free To X"
+      ],
+      "colonnine": [
+        {
+          "id": "F2XITL9101",
+          "operatore": "Free To X",
+          "modello": "HPC 300 kW",
+          "potenzaKw": 300.0,
+          "attivaDal": "2023-01-15",
+          "guasti": null,
+          "connettori": [
+            {
+              "tipo": "CCS",
+              "potenzaKw": null
+            },
+            {
+              "tipo": "CCS",
+              "potenzaKw": null
+            }
+          ]
+        },
+        {
+          "id": "F2XITL9102",
+          "operatore": "Free To X",
+          "modello": "HPC 300 kW",
+          "potenzaKw": 300.0,
+          "attivaDal": "2023-01-15",
+          "guasti": null,
+          "connettori": [
+            {
+              "tipo": "CCS",
+              "potenzaKw": null
+            },
+            {
+              "tipo": "CCS",
+              "potenzaKw": null
+            }
+          ]
+        },
+        {
+          "id": "F2XITL9151",
+          "operatore": "Free To X",
+          "modello": "Fast Charging 64 kW",
+          "potenzaKw": 64.0,
+          "attivaDal": "2023-04-03",
+          "guasti": null,
+          "connettori": [
+            {
+              "tipo": "CCS",
+              "potenzaKw": null
+            },
+            {
+              "tipo": "CHAdeMO",
+              "potenzaKw": null
+            },
+            {
+              "tipo": "Type 2",
+              "potenzaKw": 22.0
+            }
+          ]
+        }
+      ],
+      "verifica": null,
+      "fonti": [
+        "free_to_x"
+      ],
+      "codiciOrigine": [
+        "L91"
       ],
       "correzioni": {},
       "esclusa": false
@@ -8375,7 +8411,7 @@
       "lat": 44.66168,
       "lon": 10.85601,
       "km": 156.5,
-      "indirizzo": "Secchia Ovest, Stradello Cenna, Tre Olmi, San Faustino-Madonnina-Quattroville, Tre Olmi, Modena, Emilia-Romagna, 41011, Italia",
+      "indirizzo": "Autostrada del Sole, Tre Olmi, San Faustino-Madonnina-Quattroville, Tre Olmi, Modena, Emilia-Romagna, 41123, Italia",
       "distanzaAutostradaM": 140,
       "operatori": [
         "Free To X"
@@ -8514,7 +8550,7 @@
       "lat": 45.60796,
       "lon": 12.29846,
       "km": 8.89,
-      "indirizzo": "Area di Sile Est, Area di servizio Sile Est, Trabucco, Conscio, Casale sul Sile, Treviso, Veneto, 31032, Italia",
+      "indirizzo": "Free to X, Area di servizio Sile Est, Trabucco, Conscio, Casale sul Sile, Treviso, Veneto, 31032, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -8601,7 +8637,7 @@
       "lat": 45.60788,
       "lon": 12.29738,
       "km": 8.89,
-      "indirizzo": "Area di servizio Sile Ovest, Trabucco, Conscio, Casale sul Sile, Treviso, Veneto, 31032, Italia",
+      "indirizzo": "Tamoil, Area di servizio Sile Ovest, Trabucco, Conscio, Casale sul Sile, Treviso, Veneto, 31032, Italia",
       "distanzaAutostradaM": 51,
       "operatori": [
         "Free To X"
@@ -8708,7 +8744,7 @@
       "lat": 44.4287,
       "lon": 11.59932,
       "km": 37.4,
-      "indirizzo": "Sillaro est, Via Cà Bianca, Cà Bianca, Zona Industriale San Carlo, Poggio Grande, Castel San Pietro Terme, Nuovo Circondario Imolese, Bologna, Emilia-Romagna, 40024, Italia",
+      "indirizzo": "Sarni ADS Sillaro Est, Autostrada Adriatica, Zona Industriale San Carlo, Ponte Rizzoli, Castel San Pietro Terme, Nuovo Circondario Imolese, Bologna, Emilia-Romagna, 40024, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -8831,7 +8867,7 @@
       "lat": 44.42817,
       "lon": 11.59932,
       "km": 37.4,
-      "indirizzo": "Sillaro ovest, Autostrada Adriatica, Zona Industriale San Carlo, Castel San Pietro Terme, Nuovo Circondario Imolese, Bologna, Emilia-Romagna, 40024, Italia",
+      "indirizzo": "Free to X, Autostrada Adriatica, Zona Industriale San Carlo, Poggio Grande, Castel San Pietro Terme, Nuovo Circondario Imolese, Bologna, Emilia-Romagna, 40024, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -8918,7 +8954,7 @@
       "lat": 45.14287,
       "lon": 9.63417,
       "km": 43.5,
-      "indirizzo": "Autostrada del Sole, Castagnoni, San Martino del Pizzolano, Somaglia, Lodi, Lombardia, 26867, Italia",
+      "indirizzo": "Autostrada del Sole, Cascina Castelnuovo, Somaglia, Lodi, Lombardia, 26867, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -9005,7 +9041,7 @@
       "lat": 45.14255,
       "lon": 9.63365,
       "km": 43.5,
-      "indirizzo": "Autostrada del Sole, Castagnoni, San Martino del Pizzolano, Somaglia, Lodi, Lombardia, 26867, Italia",
+      "indirizzo": "Autostrada del Sole, Cascina Castelnuovo, Somaglia, Lodi, Lombardia, 26867, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -9092,7 +9128,7 @@
       "lat": 44.59222,
       "lon": 8.66607,
       "km": 25.5,
-      "indirizzo": "Area di Stura Est, Autostrada dei Trafori, Belforte Monferrato, Alessandria, Piemonte, 16060, Italia",
+      "indirizzo": "IP, Stura Est, Belforte Monferrato, Alessandria, Piemonte, 15126, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -9215,7 +9251,7 @@
       "lat": 44.59237,
       "lon": 8.66477,
       "km": 25.5,
-      "indirizzo": "Area di Stura Ovest, Autostrada dei Trafori, Belforte Monferrato, Alessandria, Piemonte, 16060, Italia",
+      "indirizzo": "Autostrada dei Trafori, Belforte Monferrato, Alessandria, Piemonte, 15126, Italia",
       "distanzaAutostradaM": 43,
       "operatori": [
         "Free To X"
@@ -9349,7 +9385,7 @@
       "lat": 41.2342,
       "lon": 14.0925,
       "km": 708.4,
-      "indirizzo": "Teano Ovest, Strada Provinciale 112 di Teano, Teano, Caserta, Campania, 81057, Italia",
+      "indirizzo": "Sarni Grill Teano Ovest, Area di servizio Teano Ovest, Teano Scalo, Teano, Caserta, Campania, 81057, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -9573,7 +9609,7 @@
       "lat": 42.03067,
       "lon": 11.96278,
       "km": 39.2,
-      "indirizzo": "Tirreno est, Autostrada Azzurra, La Scaglia, Santa Severa Nord, Tolfa, Roma Capitale, Lazio, 00050, Italia",
+      "indirizzo": "Autostrada Azzurra, La Scaglia, Santa Severa Nord, Tolfa, Roma Capitale, Lazio, 00050, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -9660,7 +9696,7 @@
       "lat": 42.02966,
       "lon": 11.96219,
       "km": 39.2,
-      "indirizzo": "Tirreno ovest, Autostrada Azzurra, La Scaglia, Santa Severa Nord, Tolfa, Roma Capitale, Lazio, 00050, Italia",
+      "indirizzo": "Free To X, Autostrada Azzurra, La Scaglia, Santa Severa Nord, Tolfa, Roma Capitale, Lazio, 00050, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -9747,7 +9783,7 @@
       "lat": 42.53115,
       "lon": 14.12545,
       "km": 363.1,
-      "indirizzo": "Torre Cerrano est, Via dei Garofani, Silvi, Teramo, Abruzzo, 64029, Italia",
+      "indirizzo": "Contrada Piomba, Silvi, Teramo, Abruzzo, 64029, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -9834,7 +9870,7 @@
       "lat": 42.53045,
       "lon": 14.12497,
       "km": 363.1,
-      "indirizzo": "Torre Cerrano ovest, Autostrada Adriatica, Silvi, Teramo, Abruzzo, 64029, Italia",
+      "indirizzo": "Esso, 362+400, Autostrada Adriatica, Silvi, Teramo, Abruzzo, 64028, Italia",
       "distanzaAutostradaM": 29,
       "operatori": [
         "Free To X"
@@ -9931,8 +9967,8 @@
       "accesso": "area_servizio",
       "lat": 41.90963,
       "lon": 15.169,
-      "km": 493.5,
-      "indirizzo": "Area di servizio Torre Fantine est, Autostrada Adriatica, Chieuti, Foggia, Puglia, Italia",
+      "km": 492.5,
+      "indirizzo": "02, Autostrada Adriatica, Fantina Prima, Chieuti, Foggia, Puglia, 71010, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -10018,8 +10054,8 @@
       "accesso": "area_servizio",
       "lat": 41.90873,
       "lon": 15.1691,
-      "km": 493.5,
-      "indirizzo": "Area di servizio Torre Fantine ovest, Autostrada Adriatica, Chieuti, Foggia, Puglia, Italia",
+      "km": 492.5,
+      "indirizzo": "Sarni Oil, Autostrada Adriatica, Fantina Prima, Chieuti, Foggia, Puglia, 71010, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -10106,7 +10142,7 @@
       "lat": 45.5329,
       "lon": 10.1497,
       "km": 213.7,
-      "indirizzo": "Val Trompia Nord, Via Enrico Fermi, Roncadelle, Brescia, Lombardia, 25030, Italia",
+      "indirizzo": "Erg, Autostrada Serenissima, Roncadelle, Brescia, Lombardia, 25030, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
@@ -10229,7 +10265,7 @@
       "lat": 45.53232,
       "lon": 10.14947,
       "km": 213.7,
-      "indirizzo": "Val Trompia Sud, Via Enrico Fermi, Roncadelle, Brescia, Lombardia, 25030, Italia",
+      "indirizzo": "IP, Autostrada Serenissima, Roncadelle, Brescia, Lombardia, 25030, Italia",
       "distanzaAutostradaM": 41,
       "operatori": [
         "Free To X"
@@ -10363,7 +10399,7 @@
       "lat": 45.5593,
       "lon": 9.04015,
       "km": 7.6,
-      "indirizzo": "Area di Villoresi Est, Autostrada dei Laghi, Pagliera, Lainate, Milano, Lombardia, 20045, Italia",
+      "indirizzo": "Autostrada dei Laghi, Pagliera, Grancia-Pagliera, Lainate, Milano, Lombardia, 20045, Italia",
       "distanzaAutostradaM": 80,
       "operatori": [
         "Free To X",
@@ -10498,7 +10534,7 @@
       "lat": 45.55879,
       "lon": 9.03948,
       "km": 7.6,
-      "indirizzo": "Area di Villoresi Ovest, Autostrada dei Laghi, Pagliera, Lainate, Milano, Lombardia, 20045, Italia",
+      "indirizzo": "Free To X, Autostrada dei Laghi, Grancia-Pagliera, Lainate, Milano, Lombardia, 20045, Italia",
       "distanzaAutostradaM": null,
       "operatori": [
         "Free To X"
