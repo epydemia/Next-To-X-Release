@@ -26,10 +26,19 @@ export async function caricaRevisioni() {
   }
 }
 
+// Data di compilazione di data/aree.json (campo "generato"), per versioneDati()
+let generatoAree = null;
+
 /** Aree come escono dalle fonti, senza le correzioni che la compilazione aveva già applicato. */
 export async function caricaAreeOriginali() {
-  const { aree } = await leggiJson(FILE_AREE);
+  const { aree, generato } = await leggiJson(FILE_AREE);
+  generatoAree = generato ?? null;
   return aree.map(originale);
+}
+
+/** Versione del file delle aree caricato, dalla data di compilazione: "2026_11_07", oppure null. */
+export function versioneDati() {
+  return /^\d{4}-\d{2}-\d{2}/.test(generatoAree ?? '') ? generatoAree.slice(0, 10).replaceAll('-', '_') : null;
 }
 
 export function originale(area) {

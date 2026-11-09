@@ -1,4 +1,4 @@
-import { caricaAree } from '../core/dati.js';
+import { caricaAree, versioneDati } from '../core/dati.js';
 import { caricaReteAutostradale } from '../core/reteAutostradale.js';
 import { filtraStazioni, tutteLeStazioni } from '../core/filtroStazioni.js';
 import { avviaPosizione, attendiPrimaPosizione, getStato, motivoSenzaPosizione } from './posizione.js';
@@ -84,6 +84,15 @@ function aggiorna(stato) {
   aggiornaPannelli(stazioni);
   const prossima = stazioni.find(s => s.isNearest);
   if (prossima) contaProssima(prossima);
+}
+
+/** In fondo alle impostazioni: da quale compilazione di data/aree.json vengono le stazioni. */
+function mostraVersioneDati() {
+  const versione = versioneDati();
+  const riga = document.getElementById('versione-dati');
+  if (!versione || !riga) return;
+  riga.textContent = t('versioneDati', { versione });
+  riga.hidden = false;
 }
 
 function collegaImpostazioni(simulazione) {
@@ -179,6 +188,7 @@ window.addEventListener('load', async () => {
   // Senza la rete autostradale l'app funziona lo stesso: la strada la dà Nominatim
   const rete = caricaReteAutostradale().catch(err => console.warn('Rete autostradale non disponibile:', err));
   aree = await caricaAree();
+  mostraVersioneDati();
   await rete;
   // Il permesso di posizione si chiede dopo le avvertenze, non sopra di esse
   await attendiAvvertenze();
