@@ -1,7 +1,7 @@
 import { TILE_GUIDA, CENTRO_ITALIA, ZOOM_GUIDA } from '../config.js';
 import { creaSfondo, preparaAttribuzioni } from '../sfondi.js';
 import { tracciatoAutostrada } from '../core/reteAutostradale.js';
-import { t, km } from '../i18n.js';
+import { t, km, nomeRamo } from '../i18n.js';
 
 let map = null;
 let markerUtente = null;
@@ -106,6 +106,7 @@ export function disegnaStazioni(stazioni) {
 
 function stileMarker(s) {
   if (s.isNearest) return [s.exitRequired ? 'marker-uscita-prossima' : 'marker-prossima', 20];
+  if (s.isAvanti && s.bivio) return [s.exitRequired ? 'marker-uscita marker-bivio' : 'marker-bivio', 14];
   if (s.isAvanti)  return [s.exitRequired ? 'marker-uscita' : 'marker-rosso', 14];
   return ['marker-grigio', 14];
 }
@@ -115,5 +116,6 @@ function testoPopup(s) {
   const intestazione = s.isNearest ? `<strong>⚡ ${t('prossimaColonnina')}</strong><br>` : '';
   const direzione = s.isNearest && s.direzione ? `<br>→ ${s.direzione}` : '';
   const operatore = s.operatore ? `<br>🔌 ${s.operatore}` : '';
-  return `${intestazione}<strong>${s.nome}</strong><br>${s.strada}${direzione}${operatore}<br>${km(s.distanza)}${uscita}`;
+  const bivio = s.bivio ? `<br>${nomeRamo(s.bivio)} · ${t('bivioTra', { km: km(s.bivio.distanza) })}` : '';
+  return `${intestazione}<strong>${s.nome}</strong><br>${s.strada}${direzione}${bivio}${operatore}<br>${km(s.distanza)}${uscita}`;
 }

@@ -1,7 +1,7 @@
 import { distanzaKm, bearing } from '../core/geo.js';
 import { codiceDaNomeStrada, estraiCodice } from '../core/autostrade.js';
 import { avviaSimulazione } from './simulazione.js';
-import { autostradaInPosizione } from '../core/reteAutostradale.js';
+import { autostradaInPosizione, siglaStrada } from '../core/reteAutostradale.js';
 import {
   REVERSE_GEOCODING_INTERVALLO_MS,
   REVERSE_GEOCODING_DISTANZA_KM,
@@ -127,7 +127,7 @@ function riconosciAutostrada(lat, lon) {
     Object.assign(stato, {
       strada: trovata.nome || trovata.codice,
       // Alcuni tratti in OSM non hanno la sigla ma solo il nome ("A12 dir. Genova…", "Autostrada dei Vini")
-      codiceAutostrada: estraiCodice(trovata.codice) ?? estraiCodice(trovata.nome) ?? codiceDaNomeStrada(trovata.nome),
+      codiceAutostrada: siglaStrada(trovata),
       paese: trovata.paese,
       autostrada: trovata.indice,
     });

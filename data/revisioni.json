@@ -58,7 +58,8 @@
     "A22_006": {
       "direzione_geografica": "NORD",
       "nota": "dal campo direzione A22",
-      "data": "2026-10-29"
+      "data": "2026-11-09",
+      "esito": "area_servizio"
     },
     "A22_007": {
       "direzione_geografica": "SUDOVEST",
@@ -94,6 +95,82 @@
       "direzione_geografica": "SUD",
       "nota": "crosscheck OSM",
       "data": "2026-10-29"
+    },
+    "ftx:493": {
+      "esito": "area_servizio",
+      "data": "2026-11-09"
+    },
+    "ftx:A66": {
+      "esito": "area_servizio",
+      "data": "2026-11-09"
+    },
+    "ftx:492": {
+      "esito": "area_servizio",
+      "data": "2026-11-09"
+    },
+    "ftx:A85": {
+      "esito": "area_servizio",
+      "data": "2026-11-09"
+    },
+    "ftx:A86": {
+      "esito": "area_servizio",
+      "data": "2026-11-09"
+    },
+    "ftx:O20": {
+      "esito": "area_servizio",
+      "data": "2026-11-09"
+    },
+    "ftx:O21": {
+      "esito": "area_servizio",
+      "data": "2026-11-09"
+    },
+    "ftx:A26": {
+      "esito": "area_servizio",
+      "data": "2026-11-09"
+    },
+    "ftx:N80": {
+      "esito": "area_servizio",
+      "data": "2026-11-09"
+    },
+    "ftx:D50": {
+      "esito": "area_servizio",
+      "data": "2026-11-09"
+    },
+    "a22:A22_009": {
+      "esito": "uscita",
+      "data": "2026-11-09"
+    },
+    "osm:way/1427407258": {
+      "esito": "uscita",
+      "data": "2026-11-09"
+    },
+    "osm:way/1553988249": {
+      "esito": "uscita",
+      "data": "2026-11-09"
+    },
+    "osm:way/1443207109": {
+      "esito": "area_servizio",
+      "data": "2026-11-09"
+    },
+    "osm:node/9486282871": {
+      "esito": "uscita",
+      "data": "2026-11-09"
+    },
+    "osm:node/10240053113": {
+      "esito": "uscita",
+      "data": "2026-11-09"
+    },
+    "osm:node/10293191309": {
+      "esito": "uscita",
+      "data": "2026-11-09"
+    },
+    "osm:node/10576521087": {
+      "esito": "uscita",
+      "data": "2026-11-09"
+    },
+    "osm:node/10942499433": {
+      "esito": "uscita",
+      "data": "2026-11-09"
     }
   }
 }

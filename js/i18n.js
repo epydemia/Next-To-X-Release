@@ -52,6 +52,8 @@ export const TESTI = {
     colonnaStrada: 'Strada',
     gpsNonDisponibile: '⚠️ GPS non disponibile — attiva la posizione',
     uscita: 'uscita',
+    bivioTra: ({ km }) => `bivio tra ${km}`,
+    tra: ({ km }) => `tra ${km}`,
     richiedeUscita: 'Richiede uscita dal casello',
     prossimaColonnina: 'PROSSIMA COLONNINA',
     stradaSconosciuta: 'Strada sconosciuta',
@@ -59,6 +61,9 @@ export const TESTI = {
     puntiCaricati: ({ file, n }) => `✅ ${file} (${n} punti)`,
     formatoNonValido: '❌ Formato non valido',
     NORD: 'NORD', EST: 'EST', SUD: 'SUD', OVEST: 'OVEST',
+    NORD_BREVE: 'N', EST_BREVE: 'E', SUD_BREVE: 'S', OVEST_BREVE: 'O',
+    apriBivio: ({ sigla, km }) => `Bivio ${sigla} tra ${km}: mostra le diramazioni`,
+    chiudiBivio: ({ sigla }) => `Bivio ${sigla}: nascondi le diramazioni`,
   },
   en: {
     impostazioni: 'Settings',
@@ -87,6 +92,8 @@ export const TESTI = {
     colonnaStrada: 'Road',
     gpsNonDisponibile: '⚠️ GPS unavailable — turn on location',
     uscita: 'exit',
+    bivioTra: ({ km }) => `junction in ${km}`,
+    tra: ({ km }) => `in ${km}`,
     richiedeUscita: 'Requires leaving the motorway',
     prossimaColonnina: 'NEXT CHARGER',
     stradaSconosciuta: 'Unknown road',
@@ -94,6 +101,9 @@ export const TESTI = {
     puntiCaricati: ({ file, n }) => `✅ ${file} (${n} points)`,
     formatoNonValido: '❌ Invalid format',
     NORD: 'NORTH', EST: 'EAST', SUD: 'SOUTH', OVEST: 'WEST',
+    NORD_BREVE: 'N', EST_BREVE: 'E', SUD_BREVE: 'S', OVEST_BREVE: 'W',
+    apriBivio: ({ sigla, km }) => `${sigla} junction in ${km}: show the branches`,
+    chiudiBivio: ({ sigla }) => `${sigla} junction: hide the branches`,
   },
   fr: {
     impostazioni: 'Réglages',
@@ -122,6 +132,8 @@ export const TESTI = {
     colonnaStrada: 'Route',
     gpsNonDisponibile: '⚠️ GPS indisponible — activez la localisation',
     uscita: 'sortie',
+    bivioTra: ({ km }) => `bifurcation dans ${km}`,
+    tra: ({ km }) => `dans ${km}`,
     richiedeUscita: "Nécessite de sortir de l'autoroute",
     prossimaColonnina: 'PROCHAINE BORNE',
     stradaSconosciuta: 'Route inconnue',
@@ -129,6 +141,9 @@ export const TESTI = {
     puntiCaricati: ({ file, n }) => `✅ ${file} (${n} points)`,
     formatoNonValido: '❌ Format non valide',
     NORD: 'NORD', EST: 'EST', SUD: 'SUD', OVEST: 'OUEST',
+    NORD_BREVE: 'N', EST_BREVE: 'E', SUD_BREVE: 'S', OVEST_BREVE: 'O',
+    apriBivio: ({ sigla, km }) => `Bifurcation ${sigla} dans ${km} : afficher les branches`,
+    chiudiBivio: ({ sigla }) => `Bifurcation ${sigla} : masquer les branches`,
   },
   de: {
     impostazioni: 'Einstellungen',
@@ -157,6 +172,8 @@ export const TESTI = {
     colonnaStrada: 'Straße',
     gpsNonDisponibile: '⚠️ GPS nicht verfügbar — Standort aktivieren',
     uscita: 'Ausfahrt',
+    bivioTra: ({ km }) => `Kreuz in ${km}`,
+    tra: ({ km }) => `in ${km}`,
     richiedeUscita: 'Autobahn muss verlassen werden',
     prossimaColonnina: 'NÄCHSTE LADESÄULE',
     stradaSconosciuta: 'Unbekannte Straße',
@@ -164,6 +181,9 @@ export const TESTI = {
     puntiCaricati: ({ file, n }) => `✅ ${file} (${n} Punkte)`,
     formatoNonValido: '❌ Ungültiges Format',
     NORD: 'NORD', EST: 'OST', SUD: 'SÜD', OVEST: 'WEST',
+    NORD_BREVE: 'N', EST_BREVE: 'O', SUD_BREVE: 'S', OVEST_BREVE: 'W',
+    apriBivio: ({ sigla, km }) => `Kreuz ${sigla} in ${km}: Abzweigungen zeigen`,
+    chiudiBivio: ({ sigla }) => `Kreuz ${sigla}: Abzweigungen ausblenden`,
   },
 };
 
@@ -176,6 +196,15 @@ export function t(chiave, valori = {}) {
 const formatoKm = new Intl.NumberFormat(lingua, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
 /** Distanza con un decimale e il separatore della lingua: "36,1 km" / "36.1 km". */
+/**
+ * Senso di marcia dopo un bivio, per pannello, barra, fumetti e mappa: freccia del lato verso
+ * cui si gira, sigla e, se dal bivio partono entrambi i sensi, il punto cardinale ("↖ A14 N").
+ */
+export function nomeRamo({ sigla, lato, cardinale }, conFreccia = true) {
+  const freccia = conFreccia ? `${lato === 'sx' ? '↖' : '↗'} ` : '';
+  return `${freccia}${sigla}${cardinale ? ` ${t(`${cardinale}_BREVE`)}` : ''}`;
+}
+
 export function km(valore) {
   return `${formatoKm.format(valore)} km`;
 }

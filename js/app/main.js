@@ -1,11 +1,11 @@
 import { caricaAree, versioneDati } from '../core/dati.js';
-import { caricaReteAutostradale } from '../core/reteAutostradale.js';
+import { caricaReteAutostradale, preparaBivi } from '../core/reteAutostradale.js';
 import { filtraStazioni, tutteLeStazioni } from '../core/filtroStazioni.js';
 import { avviaPosizione, attendiPrimaPosizione, getStato, motivoSenzaPosizione } from './posizione.js';
 import { caricaTracciaCSV, osservaProgresso, vaiAlPunto } from './simulazione.js';
 import { creaMappa, aggiornaUtente, disegnaStazioni, evidenziaAutostrada, mostraPanoramicaItalia, aggiornaDimensioniMappa } from './mappa.js';
 import {
-  collegaPannelli, collegaOrientamentoBarra, mostraStrada, mostraDirezione, mostraAvvisoGps, aggiornaPannelli,
+  collegaPannelli, collegaOrientamentoBarra, seguiAltezzaPannello, mostraStrada, mostraDirezione, mostraAvvisoGps, aggiornaPannelli,
 } from './hud.js';
 import { attendiAvvertenze } from './avvertenze.js';
 import { t, traduciPagina } from '../i18n.js';
@@ -184,9 +184,13 @@ window.addEventListener('load', async () => {
   const installata = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
   contaEvento(installata ? 'apertura/schermata-home' : 'apertura/browser');
   collegaOrientamentoBarra(aggiornaDimensioniMappa);
+  seguiAltezzaPannello();
 
   // Senza la rete autostradale l'app funziona lo stesso: la strada la dà Nominatim
-  const rete = caricaReteAutostradale().catch(err => console.warn('Rete autostradale non disponibile:', err));
+  const rete = caricaReteAutostradale()
+    // Bivi tra autostrade, per mostrare anche le stazioni dopo un bivio: calcolati quando il telefono è libero
+    .then(preparaBivi)
+    .catch(err => console.warn('Rete autostradale non disponibile:', err));
   aree = await caricaAree();
   mostraVersioneDati();
   await rete;

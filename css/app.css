@@ -29,6 +29,9 @@
   --amber: #f59e0b;
   --red: #ef4444;
   --blue: #3b9eff;
+  /* stazioni dopo un bivio, su un'altra autostrada */
+  --viola: #a78bfa;
+  --viola-ramo: rgba(167,139,250,.5);
 }
 
 body {
@@ -279,6 +282,40 @@ body {
   border: 1px solid rgba(245,158,11,.35);
   align-self: flex-end;
 }
+/* Righe dei bivi: la prima stazione su ogni autostrada che si stacca davanti */
+.next-station-bivi {
+  flex-basis: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.bivio-riga {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  font-size: .85em;
+  color: rgba(255,255,255,.6);
+  white-space: nowrap;
+  text-shadow: 0 1px 4px rgba(0,0,0,.7);
+}
+.bivio-sigla { font-weight: 700; color: var(--viola); flex-shrink: 0; }
+.bivio-tra { flex-shrink: 0; }
+.bivio-nome {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
+  font-weight: 600;
+}
+.bivio-dist { font-weight: 700; color: var(--green); flex-shrink: 0; margin-left: auto; }
+.bivio-dist--uscita { color: var(--amber); }
+.td-bivio { color: var(--viola); font-weight: 700; }
+
 .next-station-dist {
   font-size: 2em;
   font-weight: 700;
@@ -377,6 +414,109 @@ body {
   border: 2px solid var(--green);
 }
 .bar-punto--uscita::before { border-color: var(--amber); }
+.bar-punto--bivio::before { border-color: var(--viola); }
+.bar-punto--bivio.bar-punto--uscita::before { background: rgba(245,158,11,.55); }
+
+/* Bivio: pulsante tondo con la forcella e la sigla dell'altra autostrada sotto; toccandolo
+   si aprono le diramazioni. Con un bivio aperto le sigle da lì in avanti si nascondono
+   (finirebbero sulle diramazioni): il nome di ogni senso sta in fondo alla sua linea. */
+.bar-bivio {
+  position: absolute;
+  left: var(--pos);
+  top: 50%;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.bar-bivio svg {
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  padding: 3px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--viola);
+  fill: none;
+  stroke: var(--viola);
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.bar-bivio--aperto svg { background: var(--viola); stroke: var(--bg); }
+.bar-bivio:focus-visible { outline: none; }
+.bar-bivio:focus-visible svg { box-shadow: 0 0 0 3px rgba(167,139,250,.45); }
+.bar-bivio span {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 5px;
+  border-radius: 6px;
+  background: var(--viola);
+  color: var(--bg);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 15px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.bar-bivio--coperto span { display: none; }
+
+/* Diramazioni del bivio aperto. --d: distanza dalla barra; lato-sx sopra (a sinistra in
+   verticale), lato-dx sotto (a destra). L'attacco obliquo va dal bivio alla linea. */
+#distance-bar { --d: 30px; --attacco: 12px; }
+.lato-sx { --verso: -1; }
+.lato-dx { --verso: 1; }
+.bar-ramo-attacco {
+  position: absolute;
+  left: var(--pos);
+  width: var(--attacco);
+  height: var(--d);
+  pointer-events: none;
+}
+.bar-ramo-attacco.lato-sx {
+  bottom: 50%;
+  background: linear-gradient(to bottom right, transparent calc(50% - 1.5px), var(--viola-ramo) calc(50% - 1.5px), var(--viola-ramo) calc(50% + 1.5px), transparent calc(50% + 1.5px));
+}
+.bar-ramo-attacco.lato-dx {
+  top: 50%;
+  background: linear-gradient(to top right, transparent calc(50% - 1.5px), var(--viola-ramo) calc(50% - 1.5px), var(--viola-ramo) calc(50% + 1.5px), transparent calc(50% + 1.5px));
+}
+.bar-ramo {
+  position: absolute;
+  left: calc(var(--pos) + var(--attacco));
+  right: 0;
+  top: calc(50% + var(--verso) * var(--d) - 2px);
+  height: 4px;
+  border-radius: 2px;
+  background: var(--viola-ramo);
+  pointer-events: none;
+}
+.bar-ramo span {
+  position: absolute;
+  right: 0;
+  color: var(--viola);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 13px;
+  white-space: nowrap;
+}
+/* Il nome del senso: sopra la linea di sinistra è occupato dall'etichetta della prossima
+   stazione, quindi va tra linea e barra; sotto la linea di destra (le tacche sono vicino alla barra) */
+.bar-ramo.lato-sx span { top: 6px; }
+.bar-ramo.lato-dx span { top: 7px; }
+.bar-punto--ramo { top: calc(50% + var(--verso) * var(--d)); }
+#distance-bar-container.ramo-dx { padding-bottom: 52px; }
+
 .bar-punto--prossima { pointer-events: none; }
 .bar-punto--prossima::before {
   width: 12px;
@@ -431,13 +571,15 @@ body {
 }
 .bar-tooltip strong { color: var(--text); font-size: 1.05em; }
 .bar-tooltip-dist { color: var(--green); font-weight: 600; }
+.bar-tooltip-bivio { color: var(--viola); font-weight: 600; }
 
 /* Schermo in verticale: striscia sul bordo destro della mappa, si sale verso la meta */
 #distance-bar-container.verticale {
   position: absolute;
   right: 10px;
   top: 76px;
-  bottom: 112px;
+  /* sopra il pannello della prossima stazione, che cresce con le righe dei bivi (hud.js) */
+  bottom: calc(var(--altezza-prossima, 96px) + 16px);
   z-index: 1000;
   width: 64px;
   box-sizing: border-box;
@@ -454,6 +596,35 @@ body {
 .verticale .bar-tacca { left: auto; top: auto; right: 14px; bottom: var(--pos); transform: translateY(50%); }
 .verticale .bar-tacca--fine::after { content: ''; }
 .verticale .bar-punto { left: 50%; top: auto; bottom: var(--pos); transform: translate(-50%, 50%); }
+.verticale .bar-bivio { left: 50%; top: auto; bottom: var(--pos); transform: translate(-50%, 50%); }
+.verticale .bar-bivio svg { transform: rotate(-90deg); }
+.verticale .bar-bivio span { top: 50%; left: auto; right: 26px; transform: translateY(-50%); }
+/* In verticale le diramazioni si aprono di lato: la striscia si allarga e le tacche si
+   nascondono, perché la linea di sinistra ci passerebbe sopra */
+#distance-bar-container.verticale.bivio-aperto { width: 104px; padding-bottom: 12px; }
+.verticale.bivio-aperto .bar-tacca { display: none; }
+.verticale #distance-bar { --d: 24px; }
+.verticale .bar-ramo-attacco { left: auto; bottom: var(--pos); width: var(--d); height: var(--attacco); }
+.verticale .bar-ramo-attacco.lato-sx {
+  top: auto;
+  right: 50%;
+  background: linear-gradient(to top right, transparent calc(50% - 1.5px), var(--viola-ramo) calc(50% - 1.5px), var(--viola-ramo) calc(50% + 1.5px), transparent calc(50% + 1.5px));
+}
+.verticale .bar-ramo-attacco.lato-dx {
+  top: auto;
+  left: 50%;
+  background: linear-gradient(to bottom right, transparent calc(50% - 1.5px), var(--viola-ramo) calc(50% - 1.5px), var(--viola-ramo) calc(50% + 1.5px), transparent calc(50% + 1.5px));
+}
+.verticale .bar-ramo {
+  left: calc(50% + var(--verso) * var(--d) - 2px);
+  right: auto;
+  top: 0;
+  bottom: calc(var(--pos) + var(--attacco));
+  width: 4px;
+  height: auto;
+}
+.verticale .bar-ramo span { top: auto; right: auto; bottom: calc(100% + 3px); left: 50%; transform: translateX(-50%); font-size: 10px; }
+.verticale .bar-punto--ramo { top: auto; left: calc(50% + var(--verso) * var(--d)); }
 .verticale .bar-etichetta {
   left: auto;
   right: 44px;
@@ -560,6 +731,14 @@ body {
   background: var(--amber);
   border: 2px solid rgba(255,255,255,.8);
 }
+.marker-bivio {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--viola);
+  border: 2px solid rgba(255,255,255,.8);
+}
+.marker-uscita.marker-bivio { background: var(--amber); border-color: var(--viola); }
 .marker-uscita-prossima {
   width: 18px;
   height: 18px;
