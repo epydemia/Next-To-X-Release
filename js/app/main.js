@@ -8,6 +8,7 @@ import {
   collegaPannelli, collegaOrientamentoBarra, seguiAltezzaPannello, mostraStrada, mostraDirezione, mostraAvvisoGps, aggiornaPannelli,
 } from './hud.js';
 import { attendiAvvertenze } from './avvertenze.js';
+import { collegaOperatori, impostaAreeOperatori, passaFiltroOperatori, filtroOperatoriAttivo } from './operatori.js';
 import { t, traduciPagina } from '../i18n.js';
 import { ATTESA_GPS_MS, CENTRO_ITALIA } from '../config.js';
 import {
@@ -42,8 +43,21 @@ function salvaPreferenza(chiave, attiva) {
   } catch { /* non salvabile (es. navigazione privata): vale per questa sessione */ }
 }
 
-function areeVisibili() {
+/** Aree con "Solo aree di servizio" applicato, senza il filtro per operatore. */
+function areeSenzaFiltroOperatori() {
   return soloAreeServizio ? aree.filter(a => a.accesso === 'area_servizio') : aree;
+}
+
+/** Aree da mostrare: impostazioni "Solo aree di servizio" e filtro per operatore. */
+function areeVisibili() {
+  const base = areeSenzaFiltroOperatori();
+  return filtroOperatoriAttivo() ? base.filter(passaFiltroOperatori) : base;
+}
+
+/** Ridisegna tutto dopo un cambio di impostazioni che cambia le aree visibili. */
+function ridisegna() {
+  if (getStato().coords) aggiorna(getStato());
+  else if (aree.length) mostraSenzaPosizione();
 }
 
 /** Senza GPS: tutte le stazioni, centrate sull'Italia. */
@@ -79,9 +93,15 @@ function aggiorna(stato) {
   mostraDirezione(stato);
 
   const { heading, strada, codiceAutostrada, paese } = stato;
-  const stazioni = filtraStazioni(areeVisibili(), { ...stato.coords, heading, strada, codiceAutostrada, paese, mostraTutte });
+  const parametri = { ...stato.coords, heading, strada, codiceAutostrada, paese, mostraTutte };
+  const stazioni = filtraStazioni(areeVisibili(), parametri);
   disegnaStazioni(stazioni);
-  aggiornaPannelli(stazioni);
+  // Filtro per operatore senza nessuna stazione davanti: si indica comunque la più vicina di
+  // qualsiasi operatore, così il filtro non lascia mai senza un'alternativa
+  const ripiego = filtroOperatoriAttivo() && !stazioni.some(s => s.isNearest)
+    ? filtraStazioni(areeSenzaFiltroOperatori(), parametri).find(s => s.isNearest)
+    : null;
+  aggiornaPannelli(stazioni, { ripiego });
   const prossima = stazioni.find(s => s.isNearest);
   if (prossima) contaProssima(prossima);
 }
@@ -119,9 +139,10 @@ function collegaImpostazioni(simulazione) {
   toggleSoloAree.addEventListener('change', e => {
     soloAreeServizio = e.target.checked;
     salvaPreferenza(CHIAVE_SOLO_AREE, soloAreeServizio);
-    if (getStato().coords) aggiorna(getStato());
-    else if (aree.length) mostraSenzaPosizione();
+    ridisegna();
   });
+
+  collegaOperatori(ridisegna);
 
   document.getElementById('csv-debug-section').hidden = !simulazione;
   document.getElementById('csvInput').addEventListener('change', async e => {
@@ -192,6 +213,7 @@ window.addEventListener('load', async () => {
     .then(preparaBivi)
     .catch(err => console.warn('Rete autostradale non disponibile:', err));
   aree = await caricaAree();
+  impostaAreeOperatori(aree);
   mostraVersioneDati();
   await rete;
   // Il permesso di posizione si chiede dopo le avvertenze, non sopra di esse

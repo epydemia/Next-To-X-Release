@@ -53,6 +53,12 @@
     <span class="toggle-track"></span>
   </label>
   <p class="setting-hint" data-i18n="soloAreeSpiegazione">Nasconde le colonnine fuori dal casello (⚠️ uscita), per non dover uscire dall'autostrada.</p>
+  <button type="button" class="setting-row setting-link" id="riga-operatori">
+    <span class="setting-label" data-i18n="operatori">Operatori</span>
+    <span class="setting-valore" id="operatori-valore" data-i18n="operatoriTutti">Tutti</span>
+    <span aria-hidden="true">›</span>
+  </button>
+  <p class="setting-hint" data-i18n="operatoriSpiegazione">Mostra solo le colonnine degli operatori scelti, per esempio quelli con cui hai un abbonamento.</p>
   <label class="setting-row">
     <span class="setting-label" data-i18n="statistiche">Statistiche anonime</span>
     <input type="checkbox" id="toggleStatistiche" class="toggle-input" />
@@ -64,6 +70,20 @@
     <span aria-hidden="true">›</span>
   </a>
   <p class="setting-hint" id="versione-dati" hidden></p>
+
+  <!-- Sottopagina del filtro per operatore (js/app/operatori.js) -->
+  <div id="operatori-pagina" hidden>
+    <div id="operatori-testata">
+      <button type="button" id="operatori-indietro" aria-label="Indietro" data-i18n-aria="indietro">‹</button>
+      <span data-i18n="operatori">Operatori</span>
+    </div>
+    <div id="operatori-ricerca">
+      <input type="search" id="operatori-cerca" autocomplete="off" aria-label="Cerca operatore" data-i18n-aria="operatoriCercaAria" />
+      <button type="button" id="operatori-tutti" data-i18n="operatoriTutti">Tutti</button>
+    </div>
+    <div id="operatori-lista"></div>
+    <p id="operatori-piede"></p>
+  </div>
 </div>
 
 <!-- Avvertenze al primo avvio (js/app/avvertenze.js) -->

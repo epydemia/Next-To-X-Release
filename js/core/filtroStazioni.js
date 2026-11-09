@@ -7,7 +7,7 @@ import { RAGGIO_STAZIONI_KM } from '../config.js';
 
 /**
  * Stazione pronta per la UI:
- * { nome, strada, direzione, operatore, lat, lon, distanza, colonnine, exitRequired,
+ * { nome, strada, direzione, operatore (testo), operatori (elenco), lat, lon, distanza, colonnine, exitRequired,
  *   isAvanti: raggiungibile proseguendo sulla strada attuale o girando a un bivio davanti,
  *   isNearest: la più vicina tra quelle avanti sulla strada attuale,
  *   bivio: se si raggiunge girando a un bivio davanti, altrimenti null:
@@ -25,6 +25,7 @@ function versoStazione(area, lat, lon) {
     strada: nomeStrada(area) || area.indirizzo || t('stradaSconosciuta'),
     direzione: area.destinazione ?? '',
     operatore: (area.operatori ?? []).join(', '),
+    operatori: area.operatori ?? [],
     paese: area.paese,
     lat: area.lat,
     lon: area.lon,

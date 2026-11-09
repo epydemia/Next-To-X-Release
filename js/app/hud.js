@@ -2,6 +2,7 @@ import { puntoCardinale } from '../core/geo.js';
 import { estraiCodice } from '../core/autostrade.js';
 import { contaEvento, slugOperatori } from '../statistiche.js';
 import { t, km, nomeRamo } from '../i18n.js';
+import { filtroOperatoriAttivo, operatoreScelto, testoFiltro, apriOperatori } from './operatori.js';
 
 // Tutto ciò che nell'app di guida non è mappa: HUD, pannelli, barra distanze, tabella.
 
@@ -15,6 +16,11 @@ export function collegaPannelli() {
   document.getElementById('stations-toggle-btn').addEventListener('click', () => {
     lista.hidden = !lista.hidden;
     chevron.classList.toggle('open', !lista.hidden);
+  });
+
+  // La scritta del filtro per operatore nel pannello apre la scelta degli operatori
+  document.getElementById('next-station').addEventListener('click', e => {
+    if (e.target.closest('.filtro-operatori')) apriOperatori();
   });
 }
 
@@ -41,13 +47,19 @@ export function mostraDirezione({ heading, headingStimato }) {
 
 // Ultime stazioni ricevute: per ridisegnare quando si apre o si chiude un bivio senza attendere il GPS
 let ultimeStazioni = [];
+let ultimoRipiego = null;
 
-export function aggiornaPannelli(stazioni) {
+/**
+ * ripiego: con il filtro per operatore e nessuna stazione davanti, la più vicina di qualsiasi
+ * operatore (calcolata senza filtro), da indicare comunque.
+ */
+export function aggiornaPannelli(stazioni, { ripiego = null } = {}) {
   ultimeStazioni = stazioni;
+  ultimoRipiego = ripiego;
   const avanti = stazioni.filter(s => s.isAvanti);
   const bivi = biviDavanti(avanti);
   aggiornaBivioAperto(bivi);
-  mostraProssimaStazione(stazioni.find(s => s.isNearest), righeBivioAperto(bivi));
+  mostraProssimaStazione(stazioni.find(s => s.isNearest), righeBivioAperto(bivi), ripiego);
   aggiornaBarraDistanze(avanti, bivi);
   aggiornaTabella(stazioni);
 }
@@ -91,7 +103,7 @@ function aggiornaBivioAperto(bivi) {
 
 function apriChiudiBivio(id) {
   bivioAperto = bivioAperto === id ? null : id;
-  aggiornaPannelli(ultimeStazioni);
+  aggiornaPannelli(ultimeStazioni, { ripiego: ultimoRipiego });
   // Il ridisegno ricrea i pulsanti: il focus torna su quello appena toccato
   document.querySelector(`#distance-bar .bar-bivio[data-id="${CSS.escape(id)}"]`)?.focus();
 }
@@ -113,20 +125,38 @@ function rigaBivio(s) {
     </span>`;
 }
 
-function mostraProssimaStazione(s, dopoIBivi = []) {
+const escape = testo => String(testo).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+/** Operatori della stazione, con quelli scelti nel filtro in evidenza. */
+function testoOperatori(s) {
+  if (!filtroOperatoriAttivo()) return s.operatore;
+  return s.operatori.map(o => (operatoreScelto(o) ? `<b>${o}</b>` : o)).join(', ');
+}
+
+function mostraProssimaStazione(s, dopoIBivi = [], ripiego = null) {
   const pannello = document.getElementById('next-station');
   const bivi = dopoIBivi.length ? `<span class="next-station-bivi">${dopoIBivi.map(rigaBivio).join('')}</span>` : '';
+  // Con il filtro per operatore attivo lo si dice sempre: senza, chi guida potrebbe credere
+  // che non ci siano colonnine quando sono solo nascoste
+  const filtro = filtroOperatoriAttivo()
+    ? `<span class="next-station-filtro"><button type="button" class="filtro-operatori">${escape(t('filtroOperatori', { nomi: testoFiltro() }))}</button></span>`
+    : '';
   if (!s) {
-    pannello.innerHTML = `<span class="next-station-info">–</span>${bivi}`;
+    const nessuna = filtroOperatoriAttivo() && ripiego
+      ? `<span class="next-station-nessuna">${t('nessunaDeiTuoi')}</span>
+         <span class="next-station-ripiego">${t('piuVicinaQualsiasi')} <b>${ripiego.nome}</b>${ripiego.operatore ? ` (${ripiego.operatore})` : ''} · ${ripiego.exitRequired ? `⚠️ ${t('uscita')} · ` : ''}${km(ripiego.distanza)}</span>`
+      : '<span class="next-station-info">–</span>';
+    pannello.innerHTML = `${filtro}${nessuna}${bivi}`;
     return;
   }
   const dettaglio = s.exitRequired
     ? `<span class="next-station-exit">⚠️ ${t('uscita')}</span>`
     : s.direzione ? `<span class="next-station-dir">→ ${s.direzione}</span>` : '';
   pannello.innerHTML = `
+    ${filtro}
     <span class="next-station-titolo">
       <span class="next-station-name">${s.nome}</span>
-      ${s.operatore ? `<span class="next-station-op">${s.operatore}</span>` : ''}
+      ${s.operatore ? `<span class="next-station-op">${testoOperatori(s)}</span>` : ''}
     </span>
     ${dettaglio}
     <span class="next-station-dist">${km(s.distanza)}</span>
