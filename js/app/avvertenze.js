@@ -12,10 +12,13 @@ function giaAccettate() {
   }
 }
 
-/** Si risolve quando le avvertenze sono accettate (subito, se lo erano già). */
+/**
+ * Si risolve quando le avvertenze sono accettate (subito, se lo erano già):
+ * true se sono state mostrate adesso, false se erano già accettate.
+ */
 export function attendiAvvertenze() {
   const finestra = document.getElementById('avvertenze');
-  if (giaAccettate()) return Promise.resolve();
+  if (giaAccettate()) return Promise.resolve(false);
   finestra.hidden = false;
   return new Promise(resolve => {
     document.getElementById('avvertenze-ok').addEventListener('click', () => {
@@ -23,7 +26,7 @@ export function attendiAvvertenze() {
         localStorage.setItem(CHIAVE, VERSIONE);
       } catch { /* non salvabile (es. navigazione privata): si riproporranno alla prossima apertura */ }
       finestra.hidden = true;
-      resolve();
+      resolve(true);
     }, { once: true });
   });
 }

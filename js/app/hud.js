@@ -35,9 +35,6 @@ export function mostraStrada({ strada, codiceAutostrada }) {
   document.getElementById('strada').textContent = `🛣️ ${testo}`;
 }
 
-export function mostraAvvisoGps() {
-  document.getElementById('strada').textContent = t('gpsNonDisponibile');
-}
 
 /** L'asterisco indica un heading stimato dallo spostamento anziché letto dal dispositivo. */
 export function mostraDirezione({ heading, headingStimato }) {

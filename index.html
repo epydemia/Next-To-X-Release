@@ -143,10 +143,34 @@
       <li><span aria-hidden="true">📵</span> <span data-i18n-html="avvertenzaTelefono"><strong>Non usare il telefono mentre guidi:</strong> affidalo al passeggero o fissalo a un supporto.</span></li>
       <li><span aria-hidden="true">⚡</span> <span data-i18n-html="avvertenzaDati"><strong>Dati indicativi:</strong> una colonnina può mancare, essere guasta o occupata. Verifica con l'app dell'operatore e tieni un margine di autonomia.</span></li>
       <li><span aria-hidden="true">🔒</span> <span data-i18n-html="avvertenzaPosizione"><strong>La tua posizione non viene salvata.</strong> Si usa sul telefono; fuori dall'autostrada le coordinate vanno a OpenStreetMap solo per il nome della strada.</span></li>
+      <li><span aria-hidden="true">📍</span> <span data-i18n-html="avvertenzaPermesso"><strong>Subito dopo il browser ti chiede la posizione:</strong> tocca Consenti, serve a trovare le colonnine davanti a te.</span></li>
       <li><span aria-hidden="true">ℹ️</span> <span data-i18n-html="avvertenzaIndipendente">App indipendente, <strong>non affiliata</strong> a Free To X, Autostrade per l'Italia, Autostrada del Brennero né agli operatori citati.</span></li>
     </ul>
     <button id="avvertenze-ok" type="button" data-i18n="hoCapito">Ho capito</button>
     <a id="avvertenze-info" href="info.html" data-i18n="infoBreve">Info e privacy</a>
+  </div>
+</div>
+
+<!-- Spiegazione prima della richiesta di posizione del browser (vedi js/app/permessoPosizione.js) -->
+<div id="permesso" class="finestra" role="dialog" aria-modal="true" aria-labelledby="permesso-titolo" hidden>
+  <div class="finestra-box">
+    <h2 id="permesso-titolo" data-i18n="permessoTitolo">📍 Serve la tua posizione</h2>
+    <p data-i18n-html="permessoTesto">Next-To-X segue la tua posizione per capire su quale autostrada e in che direzione stai andando, e mostrarti la prossima colonnina <strong>sulla tua carreggiata</strong>.</p>
+    <p data-i18n-html="permessoPrivacy">La posizione si usa solo sul telefono: <strong>non la riceviamo e non la salviamo.</strong></p>
+    <p class="finestra-nota" data-i18n="permessoNota">Al tocco il browser ti chiede il permesso: scegli Consenti.</p>
+    <button id="permesso-ok" class="finestra-primario" type="button" data-i18n="attivaPosizione">Attiva la posizione</button>
+    <button id="permesso-no" class="finestra-secondario" type="button" data-i18n="continuaSenza">Continua senza</button>
+  </div>
+</div>
+
+<!-- Istruzioni per riattivare la posizione bloccata o assente -->
+<div id="aiuto-gps" class="finestra" role="dialog" aria-modal="true" aria-labelledby="aiuto-gps-titolo" hidden>
+  <div class="finestra-box">
+    <h2 id="aiuto-gps-titolo" data-i18n="aiutoGpsTitolo">📍 Come attivare la posizione</h2>
+    <p id="aiuto-gps-motivo"></p>
+    <div id="aiuto-gps-passi"></div>
+    <button id="aiuto-gps-riprova" class="finestra-primario" type="button" data-i18n="riprova">Riprova</button>
+    <button id="aiuto-gps-chiudi" class="finestra-secondario" type="button" data-i18n="chiudi">Chiudi</button>
   </div>
 </div>
 

@@ -5,9 +5,10 @@ import { avviaPosizione, attendiPrimaPosizione, getStato, motivoSenzaPosizione }
 import { caricaTracciaCSV, osservaProgresso, vaiAlPunto } from './simulazione.js';
 import { creaMappa, aggiornaUtente, disegnaStazioni, evidenziaAutostrada, mostraPanoramicaItalia, aggiornaDimensioniMappa } from './mappa.js';
 import {
-  collegaPannelli, collegaOrientamentoBarra, seguiAltezzaPannello, mostraStrada, mostraDirezione, mostraAvvisoGps, aggiornaPannelli,
+  collegaPannelli, collegaOrientamentoBarra, seguiAltezzaPannello, mostraStrada, mostraDirezione, aggiornaPannelli,
 } from './hud.js';
 import { attendiAvvertenze } from './avvertenze.js';
+import { attendiConsensoPosizione, mostraAvvisoPosizione, segnaPosizioneConcessa } from './permessoPosizione.js';
 import { collegaOperatori, impostaAreeOperatori, passaFiltroOperatori, filtroOperatoriAttivo } from './operatori.js';
 import { t, traduciPagina, impostaTitolo, impostaCanonical } from '../i18n.js';
 import { VERSIONE_APP } from '../versione.js';
@@ -88,6 +89,7 @@ function aggiorna(stato) {
   if (!stato.coords) return;
   if (posizioneInRitardo) {
     posizioneInRitardo = false;
+    segnaPosizioneConcessa();
     contaEvento('avvio/gps-in-ritardo', 'Posizione arrivata dopo il tempo d\'attesa');
   }
   aggiornaUtente(stato.coords, stato.heading);
@@ -225,21 +227,41 @@ window.addEventListener('load', async () => {
   impostaAreeOperatori(aree);
   mostraVersioneDati();
   await rete;
-  // Il permesso di posizione si chiede dopo le avvertenze, non sopra di esse
-  await attendiAvvertenze();
-  avviaPosizione({ simulazione, onAggiornamento: aggiorna });
-
-  const posizione = await attendiPrimaPosizione(ATTESA_GPS_MS);
-  if (simulazione) contaEvento('avvio/simulazione');
-  else if (posizione) contaEvento('avvio/gps');
-  else {
-    // avvio/gps-negato, -permesso-in-attesa, -nessun-segnale, -non-supportato
-    contaEvento(`avvio/gps-${await motivoSenzaPosizione()}`);
-    posizioneInRitardo = !getStato().coords;
-  }
-  if (!posizione) {
-    mostraAvvisoGps();
+  // Il permesso di posizione si chiede dopo le avvertenze, non sopra di esse. Al primo avvio
+  // la spiegazione del permesso è nelle avvertenze; poi, a chi non l'ha mai dato, una finestra apposta.
+  const avvertenzeMostrate = await attendiAvvertenze();
+  if (simulazione || avvertenzeMostrate || await attendiConsensoPosizione()) {
+    await avviaGps(simulazione, 'avvio');
+  } else {
+    contaEvento('avvio/gps-senza-consenso');
+    // Toccando l'avviso in alto il GPS parte più tardi
+    mostraAvvisoPosizione('senza-consenso', () => avviaGps(false, 'avvio-rimandato'));
     mostraPanoramicaItalia();
     mostraSenzaPosizione();
   }
 });
+
+/**
+ * Avvia GPS o simulazione e attende la prima posizione; senza, mostra la panoramica e
+ * l'avviso con le istruzioni. evento: prefisso dei conteggi ('avvio' o 'avvio-rimandato').
+ */
+async function avviaGps(simulazione, evento) {
+  avviaPosizione({ simulazione, onAggiornamento: aggiorna });
+
+  const posizione = await attendiPrimaPosizione(ATTESA_GPS_MS);
+  if (simulazione) contaEvento(`${evento}/simulazione`);
+  else if (posizione) {
+    segnaPosizioneConcessa();
+    contaEvento(`${evento}/gps`);
+  } else {
+    // avvio/gps-negato, -permesso-in-attesa, -nessun-segnale, -non-supportato
+    const motivo = await motivoSenzaPosizione();
+    contaEvento(`${evento}/gps-${motivo}`);
+    posizioneInRitardo = !getStato().coords;
+    if (posizioneInRitardo) mostraAvvisoPosizione(motivo);
+  }
+  if (!posizione) {
+    mostraPanoramicaItalia();
+    mostraSenzaPosizione();
+  }
+}

@@ -958,7 +958,7 @@ button.setting-row {
 }
 
 /* ── Avvertenze al primo avvio ──────────────────── */
-#avvertenze {
+#avvertenze, .finestra {
   position: fixed;
   inset: 0;
   z-index: 3000;
@@ -968,8 +968,8 @@ button.setting-row {
   padding: 16px;
   background: rgba(1, 4, 9, .75);
 }
-#avvertenze[hidden] { display: none; }
-#avvertenze-box {
+#avvertenze[hidden], .finestra[hidden] { display: none; }
+#avvertenze-box, .finestra-box {
   width: 100%;
   max-width: 420px;
   max-height: 100%;
@@ -980,11 +980,11 @@ button.setting-row {
   padding: 20px;
   box-shadow: 0 8px 32px rgba(0,0,0,.5);
 }
-#avvertenze h2 { font-size: 1.2em; margin-bottom: 12px; }
+#avvertenze h2, .finestra h2 { font-size: 1.2em; margin-bottom: 12px; }
 #avvertenze ul { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
 #avvertenze li { display: flex; gap: 10px; font-size: .9em; line-height: 1.4; color: var(--muted); }
 #avvertenze li strong { color: var(--text); font-weight: 600; }
-#avvertenze-ok {
+#avvertenze-ok, .finestra-primario {
   width: 100%;
   padding: 12px;
   border: 0;
@@ -997,6 +997,38 @@ button.setting-row {
   cursor: pointer;
 }
 #avvertenze-info { display: block; text-align: center; margin-top: 12px; font-size: .85em; color: var(--blue); }
+
+/* ── Permesso di posizione e istruzioni ─────────── */
+.finestra p { font-size: .9em; line-height: 1.45; color: var(--muted); margin-bottom: 10px; }
+.finestra p strong, .finestra li strong { color: var(--text); font-weight: 600; }
+.finestra .finestra-nota { font-size: .85em; margin-bottom: 16px; }
+.finestra ol { padding-left: 1.3em; margin: 0 0 16px; display: flex; flex-direction: column; gap: 8px; font-size: .9em; line-height: 1.4; color: var(--muted); }
+.finestra-secondario {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  border: 0;
+  background: none;
+  color: var(--blue);
+  font: inherit;
+  font-size: .9em;
+  cursor: pointer;
+}
+.avviso-gps {
+  max-width: 100%;
+  padding: 4px 10px;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 8px;
+  background: rgba(1, 4, 9, .55);
+  color: white;
+  font: inherit;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
 
 /* ── Pagina info (info.html) ────────────────────── */
 body.pagina-info { height: auto; min-height: 100dvh; display: block; overflow: auto; }
