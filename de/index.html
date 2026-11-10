@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="de" data-lingua="de">
+<head>
+  <meta charset="UTF-8" />
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Next-To-X – Nächste Ladesäule an der Autobahn</title>
+  <meta name="description" content="Die nächste Schnellladesäule für dein E-Auto an der Autobahn, auf deiner Fahrbahnseite: Raststätten und Autohöfe in Deutschland, Österreich, der Schweiz und Italien. Kostenlos, ohne Anmeldung." />
+  <link rel="canonical" href="https://nexttox.com/de/" />
+  <link rel="alternate" hreflang="it" href="https://nexttox.com/" />
+  <link rel="alternate" hreflang="de" href="https://nexttox.com/de/" />
+  <link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/" />
+  <link rel="alternate" hreflang="en" href="https://nexttox.com/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://nexttox.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Next-To-X" />
+  <meta property="og:title" content="Next-To-X – Nächste Ladesäule an der Autobahn" />
+  <meta property="og:description" content="Die nächste Schnellladesäule für dein E-Auto an der Autobahn, auf deiner Fahrbahnseite: Raststätten und Autohöfe in Deutschland, Österreich, der Schweiz und Italien. Kostenlos, ohne Anmeldung." />
+  <meta property="og:url" content="https://nexttox.com/de/" />
+  <meta property="og:image" content="https://nexttox.com/img/anteprima-social.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Next-To-X" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:locale:alternate" content="en_GB" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="it_IT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Next-To-X",
+  "url": "https://nexttox.com/de/",
+  "description": "Die nächste Schnellladesäule für dein E-Auto an der Autobahn, auf deiner Fahrbahnseite: Raststätten und Autohöfe in Deutschland, Österreich, der Schweiz und Italien. Kostenlos, ohne Anmeldung.",
+  "image": "https://nexttox.com/img/anteprima-social.png",
+  "applicationCategory": "TravelApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Richiede JavaScript e la posizione GPS",
+  "inLanguage": [
+    "it",
+    "en",
+    "fr",
+    "de"
+  ],
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Daniele Franco"
+  }
+}
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#0d1117" />
+  <meta name="apple-mobile-web-app-title" content="Next-To-X" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+
+<!-- Pannello impostazioni (slide da destra) -->
+<div id="options-panel">
+  <div id="options-header">
+    <div id="options-brand">
+      <img src="img/icona-192.png" alt="" width="32" height="32" />
+      <div>
+        <div id="options-app">Next-To-X</div>
+        <div id="options-title" data-i18n="impostazioni">Einstellungen</div>
+      </div>
+    </div>
+    <button id="options-close">✕</button>
+  </div>
+  <label class="setting-row" id="riga-simulazione" hidden>
+    <span class="setting-label" data-i18n="simulaPosizione">Position simulieren</span>
+    <input type="checkbox" id="toggleDebug" class="toggle-input" />
+    <span class="toggle-track"></span>
+  </label>
+  <label class="setting-row" id="riga-cursore" hidden>
+    <span class="setting-label" data-i18n="mostraCursore">Simulationsregler anzeigen</span>
+    <input type="checkbox" id="toggleCursore" class="toggle-input" />
+    <span class="toggle-track"></span>
+  </label>
+  <div id="csv-debug-section" hidden>
+    <p class="setting-hint" data-i18n="tracciaCsv">GPS-Track (CSV)</p>
+    <input type="file" id="csvInput" accept=".csv" />
+    <div id="csvStatus"></div>
+  </div>
+  <label class="setting-row">
+    <span class="setting-label" data-i18n="mostraTutte">Alle Stationen anzeigen</span>
+    <input type="checkbox" id="toggleNearest" class="toggle-input" />
+    <span class="toggle-track"></span>
+  </label>
+  <label class="setting-row">
+    <span class="setting-label" data-i18n="soloAree">Nur Raststätten</span>
+    <input type="checkbox" id="toggleSoloAree" class="toggle-input" />
+    <span class="toggle-track"></span>
+  </label>
+  <p class="setting-hint" data-i18n="soloAreeSpiegazione">Blendet Ladesäulen nach der Ausfahrt aus (⚠️ Ausfahrt), damit du die Autobahn nicht verlassen musst.</p>
+  <button type="button" class="setting-row setting-link" id="riga-operatori">
+    <span class="setting-label" data-i18n="operatori">Betreiber</span>
+    <span class="setting-valore" id="operatori-valore" data-i18n="operatoriTutti">Alle</span>
+    <span aria-hidden="true">›</span>
+  </button>
+  <p class="setting-hint" data-i18n="operatoriSpiegazione">Zeigt nur Ladesäulen der gewählten Betreiber, zum Beispiel derer, bei denen du ein Abo hast.</p>
+  <label class="setting-row">
+    <span class="setting-label" data-i18n="statistiche">Anonyme Statistiken</span>
+    <input type="checkbox" id="toggleStatistiche" class="toggle-input" />
+    <span class="toggle-track"></span>
+  </label>
+  <p class="setting-hint" data-i18n="statisticheSpiegazione">Ohne Cookies und nie dein Standort: gezählt werden nur App-Aufrufe, die Website, von der du kommst, ob GPS funktioniert und welche Betreiber vorgeschlagen werden. Das hilft, die App zu verbessern.</p>
+  <a class="setting-row setting-link" href="/de/info.html">
+    <span class="setting-label" data-i18n="infoPrivacy">Info, Hinweise und Datenschutz</span>
+    <span aria-hidden="true">›</span>
+  </a>
+  <nav class="setting-hint lingue" aria-label="Lingua / Language">🌐 <a href="/?lang=it" hreflang="it" lang="it">Italiano</a> · <a href="/de/" hreflang="de" lang="de">Deutsch</a> · <a href="/fr/" hreflang="fr" lang="fr">Français</a> · <a href="/en/" hreflang="en" lang="en">English</a></nav>
+  <p class="setting-hint versioni"><span id="versione-app"></span><span id="versione-dati" hidden></span></p>
+
+  <!-- Sottopagina del filtro per operatore (js/app/operatori.js) -->
+  <div id="operatori-pagina" hidden>
+    <div id="operatori-testata">
+      <button type="button" id="operatori-indietro" aria-label="Zurück" data-i18n-aria="indietro">‹</button>
+      <span data-i18n="operatori">Betreiber</span>
+    </div>
+    <div id="operatori-ricerca">
+      <input type="search" id="operatori-cerca" autocomplete="off" aria-label="Betreiber suchen" data-i18n-aria="operatoriCercaAria" />
+      <button type="button" id="operatori-tutti" data-i18n="operatoriTutti">Alle</button>
+    </div>
+    <div id="operatori-lista"></div>
+    <p id="operatori-piede"></p>
+  </div>
+</div>
+
+<!-- Avvertenze al primo avvio (js/app/avvertenze.js) -->
+<div id="avvertenze" role="dialog" aria-modal="true" aria-labelledby="avvertenze-titolo" hidden>
+  <div id="avvertenze-box">
+    <h2 id="avvertenze-titolo" data-i18n="avvertenzeTitolo">Vor der Fahrt</h2>
+    <ul>
+      <li><span aria-hidden="true">📵</span> <span data-i18n-html="avvertenzaTelefono"><strong>Benutze das Handy nicht während der Fahrt:</strong> gib es dem Beifahrer oder setze es in eine Halterung.</span></li>
+      <li><span aria-hidden="true">⚡</span> <span data-i18n-html="avvertenzaDati"><strong>Die Daten sind unverbindlich:</strong> eine Ladesäule kann fehlen, defekt oder belegt sein. Prüfe in der App des Betreibers und plane eine Reichweitenreserve ein.</span></li>
+      <li><span aria-hidden="true">🔒</span> <span data-i18n-html="avvertenzaPosizione"><strong>Dein Standort wird nicht gespeichert.</strong> Er wird auf dem Handy verwendet; abseits der Autobahn gehen die Koordinaten nur für den Straßennamen an OpenStreetMap.</span></li>
+      <li><span aria-hidden="true">📍</span> <span data-i18n-html="avvertenzaPermesso"><strong>Gleich danach fragt der Browser nach deinem Standort:</strong> tippe auf Erlauben, damit die App die Ladesäulen vor dir findet.</span></li>
+      <li><span aria-hidden="true">ℹ️</span> <span data-i18n-html="avvertenzaIndipendente">Unabhängige App, <strong>nicht verbunden</strong> mit Free To X, Autostrade per l'Italia, Autostrada del Brennero oder den genannten Betreibern.</span></li>
+    </ul>
+    <button id="avvertenze-ok" type="button" data-i18n="hoCapito">Verstanden</button>
+    <a id="avvertenze-info" href="/de/info.html" data-i18n="infoBreve">Info und Datenschutz</a>
+  </div>
+</div>
+
+<!-- Spiegazione prima della richiesta di posizione del browser (vedi js/app/permessoPosizione.js) -->
+<div id="permesso" class="finestra" role="dialog" aria-modal="true" aria-labelledby="permesso-titolo" hidden>
+  <div class="finestra-box">
+    <h2 id="permesso-titolo" data-i18n="permessoTitolo">📍 Dein Standort wird benötigt</h2>
+    <p data-i18n-html="permessoTesto">Next-To-X folgt deinem Standort, um zu erkennen, auf welcher Autobahn und in welche Richtung du fährst, und dir die nächste Ladesäule <strong>auf deiner Fahrbahnseite</strong> zu zeigen.</p>
+    <p data-i18n-html="permessoPrivacy">Der Standort wird nur auf dem Handy verwendet: <strong>wir erhalten und speichern ihn nicht.</strong></p>
+    <p class="finestra-nota" data-i18n="permessoNota">Beim Tippen fragt der Browser nach der Erlaubnis: wähle Erlauben.</p>
+    <button id="permesso-ok" class="finestra-primario" type="button" data-i18n="attivaPosizione">Standort aktivieren</button>
+    <button id="permesso-no" class="finestra-secondario" type="button" data-i18n="continuaSenza">Ohne fortfahren</button>
+  </div>
+</div>
+
+<!-- Istruzioni per riattivare la posizione bloccata o assente -->
+<div id="aiuto-gps" class="finestra" role="dialog" aria-modal="true" aria-labelledby="aiuto-gps-titolo" hidden>
+  <div class="finestra-box">
+    <h2 id="aiuto-gps-titolo" data-i18n="aiutoGpsTitolo">📍 So aktivierst du den Standort</h2>
+    <p id="aiuto-gps-motivo"></p>
+    <div id="aiuto-gps-passi"></div>
+    <button id="aiuto-gps-riprova" class="finestra-primario" type="button" data-i18n="riprova">Erneut versuchen</button>
+    <button id="aiuto-gps-chiudi" class="finestra-secondario" type="button" data-i18n="chiudi">Schließen</button>
+  </div>
+</div>
+
+<!-- Mappa con overlay HUD -->
+<div id="map-wrapper">
+  <div id="hud-top">
+    <div id="strada">🛣️</div>
+    <div id="direzione">🧭</div>
+    <button id="options-toggle" aria-label="Einstellungen" data-i18n-aria="impostazioni">⚙</button>
+  </div>
+  <div id="map"></div>
+  <div id="sim-cursore" hidden>
+    <input type="range" id="simSlider" min="0" max="0" step="1" value="0" aria-label="Position im simulierten Track" data-i18n-aria="cursoreSimulazione" />
+    <span id="simTempo"></span>
+  </div>
+  <div id="next-station">
+    <span class="next-station-info">–</span>
+  </div>
+</div>
+
+<!-- Pannello inferiore -->
+<div id="bottom-panel">
+  <div id="distance-bar-container">
+    <div class="bar-posizione" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><polygon points="12,1 22,23 12,18 2,23" fill="#3b9eff" stroke="#ffffff" stroke-width="2" stroke-linejoin="round" /></svg>
+    </div>
+    <div id="distance-bar"></div>
+  </div>
+  <button id="stations-toggle-btn">
+    <span id="stations-count-label" data-i18n="stazioniVicine">Stationen in der Nähe</span>
+    <span id="stations-chevron">▼</span>
+  </button>
+  <div id="stations-list" hidden>
+    <table id="stations-table">
+      <thead>
+        <tr>
+          <th data-i18n="colonnaArea">Station</th>
+          <th data-i18n="colonnaStrada">Straße</th>
+          <th class="th-dist">km</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<script type="module" src="js/app/main.js"></script>
+</body>
+</html>

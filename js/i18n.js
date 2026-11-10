@@ -17,15 +17,18 @@ export function scegliLingua(preferenze, forzata = null) {
   return PREDEFINITA;
 }
 
+// Le pagine per lingua (/de/, /fr/, /en/, generate da tools/genera_lingue.mjs) la fissano con
+// <html data-lingua="de">; ?lang= nell'indirizzo vale comunque, per provare
 export const lingua = scegliLingua(
   navigator.languages?.length ? navigator.languages : [navigator.language],
-  new URLSearchParams(location.search).get('lang'),
+  new URLSearchParams(location.search).get('lang') ?? globalThis.document?.documentElement?.dataset.lingua,
 );
 
 const plurale = (n, uno, molti) => (n === 1 ? uno : molti);
 
 export const TESTI = {
   it: {
+    // Titolo e description delle pagine per lingua: li usa tools/genera_lingue.mjs
     titoloPagina: "Next-To-X – Prossima colonnina di ricarica in autostrada",
     descrizionePagina: "La prossima colonnina di ricarica per auto elettriche lungo l'autostrada, sulla tua carreggiata. Italia, Germania, Svizzera e Austria. Gratis, senza registrazione.",
     impostazioni: 'Impostazioni',
@@ -185,7 +188,7 @@ export const TESTI = {
   },
   fr: {
     titoloPagina: "Next-To-X – Prochaine borne de recharge sur l'autoroute",
-    descrizionePagina: "La prochaine borne de recharge pour voiture électrique sur l'autoroute, de votre côté de la chaussée. Italie, Allemagne, Suisse et Autriche. Gratuit, sans inscription.",
+    descrizionePagina: "La prochaine borne de recharge rapide pour voiture électrique sur l'autoroute, de votre côté : aires de service en Suisse, en Italie, en Autriche et en Allemagne. Gratuit, sans inscription.",
     impostazioni: 'Réglages',
     simulaPosizione: 'Simuler la position',
     mostraCursore: 'Afficher le curseur de simulation',
@@ -264,7 +267,7 @@ export const TESTI = {
   },
   de: {
     titoloPagina: "Next-To-X – Nächste Ladesäule an der Autobahn",
-    descrizionePagina: "Die nächste Ladesäule für Elektroautos an der Autobahn, auf deiner Fahrbahnseite. Italien, Deutschland, Schweiz und Österreich. Kostenlos, ohne Anmeldung.",
+    descrizionePagina: "Die nächste Schnellladesäule für dein E-Auto an der Autobahn, auf deiner Fahrbahnseite: Raststätten und Autohöfe in Deutschland, Österreich, der Schweiz und Italien. Kostenlos, ohne Anmeldung.",
     impostazioni: 'Einstellungen',
     simulaPosizione: 'Position simulieren',
     mostraCursore: 'Simulationsregler anzeigen',
@@ -373,8 +376,6 @@ export function traduciPagina(radice = document) {
   radice.querySelectorAll('[data-i18n-aria]').forEach(el => { el.setAttribute('aria-label', t(el.dataset.i18nAria)); });
 }
 
-const SITO = 'https://nexttox.com';
-
 /**
  * Titolo e meta description nella lingua scelta (l'HTML ha quelli italiani, per chi non esegue
  * JavaScript); Google legge quelli della pagina renderizzata.
@@ -382,22 +383,4 @@ const SITO = 'https://nexttox.com';
 export function impostaTitolo(titolo, descrizione) {
   document.title = titolo;
   document.querySelector('meta[name="description"]')?.setAttribute('content', descrizione);
-}
-
-/**
- * Canonical della pagina: l'indirizzo pubblico senza parametri (?debug, ?utm_...), con ?lang=
- * solo se la lingua è forzata, così ogni versione elencata negli hreflang dell'HTML è canonica
- * di se stessa. Nell'HTML non c'è: Google sconsiglia di avere un canonical che JavaScript cambia.
- */
-export function impostaCanonical() {
-  const forzata = new URLSearchParams(location.search).get('lang')?.toLowerCase();
-  const url = new URL(location.pathname.replace(/\/index\.html$/, '/'), SITO);
-  if (LINGUE.includes(forzata)) url.searchParams.set('lang', forzata);
-  let link = document.querySelector('link[rel="canonical"]');
-  if (!link) {
-    link = document.createElement('link');
-    link.rel = 'canonical';
-    document.head.append(link);
-  }
-  link.href = url.href;
 }

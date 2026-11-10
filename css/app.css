@@ -104,6 +104,7 @@ body {
 .setting-link { color: var(--text); text-decoration: none; }
 .setting-link span[aria-hidden] { color: var(--muted); font-size: 1.3em; }
 .setting-hint { padding: 8px 16px 4px; font-size: .8em; color: var(--muted); }
+.lingue a { color: var(--blue); }
 .versioni span { display: block; }
 .versioni span + span { margin-top: 2px; }
 button.setting-row {
@@ -1044,4 +1045,7 @@ body.pagina-info { height: auto; min-height: 100dvh; display: block; overflow: a
 .pagina-info p, .pagina-info li { font-size: .92em; }
 .pagina-info ul { padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
 .pagina-info ul + p { margin-top: 12px; }
+.pagina-info .faq dt { font-weight: 600; font-size: .92em; margin-top: 12px; }
+.pagina-info .faq dd { font-size: .92em; color: var(--muted); margin: 2px 0 0; }
+.pagina-info .lingue { margin-top: 32px; font-size: .85em; }
 .pagina-info .aggiornato { margin-top: 32px; color: var(--muted); font-size: .8em; }

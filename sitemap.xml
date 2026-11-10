@@ -1,85 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Pagine da indicizzare, con le versioni ?lang= (vedi gli hreflang nell'HTML).
-     stazioni.html e autostrade.html restano fuori: sono in noindex. -->
+<!-- Pagine da indicizzare: le italiane e le versioni per lingua (de/, fr/, en/, generate da
+     tools/genera_lingue.mjs), collegate con hreflang. stazioni.html e autostrade.html restano
+     fuori: sono in noindex. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nexttox.com/</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/?lang=it" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/?lang=en" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/?lang=de" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/" />
   </url>
   <url>
-    <loc>https://nexttox.com/?lang=it</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/?lang=it" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/?lang=en" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/?lang=de" />
+    <loc>https://nexttox.com/de/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/" />
   </url>
   <url>
-    <loc>https://nexttox.com/?lang=en</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/?lang=it" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/?lang=en" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/?lang=de" />
+    <loc>https://nexttox.com/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/" />
   </url>
   <url>
-    <loc>https://nexttox.com/?lang=fr</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/?lang=it" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/?lang=en" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/?lang=de" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/" />
-  </url>
-  <url>
-    <loc>https://nexttox.com/?lang=de</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/?lang=it" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/?lang=en" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/?lang=de" />
+    <loc>https://nexttox.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/" />
   </url>
   <url>
     <loc>https://nexttox.com/info.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/info.html?lang=it" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/info.html?lang=en" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/info.html?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/info.html?lang=de" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/info.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/info.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/info.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/info.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/info.html" />
   </url>
   <url>
-    <loc>https://nexttox.com/info.html?lang=it</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/info.html?lang=it" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/info.html?lang=en" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/info.html?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/info.html?lang=de" />
+    <loc>https://nexttox.com/de/info.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/info.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/info.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/info.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/info.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/info.html" />
   </url>
   <url>
-    <loc>https://nexttox.com/info.html?lang=en</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/info.html?lang=it" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/info.html?lang=en" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/info.html?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/info.html?lang=de" />
+    <loc>https://nexttox.com/fr/info.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/info.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/info.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/info.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/info.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/info.html" />
   </url>
   <url>
-    <loc>https://nexttox.com/info.html?lang=fr</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/info.html?lang=it" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/info.html?lang=en" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/info.html?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/info.html?lang=de" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/info.html" />
-  </url>
-  <url>
-    <loc>https://nexttox.com/info.html?lang=de</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/info.html?lang=it" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/info.html?lang=en" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/info.html?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/info.html?lang=de" />
+    <loc>https://nexttox.com/en/info.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/info.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/info.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/info.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/info.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/info.html" />
   </url>
 </urlset>
