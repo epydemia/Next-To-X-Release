@@ -9,7 +9,7 @@ import {
 } from './hud.js';
 import { attendiAvvertenze } from './avvertenze.js';
 import { collegaOperatori, impostaAreeOperatori, passaFiltroOperatori, filtroOperatoriAttivo } from './operatori.js';
-import { t, traduciPagina } from '../i18n.js';
+import { t, traduciPagina, impostaTitolo, impostaCanonical } from '../i18n.js';
 import { VERSIONE_APP } from '../versione.js';
 import { ATTESA_GPS_MS, CENTRO_ITALIA } from '../config.js';
 import {
@@ -18,6 +18,8 @@ import {
 
 // Subito, prima di ogni attesa: i testi della pagina nella lingua del browser
 traduciPagina();
+impostaTitolo(t('titoloPagina'), t('descrizionePagina'));
+impostaCanonical();
 
 const CHIAVE_SIMULAZIONE = 'debugPosizione';
 // La simulazione è uno strumento di sviluppo: compare solo aprendo la pagina con ?debug=true

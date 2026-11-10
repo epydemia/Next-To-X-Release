@@ -26,6 +26,8 @@ const plurale = (n, uno, molti) => (n === 1 ? uno : molti);
 
 export const TESTI = {
   it: {
+    titoloPagina: "Next-To-X – Prossima colonnina di ricarica in autostrada",
+    descrizionePagina: "La prossima colonnina di ricarica per auto elettriche lungo l'autostrada, sulla tua carreggiata. Italia, Germania, Svizzera e Austria. Gratis, senza registrazione.",
     impostazioni: 'Impostazioni',
     simulaPosizione: 'Simula posizione',
     mostraCursore: 'Mostra cursore simulazione',
@@ -87,6 +89,8 @@ export const TESTI = {
     piuVicinaQualsiasi: 'La più vicina di qualsiasi operatore:',
   },
   en: {
+    titoloPagina: "Next-To-X – Next EV charger on the motorway",
+    descrizionePagina: "The next EV charging station along the motorway, on your side of the road. Italy, Germany, Switzerland and Austria. Free, no sign-up.",
     impostazioni: 'Settings',
     simulaPosizione: 'Simulate position',
     mostraCursore: 'Show simulation slider',
@@ -148,6 +152,8 @@ export const TESTI = {
     piuVicinaQualsiasi: 'Nearest from any operator:',
   },
   fr: {
+    titoloPagina: "Next-To-X – Prochaine borne de recharge sur l'autoroute",
+    descrizionePagina: "La prochaine borne de recharge pour voiture électrique sur l'autoroute, de votre côté de la chaussée. Italie, Allemagne, Suisse et Autriche. Gratuit, sans inscription.",
     impostazioni: 'Réglages',
     simulaPosizione: 'Simuler la position',
     mostraCursore: 'Afficher le curseur de simulation',
@@ -209,6 +215,8 @@ export const TESTI = {
     piuVicinaQualsiasi: 'La plus proche, tous opérateurs :',
   },
   de: {
+    titoloPagina: "Next-To-X – Nächste Ladesäule an der Autobahn",
+    descrizionePagina: "Die nächste Ladesäule für Elektroautos an der Autobahn, auf deiner Fahrbahnseite. Italien, Deutschland, Schweiz und Österreich. Kostenlos, ohne Anmeldung.",
     impostazioni: 'Einstellungen',
     simulaPosizione: 'Position simulieren',
     mostraCursore: 'Simulationsregler anzeigen',
@@ -299,4 +307,33 @@ export function traduciPagina(radice = document) {
   radice.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
   radice.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); });
   radice.querySelectorAll('[data-i18n-aria]').forEach(el => { el.setAttribute('aria-label', t(el.dataset.i18nAria)); });
+}
+
+const SITO = 'https://nexttox.com';
+
+/**
+ * Titolo e meta description nella lingua scelta (l'HTML ha quelli italiani, per chi non esegue
+ * JavaScript); Google legge quelli della pagina renderizzata.
+ */
+export function impostaTitolo(titolo, descrizione) {
+  document.title = titolo;
+  document.querySelector('meta[name="description"]')?.setAttribute('content', descrizione);
+}
+
+/**
+ * Canonical della pagina: l'indirizzo pubblico senza parametri (?debug, ?utm_...), con ?lang=
+ * solo se la lingua è forzata, così ogni versione elencata negli hreflang dell'HTML è canonica
+ * di se stessa. Nell'HTML non c'è: Google sconsiglia di avere un canonical che JavaScript cambia.
+ */
+export function impostaCanonical() {
+  const forzata = new URLSearchParams(location.search).get('lang')?.toLowerCase();
+  const url = new URL(location.pathname.replace(/\/index\.html$/, '/'), SITO);
+  if (LINGUE.includes(forzata)) url.searchParams.set('lang', forzata);
+  let link = document.querySelector('link[rel="canonical"]');
+  if (!link) {
+    link = document.createElement('link');
+    link.rel = 'canonical';
+    document.head.append(link);
+  }
+  link.href = url.href;
 }
