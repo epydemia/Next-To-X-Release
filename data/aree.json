@@ -1,6 +1,6 @@
 {
   "versione": 2,
-  "generato": "2026-11-09T10:07:32+00:00",
+  "generato": "2026-11-10T22:41:18+00:00",
   "licenza": "Contiene dati © OpenStreetMap contributors, disponibili con licenza ODbL 1.0 (https://opendatacommons.org/licenses/odbl/1-0/). Dettagli per fonte: data/README.md",
   "aree": [
     {
@@ -474,7 +474,7 @@
           ]
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Colonnine DC tutte \"Non Attivo\"",
       "fonti": [
         "free_to_x"
       ],
@@ -482,7 +482,8 @@
         "nome:AEROPORTO MILANO MALPENSA"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "ftx:aeroporto-milano-malpensa-prime",
@@ -11966,7 +11967,7 @@
           ]
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Nessuna colonnina DC attiva nella PUN entro 600 m",
       "fonti": [
         "test"
       ],
@@ -11974,7 +11975,8 @@
         "TEST"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:way/303739446",
@@ -12283,7 +12285,7 @@
           "connettori": []
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Nessuna colonnina DC attiva nella PUN entro 600 m",
       "fonti": [
         "osm"
       ],
@@ -12291,7 +12293,8 @@
         "osm:way/915818719"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:way/1127491251",
@@ -12321,7 +12324,7 @@
           "connettori": []
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Colonnine DC tutte \"Non Attivo\"",
       "fonti": [
         "osm"
       ],
@@ -12329,7 +12332,8 @@
         "osm:way/1127491251"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:way/447971897",
@@ -12397,7 +12401,7 @@
           "connettori": []
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Nella PUN solo colonnine AC",
       "fonti": [
         "osm"
       ],
@@ -12405,7 +12409,8 @@
         "osm:way/303635846"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:way/881905488",
@@ -12442,7 +12447,7 @@
           "connettori": []
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Nella PUN solo colonnine AC",
       "fonti": [
         "osm"
       ],
@@ -12450,7 +12455,8 @@
         "osm:way/881905488"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:way/301723535",
@@ -12498,7 +12504,7 @@
           "connettori": []
         }
       ],
-      "verifica": "a 369 m dall'autostrada, lontana per un'area di servizio",
+      "verifica": "a 369 m dall'autostrada, lontana per un'area di servizio; PUN 2026-11-10: Colonnine DC tutte \"Non Attivo\"",
       "fonti": [
         "osm"
       ],
@@ -12506,7 +12512,8 @@
         "osm:way/301723535"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:way/333309475",
@@ -12534,7 +12541,7 @@
           "connettori": []
         }
       ],
-      "verifica": "a 280 m dall'autostrada, lontana per un'area di servizio",
+      "verifica": "a 280 m dall'autostrada, lontana per un'area di servizio; PUN 2026-11-10: Nessuna colonnina DC attiva nella PUN entro 600 m",
       "fonti": [
         "osm"
       ],
@@ -12542,7 +12549,8 @@
         "osm:way/333309475"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:way/814509912",
@@ -12657,7 +12665,7 @@
           "connettori": []
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Colonnine DC tutte \"Non Attivo\"",
       "fonti": [
         "osm"
       ],
@@ -12665,7 +12673,8 @@
         "osm:way/745957324"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:way/316205637",
@@ -12769,7 +12778,7 @@
           "connettori": []
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Nessuna colonnina DC attiva nella PUN entro 600 m",
       "fonti": [
         "osm"
       ],
@@ -12777,7 +12786,8 @@
         "osm:way/889965459"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:way/1445301459",
@@ -12807,7 +12817,7 @@
           "connettori": []
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Colonnine DC tutte \"Non Attivo\"",
       "fonti": [
         "osm"
       ],
@@ -12815,7 +12825,8 @@
         "osm:way/1445301459"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:way/694818253",
@@ -12855,7 +12866,7 @@
           "connettori": []
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Nella PUN solo colonnine AC",
       "fonti": [
         "osm"
       ],
@@ -12863,7 +12874,8 @@
         "osm:way/694818253"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:way/334110395",
@@ -12931,7 +12943,7 @@
           "connettori": []
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Nessuna colonnina DC attiva nella PUN entro 600 m",
       "fonti": [
         "osm"
       ],
@@ -12939,7 +12951,8 @@
         "osm:way/682158063"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:way/94505188",
@@ -13208,7 +13221,7 @@
           "connettori": []
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Colonnine DC tutte \"Non Attivo\"",
       "fonti": [
         "osm"
       ],
@@ -13216,7 +13229,8 @@
         "osm:way/1149254253"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:way/75359707",
@@ -13423,7 +13437,7 @@
       "tratta": null,
       "carreggiata": "SUD",
       "destinazione": null,
-      "accesso": "area_servizio",
+      "accesso": "uscita",
       "lat": 45.807494,
       "lon": 13.017895,
       "km": null,
@@ -13459,15 +13473,21 @@
           "connettori": []
         }
       ],
-      "verifica": "a 234 m dall'autostrada, lontana per un'area di servizio",
+      "verifica": "a 234 m dall'autostrada, lontana per un'area di servizio; PUN 2026-11-10: Nessuna colonnina DC attiva nella PUN entro 600 m",
       "fonti": [
         "osm"
       ],
       "codiciOrigine": [
         "osm:way/1427407258"
       ],
-      "correzioni": {},
-      "esclusa": false
+      "correzioni": {
+        "accesso": {
+          "da": "area_servizio",
+          "nota": "revisione del 2026-11-09"
+        }
+      },
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:way/737672136",
@@ -15050,7 +15070,7 @@
           ]
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Colonnine DC tutte \"Non Attivo\"",
       "fonti": [
         "osm"
       ],
@@ -15058,7 +15078,8 @@
         "osm:node/5130182854"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:node/5458446256",
@@ -15322,7 +15343,7 @@
           ]
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Colonnine DC tutte \"Non Attivo\"",
       "fonti": [
         "osm"
       ],
@@ -15330,7 +15351,8 @@
         "osm:node/6547741735"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:node/6683527641",
@@ -15444,7 +15466,7 @@
           ]
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Nella PUN solo colonnine AC",
       "fonti": [
         "osm"
       ],
@@ -15452,7 +15474,8 @@
         "osm:node/6840901673"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:node/6844584995",
@@ -16666,7 +16689,7 @@
           ]
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Nella PUN solo colonnine AC",
       "fonti": [
         "osm"
       ],
@@ -16674,7 +16697,8 @@
         "osm:node/9041397026"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:node/9041397029",
@@ -17949,7 +17973,7 @@
           ]
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Colonnine DC tutte \"Non Attivo\"",
       "fonti": [
         "osm"
       ],
@@ -17957,7 +17981,8 @@
         "osm:node/10698169780"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:node/10821222708",
@@ -17987,7 +18012,7 @@
           "connettori": []
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Colonnine DC tutte \"Non Attivo\"",
       "fonti": [
         "osm"
       ],
@@ -17995,7 +18020,8 @@
         "osm:node/10821222708"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:node/10998267270",
@@ -18309,7 +18335,7 @@
           ]
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Colonnine DC tutte \"Non Attivo\"",
       "fonti": [
         "osm"
       ],
@@ -18317,7 +18343,8 @@
         "osm:node/11520120932"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:node/11569013151",
@@ -18360,7 +18387,7 @@
           ]
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Colonnine DC tutte \"Non Attivo\"",
       "fonti": [
         "osm"
       ],
@@ -18368,7 +18395,8 @@
         "osm:node/11569013151"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:node/11582180206",
@@ -18411,7 +18439,7 @@
           ]
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Colonnine DC tutte \"Non Attivo\"",
       "fonti": [
         "osm"
       ],
@@ -18419,7 +18447,8 @@
         "osm:node/11582180206"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:node/11640524278",
@@ -18513,7 +18542,7 @@
           ]
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Nessuna colonnina DC attiva nella PUN entro 600 m",
       "fonti": [
         "osm"
       ],
@@ -18521,7 +18550,8 @@
         "osm:node/11762220227"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:node/11762220236",
@@ -23732,7 +23762,7 @@
           ]
         }
       ],
-      "verifica": null,
+      "verifica": "PUN 2026-11-10: Colonnine DC tutte \"Non Attivo\"",
       "fonti": [
         "osm"
       ],
@@ -23740,7 +23770,8 @@
         "osm:way/1408166685"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": false,
+      "verificaDal": "2026-11-10"
     },
     {
       "id": "osm:way/1422873778",
@@ -154698,7 +154729,7 @@
       "tratta": null,
       "carreggiata": "SUDEST",
       "destinazione": null,
-      "accesso": "area_servizio",
+      "accesso": "uscita",
       "lat": 48.314488,
       "lon": 14.299865,
       "km": null,
@@ -154910,7 +154941,12 @@
       "codiciOrigine": [
         "osm:way/1553988249"
       ],
-      "correzioni": {},
+      "correzioni": {
+        "accesso": {
+          "da": "area_servizio",
+          "nota": "revisione del 2026-11-09"
+        }
+      },
       "esclusa": false
     },
     {
@@ -172699,7 +172735,7 @@
         "osm:node/8946411348"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": true
     },
     {
       "id": "osm:node/8946798680",
@@ -172924,7 +172960,7 @@
         "osm:node/9954798811"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": true
     },
     {
       "id": "osm:node/10240022603",
@@ -172983,7 +173019,7 @@
         "osm:node/10240022603"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": true
     },
     {
       "id": "osm:node/10240053113",
@@ -173038,7 +173074,7 @@
         "osm:node/10240053113"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": true
     },
     {
       "id": "osm:node/10293191309",
@@ -173296,7 +173332,7 @@
         "osm:node/10576521087"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": true
     },
     {
       "id": "osm:node/10576745587",
@@ -173444,7 +173480,7 @@
         "osm:node/10576899903"
       ],
       "correzioni": {},
-      "esclusa": false
+      "esclusa": true
     },
     {
       "id": "osm:node/10777587274",

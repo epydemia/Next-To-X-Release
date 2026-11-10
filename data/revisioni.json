@@ -157,20 +157,42 @@
       "data": "2026-11-09"
     },
     "osm:node/10240053113": {
-      "esito": "uscita",
-      "data": "2026-11-09"
+      "esito": "esclusa",
+      "nota": "IONITY chiusa e rimossa nel 2025 insieme a Valdichiana (forumelettrico.it, thread 'Chiusura di alcune stazioni Ionity', 29/07/2025); OSM non aggiornato",
+      "data": "2026-11-10"
     },
     "osm:node/10293191309": {
       "esito": "uscita",
       "data": "2026-11-09"
     },
     "osm:node/10576521087": {
-      "esito": "uscita",
-      "data": "2026-11-09"
+      "esito": "esclusa",
+      "nota": "IONITY chiusa dal 2025 e colonnine rimosse (segnalazione utenti, forumelettrico.it 13/10/2026); OSM non aggiornato",
+      "data": "2026-11-10"
     },
     "osm:node/10942499433": {
       "esito": "uscita",
       "data": "2026-11-09"
+    },
+    "osm:node/8946411348": {
+      "esito": "esclusa",
+      "nota": "IONITY chiusa e rimossa nel 2025 insieme a Valdichiana (forumelettrico.it, thread 'Chiusura di alcune stazioni Ionity', 29/07/2025); OSM non aggiornato",
+      "data": "2026-11-10"
+    },
+    "osm:node/10576899903": {
+      "esito": "esclusa",
+      "nota": "IONITY chiusa e rimossa nel 2025 insieme a Valdichiana (forumelettrico.it, thread 'Chiusura di alcune stazioni Ionity', 29/07/2025); OSM non aggiornato",
+      "data": "2026-11-10"
+    },
+    "osm:node/9954798811": {
+      "esito": "esclusa",
+      "nota": "IONITY chiusa e rimossa nel 2025 insieme a Valdichiana (forumelettrico.it, thread 'Chiusura di alcune stazioni Ionity', 29/07/2025); OSM non aggiornato",
+      "data": "2026-11-10"
+    },
+    "osm:node/10240022603": {
+      "esito": "esclusa",
+      "nota": "doppione di IONITY Gioia Tauro (osm:node/10576036514, a 860 m): nessuna colonnina nella PUN entro 600 m",
+      "data": "2026-11-10"
     }
   }
 }

@@ -52,8 +52,13 @@ function esito(area) {
   return area.esclusa ? 'esclusa' : area.accesso;
 }
 
+/** Da verificare e non ancora deciso. Una verifica del crosscheck PUN (verificaDal) va decisa
+ *  di nuovo anche se l'area ha un esito, quando l'esito è più vecchio del crosscheck. */
 function inAttesa(area) {
-  return !!area.verifica && !revisioneDi(revisioni, area)?.revisione.esito;
+  if (!area.verifica) return false;
+  const revisione = revisioneDi(revisioni, area)?.revisione;
+  if (!revisione?.esito) return true;
+  return !!area.verificaDal && (revisione.data ?? '') < area.verificaDal;
 }
 
 /** Chiave sotto cui salvare una revisione: quella già usata per l'area, altrimenti il suo id. */
