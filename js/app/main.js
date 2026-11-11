@@ -201,6 +201,24 @@ function formattaDurata(ms) {
   return `${hh}:${mm}:${String(s % 60).padStart(2, '0')}`;
 }
 
+const CHIAVE_ULTIMA_APERTURA = 'ultimaApertura';
+const GIORNO_MS = 24 * 60 * 60 * 1000;
+
+/**
+ * Prima volta su questo telefono o ritorno (entro 7 giorni o dopo), per capire quanti tornano.
+ * La data dell'ultima apertura resta nel telefono: a GoatCounter va solo la categoria.
+ * Chi cancella i dati del browser o naviga in privato risulta "prima volta".
+ */
+function tipoApertura() {
+  let precedente = null;
+  try {
+    precedente = Number(localStorage.getItem(CHIAVE_ULTIMA_APERTURA)) || null;
+    localStorage.setItem(CHIAVE_ULTIMA_APERTURA, String(Date.now()));
+  } catch { /* non salvabile (es. navigazione privata) */ }
+  if (!precedente) return 'apertura/prima-volta';
+  return Date.now() - precedente <= 7 * GIORNO_MS ? 'apertura/ritorno-entro-7-giorni' : 'apertura/ritorno-dopo-7-giorni';
+}
+
 window.addEventListener('load', async () => {
   // Senza ?debug=true si usa sempre il GPS, anche se la simulazione era rimasta attiva
   const simulazione = MODALITA_DEBUG && localStorage.getItem(CHIAVE_SIMULAZIONE) === '1';
@@ -215,6 +233,7 @@ window.addEventListener('load', async () => {
   // Aperta dall'icona sulla schermata Home (app installata) o nel browser
   const installata = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
   contaEvento(installata ? 'apertura/schermata-home' : 'apertura/browser');
+  contaEvento(tipoApertura());
   collegaOrientamentoBarra(aggiornaDimensioniMappa);
   seguiAltezzaPannello();
 
