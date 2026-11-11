@@ -1066,3 +1066,41 @@ body.pagina-info { height: auto; min-height: 100dvh; display: block; overflow: a
 .pagina-guida footer { margin-top: 32px; color: var(--muted); font-size: .8em; display: flex; flex-direction: column; gap: 8px; }
 .pagina-guida footer p { font-size: 1em; }
 .pagina-guida footer .lingue { margin-top: 8px; font-size: 1.05em; }
+
+/* ── Segnalazioni (js/app/segnalazione.js) ──────── */
+#segnala {
+  position: absolute;
+  /* sotto i tasti dello zoom: a destra c'è la barra delle distanze */
+  top: 84px;
+  left: 10px;
+  z-index: 1001;
+  padding: 6px 12px;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 999px;
+  background: rgba(1, 4, 9, .7);
+  color: white;
+  font: inherit;
+  font-size: .85em;
+  font-weight: 600;
+  cursor: pointer;
+}
+#segnala[hidden] { display: none; }
+#segnala-stazione { color: var(--text); font-weight: 600; }
+#segnala-scelte { display: flex; flex-direction: column; gap: 2px; margin-bottom: 12px; }
+.segnala-scelta { display: flex; align-items: center; gap: 8px; padding: 7px 4px; font-size: .9em; border-bottom: 1px solid var(--border); cursor: pointer; }
+.segnala-scelta input, .segnala-posizione input { accent-color: var(--blue); width: 18px; height: 18px; flex-shrink: 0; }
+#segnala-nota {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: .9em;
+  resize: vertical;
+  margin-bottom: 10px;
+}
+.segnala-posizione { display: flex; align-items: center; gap: 8px; font-size: .9em; margin-bottom: 10px; cursor: pointer; }
+.finestra-primario:disabled { opacity: .45; cursor: default; }

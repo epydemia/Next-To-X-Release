@@ -21,7 +21,9 @@ import { RAGGIO_STAZIONI_KM } from '../config.js';
  */
 function versoStazione(area, lat, lon) {
   return {
+    id: area.id,
     nome: area.nome,
+    codiceAutostrada: area.autostrada ?? null,
     strada: nomeStrada(area) || area.indirizzo || t('stradaSconosciuta'),
     direzione: area.destinazione ?? '',
     operatore: (area.operatori ?? []).join(', '),

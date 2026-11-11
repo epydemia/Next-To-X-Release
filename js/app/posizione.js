@@ -17,6 +17,7 @@ import {
  */
 const stato = {
   coords: null,
+  velocita: null,
   heading: 0,
   headingStimato: true,
   strada: '',
@@ -108,6 +109,8 @@ export async function motivoSenzaPosizione() {
 /** gps: heading, speed e accuracy del dispositivo, se ci sono (la simulazione non li ha). */
 function nuovaPosizione(lat, lon, gps = {}) {
   stato.coords = { lat, lon };
+  // m/s dal GPS del dispositivo, null se non la dà (o in simulazione)
+  stato.velocita = Number.isFinite(gps.speed) ? gps.speed : null;
   aggiornaHeading(lat, lon, gps);
   if (!riconosciAutostrada(lat, lon)) aggiornaStradaSeNecessario(lat, lon);
   onAggiornamento(stato);

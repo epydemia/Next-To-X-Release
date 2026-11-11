@@ -12,6 +12,7 @@ import { attendiConsensoPosizione, mostraAvvisoPosizione, segnaPosizioneConcessa
 import { collegaOperatori, impostaAreeOperatori, passaFiltroOperatori, filtroOperatoriAttivo } from './operatori.js';
 import { t, traduciPagina } from '../i18n.js';
 import { VERSIONE_APP } from '../versione.js';
+import { aggiornaSegnalazione, collegaSegnalazione } from './segnalazione.js';
 import { ATTESA_GPS_MS, CENTRO_ITALIA } from '../config.js';
 import {
   contaPagina, contaEvento, slugOperatori, statisticheAttive, impostaStatistiche, segnaSimulazione,
@@ -109,6 +110,8 @@ function aggiorna(stato) {
   aggiornaPannelli(stazioni, { ripiego });
   const prossima = stazioni.find(s => s.isNearest);
   if (prossima) contaProssima(prossima);
+  // Da fermi vicino a una stazione (qualsiasi, anche filtrata o alle spalle) o in autostrada
+  aggiornaSegnalazione({ ...stato.coords, velocita: stato.velocita }, tutteLeStazioni(aree, stato.coords), Boolean(stato.codiceAutostrada));
 }
 
 /** In fondo alle impostazioni: versione dell'app (tag della release, "sviluppo" in locale). */
@@ -225,6 +228,7 @@ window.addEventListener('load', async () => {
 
   // I controlli vanno collegati prima di ogni await, così rispondono anche senza GPS
   collegaPannelli();
+  collegaSegnalazione();
   collegaImpostazioni(simulazione);
   mostraVersioneApp();
   creaMappa('map');
