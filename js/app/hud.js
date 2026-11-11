@@ -9,7 +9,18 @@ import { filtroOperatoriAttivo, operatoreScelto, testoFiltro, apriOperatori } fr
 export function collegaPannelli() {
   const opzioni = document.getElementById('options-panel');
   document.getElementById('options-toggle').addEventListener('click', () => opzioni.classList.toggle('open'));
-  document.getElementById('options-close').addEventListener('click', () => opzioni.classList.remove('open'));
+  const chiudi = document.getElementById('options-close');
+  chiudi.addEventListener('click', () => opzioni.classList.remove('open'));
+  // Un tocco fuori dal pannello aperto lo chiude (come ✕) e non arriva a ciò che c'è sotto,
+  // così non si apre per sbaglio una stazione o altro. Il pulsante ⚙ e le finestre
+  // (avvertenze, permesso di posizione) fanno da sé.
+  document.addEventListener('click', e => {
+    if (!opzioni.classList.contains('open')) return;
+    if (e.target.closest('#options-panel, #options-toggle, #avvertenze, .finestra')) return;
+    e.stopPropagation();
+    e.preventDefault();
+    chiudi.click();
+  }, true);
 
   const lista = document.getElementById('stations-list');
   const chevron = document.getElementById('stations-chevron');

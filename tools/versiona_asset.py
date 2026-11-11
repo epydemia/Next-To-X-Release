@@ -24,8 +24,11 @@ def versiona(versione, radice=RADICE):
         raise ValueError(f"versione non valida: {versione!r}")
     query = f"?v={versione}"
     modificati = 0
-    # Anche le pagine per lingua (de/, fr/, en/) generate da tools/genera_lingue.mjs
-    for html in [*radice.glob("*.html"), *radice.glob("*/*.html")]:
+    # Anche le pagine generate da tools/genera_lingue.mjs (de/, fr/, en/) e da
+    # tools/genera_guide.mjs (autostrada/, de/autobahn/...)
+    for html in radice.rglob("*.html"):
+        if ".git" in html.relative_to(radice).parts:
+            continue
         modificati += riscrivi(html, lambda t: LINK_PAGINE.sub(lambda m: f'{m[1]}{m[2]}{query}"', t))
     for modulo in (radice / "js").rglob("*.js"):
         modificati += riscrivi(modulo, lambda t: IMPORT_RELATIVI.sub(lambda m: f"{m[1]}{m[2]}{m[3]}{query}{m[2]}", t))

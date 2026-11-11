@@ -1049,3 +1049,20 @@ body.pagina-info { height: auto; min-height: 100dvh; display: block; overflow: a
 .pagina-info .faq dd { font-size: .92em; color: var(--muted); margin: 2px 0 0; }
 .pagina-info .lingue { margin-top: 32px; font-size: .85em; }
 .pagina-info .aggiornato { margin-top: 32px; color: var(--muted); font-size: .8em; }
+
+/* ── Guide e pagine per autostrada (tools/genera_guide.mjs) ── */
+.pagina-guida h1 { margin-bottom: 4px; }
+.pagina-guida .percorso { color: var(--muted); font-size: .9em; }
+.pagina-guida .intro { margin-top: 12px; font-size: 1em; }
+.pagina-guida ul.strade, .pagina-guida ul.aree { list-style: none; padding-left: 0; }
+.pagina-guida ul.strade span { color: var(--muted); font-size: .9em; }
+.pagina-guida ul.aree { gap: 0; }
+.pagina-guida ul.aree li { display: flex; flex-direction: column; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.pagina-guida ul.aree li span { color: var(--muted); font-size: .9em; }
+.pagina-guida ul.aree li.uscita strong { color: var(--amber); }
+.pagina-guida .cta { margin-top: 28px; padding: 4px 16px 16px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+.pagina-guida .cta h2 { border-bottom: 0; margin-top: 16px; }
+.pagina-guida .bottone { display: inline-block; padding: 10px 16px; border-radius: 10px; background: var(--blue); color: #fff; font-weight: 600; text-decoration: none; }
+.pagina-guida footer { margin-top: 32px; color: var(--muted); font-size: .8em; display: flex; flex-direction: column; gap: 8px; }
+.pagina-guida footer p { font-size: 1em; }
+.pagina-guida footer .lingue { margin-top: 8px; font-size: 1.05em; }

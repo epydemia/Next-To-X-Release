@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Pagine da indicizzare: le italiane e le versioni per lingua (de/, fr/, en/, generate da
      tools/genera_lingue.mjs), collegate con hreflang. stazioni.html e autostrade.html restano
-     fuori: sono in noindex. -->
+     fuori: sono in noindex. Le guide per paese e per autostrada le aggiunge
+     tools/genera_guide.mjs nella copia pubblicata. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nexttox.com/</loc>
@@ -66,5 +67,1509 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/info.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/info.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/info.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/italia.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/italia.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/italien.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/italie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/italy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/italia.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/italien.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/italia.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/italien.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/italie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/italy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/italia.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/italie.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/italia.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/italien.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/italie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/italy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/italia.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/italy.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/italia.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/italien.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/italie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/italy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/italia.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/germania.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/germania.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/deutschland.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/allemagne.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/germany.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/germania.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/deutschland.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/germania.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/deutschland.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/allemagne.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/germany.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/germania.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/allemagne.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/germania.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/deutschland.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/allemagne.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/germany.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/germania.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/germany.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/germania.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/deutschland.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/allemagne.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/germany.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/germania.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/austria.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/austria.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/oesterreich.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/autriche.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/austria.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/austria.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/oesterreich.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/austria.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/oesterreich.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/autriche.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/austria.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/austria.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/autriche.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/austria.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/oesterreich.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/autriche.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/austria.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/austria.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/austria.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/austria.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/oesterreich.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/autriche.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/austria.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/austria.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/svizzera.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/svizzera.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/schweiz.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/suisse.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/switzerland.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/svizzera.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/schweiz.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/svizzera.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/schweiz.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/suisse.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/switzerland.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/svizzera.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/suisse.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/svizzera.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/schweiz.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/suisse.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/switzerland.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/svizzera.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/switzerland.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/svizzera.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/schweiz.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/suisse.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/switzerland.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/svizzera.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/it-a1.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a1.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a1.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a1.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a1.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a1.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/it-a1.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a1.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a1.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a1.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a1.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a1.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/it-a1.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a1.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a1.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a1.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a1.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a1.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/it-a1.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a1.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a1.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a1.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a1.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a1.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/it-a2.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a2.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a2.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a2.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a2.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a2.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/it-a2.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a2.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a2.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a2.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a2.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a2.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/it-a2.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a2.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a2.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a2.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a2.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a2.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/it-a2.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a2.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a2.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a2.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a2.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a2.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/it-a4.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a4.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a4.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a4.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a4.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a4.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/it-a4.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a4.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a4.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a4.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a4.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a4.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/it-a4.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a4.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a4.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a4.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a4.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a4.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/it-a4.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a4.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a4.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a4.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a4.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a4.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/it-a5.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a5.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a5.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a5.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a5.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a5.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/it-a5.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a5.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a5.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a5.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a5.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a5.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/it-a5.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a5.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a5.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a5.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a5.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a5.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/it-a5.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a5.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a5.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a5.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a5.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a5.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/it-a7.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a7.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a7.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a7.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a7.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a7.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/it-a7.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a7.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a7.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a7.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a7.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a7.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/it-a7.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a7.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a7.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a7.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a7.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a7.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/it-a7.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a7.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a7.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a7.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a7.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a7.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/it-a8.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a8.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a8.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a8.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a8.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a8.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/it-a8.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a8.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a8.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a8.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a8.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a8.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/it-a8.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a8.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a8.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a8.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a8.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a8.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/it-a8.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a8.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a8.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a8.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a8.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a8.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/it-a10.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a10.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a10.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a10.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a10.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a10.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/it-a10.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a10.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a10.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a10.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a10.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a10.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/it-a10.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a10.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a10.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a10.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a10.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a10.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/it-a10.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a10.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a10.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a10.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a10.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a10.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/it-a12.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a12.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a12.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a12.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a12.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a12.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/it-a12.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a12.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a12.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a12.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a12.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a12.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/it-a12.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a12.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a12.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a12.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a12.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a12.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/it-a12.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a12.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a12.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a12.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a12.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a12.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/it-a13.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a13.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a13.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a13.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a13.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a13.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/it-a13.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a13.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a13.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a13.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a13.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a13.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/it-a13.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a13.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a13.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a13.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a13.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a13.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/it-a13.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a13.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a13.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a13.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a13.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a13.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/it-a14.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a14.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a14.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a14.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a14.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a14.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/it-a14.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a14.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a14.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a14.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a14.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a14.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/it-a14.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a14.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a14.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a14.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a14.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a14.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/it-a14.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a14.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a14.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a14.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a14.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a14.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/it-a16.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a16.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a16.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a16.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a16.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a16.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/it-a16.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a16.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a16.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a16.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a16.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a16.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/it-a16.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a16.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a16.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a16.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a16.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a16.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/it-a16.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a16.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a16.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a16.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a16.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a16.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/it-a22.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a22.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a22.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a22.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a22.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a22.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/it-a22.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a22.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a22.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a22.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a22.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a22.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/it-a22.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a22.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a22.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a22.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a22.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a22.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/it-a22.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a22.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a22.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a22.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a22.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a22.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/it-a23.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a23.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a23.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a23.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a23.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a23.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/it-a23.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a23.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a23.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a23.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a23.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a23.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/it-a23.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a23.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a23.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a23.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a23.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a23.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/it-a23.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a23.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a23.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a23.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a23.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a23.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/it-a26.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a26.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a26.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a26.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a26.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a26.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/it-a26.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a26.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a26.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a26.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a26.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a26.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/it-a26.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a26.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a26.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a26.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a26.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a26.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/it-a26.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/it-a26.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/it-a26.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/it-a26.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/it-a26.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/it-a26.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/de-a1.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a1.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a1.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a1.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a1.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a1.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/de-a1.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a1.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a1.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a1.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a1.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a1.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/de-a1.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a1.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a1.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a1.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a1.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a1.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/de-a1.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a1.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a1.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a1.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a1.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a1.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/de-a2.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a2.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a2.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a2.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a2.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a2.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/de-a2.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a2.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a2.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a2.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a2.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a2.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/de-a2.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a2.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a2.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a2.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a2.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a2.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/de-a2.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a2.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a2.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a2.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a2.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a2.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/de-a3.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a3.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a3.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a3.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a3.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a3.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/de-a3.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a3.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a3.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a3.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a3.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a3.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/de-a3.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a3.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a3.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a3.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a3.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a3.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/de-a3.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a3.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a3.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a3.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a3.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a3.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/de-a4.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a4.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a4.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a4.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a4.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a4.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/de-a4.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a4.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a4.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a4.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a4.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a4.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/de-a4.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a4.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a4.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a4.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a4.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a4.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/de-a4.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a4.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a4.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a4.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a4.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a4.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/de-a5.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a5.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a5.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a5.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a5.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a5.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/de-a5.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a5.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a5.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a5.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a5.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a5.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/de-a5.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a5.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a5.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a5.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a5.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a5.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/de-a5.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a5.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a5.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a5.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a5.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a5.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/de-a6.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a6.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a6.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a6.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a6.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a6.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/de-a6.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a6.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a6.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a6.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a6.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a6.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/de-a6.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a6.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a6.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a6.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a6.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a6.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/de-a6.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a6.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a6.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a6.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a6.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a6.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/de-a7.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a7.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a7.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a7.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a7.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a7.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/de-a7.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a7.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a7.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a7.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a7.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a7.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/de-a7.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a7.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a7.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a7.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a7.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a7.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/de-a7.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a7.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a7.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a7.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a7.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a7.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/de-a8.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a8.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a8.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a8.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a8.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a8.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/de-a8.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a8.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a8.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a8.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a8.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a8.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/de-a8.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a8.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a8.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a8.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a8.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a8.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/de-a8.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a8.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a8.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a8.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a8.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a8.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/de-a9.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a9.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a9.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a9.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a9.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a9.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/de-a9.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a9.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a9.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a9.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a9.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a9.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/de-a9.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a9.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a9.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a9.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a9.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a9.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/de-a9.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a9.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a9.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a9.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a9.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a9.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/de-a61.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a61.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a61.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a61.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a61.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a61.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/de-a61.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a61.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a61.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a61.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a61.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a61.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/de-a61.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a61.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a61.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a61.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a61.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a61.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/de-a61.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a61.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a61.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a61.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a61.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a61.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/de-a93.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a93.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a93.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a93.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a93.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a93.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/de-a93.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a93.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a93.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a93.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a93.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a93.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/de-a93.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a93.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a93.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a93.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a93.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a93.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/de-a93.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a93.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a93.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a93.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a93.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a93.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/de-a96.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a96.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a96.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a96.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a96.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a96.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/de-a96.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a96.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a96.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a96.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a96.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a96.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/de-a96.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a96.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a96.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a96.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a96.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a96.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/de-a96.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/de-a96.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/de-a96.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/de-a96.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/de-a96.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/de-a96.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/at-a1.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a1.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a1.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a1.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a1.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a1.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/at-a1.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a1.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a1.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a1.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a1.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a1.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/at-a1.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a1.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a1.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a1.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a1.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a1.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/at-a1.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a1.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a1.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a1.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a1.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a1.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/at-a2.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a2.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a2.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a2.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a2.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a2.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/at-a2.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a2.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a2.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a2.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a2.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a2.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/at-a2.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a2.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a2.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a2.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a2.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a2.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/at-a2.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a2.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a2.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a2.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a2.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a2.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/at-a4.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a4.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a4.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a4.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a4.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a4.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/at-a4.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a4.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a4.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a4.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a4.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a4.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/at-a4.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a4.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a4.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a4.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a4.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a4.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/at-a4.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a4.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a4.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a4.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a4.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a4.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/at-a8.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a8.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a8.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a8.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a8.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a8.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/at-a8.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a8.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a8.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a8.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a8.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a8.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/at-a8.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a8.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a8.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a8.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a8.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a8.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/at-a8.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a8.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a8.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a8.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a8.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a8.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/at-a9.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a9.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a9.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a9.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a9.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a9.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/at-a9.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a9.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a9.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a9.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a9.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a9.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/at-a9.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a9.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a9.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a9.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a9.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a9.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/at-a9.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a9.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a9.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a9.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a9.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a9.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/at-a10.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a10.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a10.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a10.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a10.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a10.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/at-a10.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a10.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a10.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a10.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a10.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a10.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/at-a10.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a10.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a10.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a10.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a10.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a10.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/at-a10.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a10.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a10.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a10.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a10.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a10.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/at-a12.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a12.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a12.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a12.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a12.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a12.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/at-a12.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a12.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a12.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a12.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a12.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a12.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/at-a12.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a12.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a12.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a12.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a12.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a12.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/at-a12.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a12.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a12.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a12.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a12.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a12.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/at-a13.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a13.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a13.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a13.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a13.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a13.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/at-a13.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a13.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a13.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a13.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a13.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a13.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/at-a13.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a13.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a13.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a13.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a13.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a13.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/at-a13.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a13.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a13.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a13.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a13.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a13.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/at-a14.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a14.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a14.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a14.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a14.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a14.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/at-a14.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a14.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a14.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a14.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a14.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a14.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/at-a14.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a14.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a14.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a14.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a14.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a14.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/at-a14.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/at-a14.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/at-a14.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/at-a14.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/at-a14.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/at-a14.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/ch-a1.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a1.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a1.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a1.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a1.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a1.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/ch-a1.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a1.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a1.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a1.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a1.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a1.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/ch-a1.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a1.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a1.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a1.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a1.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a1.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/ch-a1.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a1.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a1.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a1.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a1.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a1.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/ch-a2.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a2.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a2.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a2.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a2.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a2.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/ch-a2.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a2.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a2.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a2.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a2.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a2.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/ch-a2.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a2.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a2.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a2.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a2.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a2.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/ch-a2.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a2.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a2.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a2.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a2.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a2.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/ch-a3.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a3.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a3.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a3.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a3.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a3.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/ch-a3.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a3.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a3.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a3.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a3.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a3.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/ch-a3.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a3.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a3.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a3.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a3.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a3.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/ch-a3.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a3.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a3.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a3.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a3.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a3.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/ch-a4.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a4.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a4.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a4.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a4.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a4.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/ch-a4.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a4.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a4.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a4.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a4.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a4.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/ch-a4.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a4.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a4.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a4.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a4.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a4.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/ch-a4.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a4.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a4.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a4.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a4.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a4.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/ch-a9.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a9.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a9.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a9.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a9.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a9.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/ch-a9.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a9.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a9.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a9.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a9.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a9.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/ch-a9.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a9.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a9.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a9.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a9.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a9.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/ch-a9.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a9.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a9.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a9.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a9.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a9.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/ch-a12.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a12.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a12.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a12.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a12.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a12.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/ch-a12.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a12.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a12.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a12.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a12.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a12.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/ch-a12.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a12.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a12.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a12.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a12.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a12.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/ch-a12.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a12.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a12.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a12.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a12.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a12.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/autostrada/ch-a13.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a13.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a13.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a13.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a13.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a13.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/de/autobahn/ch-a13.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a13.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a13.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a13.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a13.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a13.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/fr/autoroute/ch-a13.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a13.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a13.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a13.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a13.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a13.html" />
+  </url>
+  <url>
+    <loc>https://nexttox.com/en/motorway/ch-a13.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://nexttox.com/autostrada/ch-a13.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://nexttox.com/de/autobahn/ch-a13.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexttox.com/fr/autoroute/ch-a13.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexttox.com/en/motorway/ch-a13.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexttox.com/autostrada/ch-a13.html" />
   </url>
 </urlset>

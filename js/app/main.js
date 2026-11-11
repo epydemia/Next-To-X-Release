@@ -19,6 +19,8 @@ import {
 
 // Subito, prima di ogni attesa: i testi della pagina nella lingua del browser
 traduciPagina();
+// Le guide per autostrada nella lingua dell'interfaccia (tools/genera_guide.mjs)
+document.getElementById('link-guide').href = t('cartellaGuide');
 
 const CHIAVE_SIMULAZIONE = 'debugPosizione';
 // La simulazione è uno strumento di sviluppo: compare solo aprendo la pagina con ?debug=true
