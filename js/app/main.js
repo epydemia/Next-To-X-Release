@@ -205,21 +205,56 @@ function formattaDurata(ms) {
 }
 
 const CHIAVE_ULTIMA_APERTURA = 'ultimaApertura';
+const CHIAVE_PRIMA_APERTURA = 'primaApertura';
+const CHIAVE_GIORNI_USO = 'giorniUso';
 const GIORNO_MS = 24 * 60 * 60 * 1000;
 
 /**
  * Prima volta su questo telefono o ritorno (entro 7 giorni o dopo), per capire quanti tornano.
  * La data dell'ultima apertura resta nel telefono: a GoatCounter va solo la categoria.
  * Chi cancella i dati del browser o naviga in privato risulta "prima volta".
+ * Alla prima apertura di ogni giorno anche la fedeltà (eventiFedelta).
  */
-function tipoApertura() {
+function eventiApertura(adesso = Date.now()) {
   let precedente = null;
+  let eventi = [];
   try {
     precedente = Number(localStorage.getItem(CHIAVE_ULTIMA_APERTURA)) || null;
-    localStorage.setItem(CHIAVE_ULTIMA_APERTURA, String(Date.now()));
+    eventi = eventiFedelta(precedente, adesso);
+    localStorage.setItem(CHIAVE_ULTIMA_APERTURA, String(adesso));
   } catch { /* non salvabile (es. navigazione privata) */ }
-  if (!precedente) return 'apertura/prima-volta';
-  return Date.now() - precedente <= 7 * GIORNO_MS ? 'apertura/ritorno-entro-7-giorni' : 'apertura/ritorno-dopo-7-giorni';
+  const tipo = !precedente ? 'apertura/prima-volta'
+    : adesso - precedente <= 7 * GIORNO_MS ? 'apertura/ritorno-entro-7-giorni' : 'apertura/ritorno-dopo-7-giorni';
+  return [tipo, ...eventi];
+}
+
+/** Giorno di calendario locale, come numero (giorni dal 1970) */
+function giorno(ms) {
+  const d = new Date(ms);
+  return Math.round(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / GIORNO_MS);
+}
+
+/**
+ * Fedeltà, una volta al giorno per telefono (quindi i conteggi sono di telefoni, non di aperture):
+ * in quanti giorni diversi è stata usata l'app (fedelta/giorni-uso/…) e quanti giorni sono
+ * passati dalla prima apertura (fedelta/da-prima/…). Nel telefono restano la data della prima
+ * apertura e il numero di giorni d'uso; a GoatCounter va solo la fascia.
+ * Sui telefoni che avevano già l'app prima di questo conteggio la prima apertura è sconosciuta:
+ * vale la data dell'ultima apertura salvata, quindi le loro fasce sono per difetto.
+ */
+function eventiFedelta(precedente, adesso) {
+  const oggi = giorno(adesso);
+  if (precedente && giorno(precedente) === oggi) return [];
+  const prima = Number(localStorage.getItem(CHIAVE_PRIMA_APERTURA)) || precedente || adesso;
+  // Senza il contatore, chi aveva già aperto l'app ha almeno un giorno d'uso prima di oggi
+  const giorni = (Number(localStorage.getItem(CHIAVE_GIORNI_USO)) || (precedente ? 1 : 0)) + 1;
+  localStorage.setItem(CHIAVE_PRIMA_APERTURA, String(prima));
+  localStorage.setItem(CHIAVE_GIORNI_USO, String(giorni));
+  const daPrima = oggi - giorno(prima);
+  return [
+    `fedelta/giorni-uso/${giorni >= 11 ? '11-o-piu' : giorni >= 6 ? '6-10' : giorni >= 3 ? '3-5' : giorni}`,
+    `fedelta/da-prima/${daPrima === 0 ? 'oggi' : daPrima <= 7 ? '1-7-giorni' : daPrima <= 30 ? '8-30-giorni' : 'oltre-30-giorni'}`,
+  ];
 }
 
 window.addEventListener('load', async () => {
@@ -237,7 +272,7 @@ window.addEventListener('load', async () => {
   // Aperta dall'icona sulla schermata Home (app installata) o nel browser
   const installata = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
   contaEvento(installata ? 'apertura/schermata-home' : 'apertura/browser');
-  contaEvento(tipoApertura());
+  for (const evento of eventiApertura()) contaEvento(evento);
   collegaOrientamentoBarra(aggiornaDimensioniMappa);
   seguiAltezzaPannello();
 

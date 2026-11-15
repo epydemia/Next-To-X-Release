@@ -6,11 +6,18 @@ import { t, km, nomeRamo } from '../i18n.js';
 let map = null;
 let markerUtente = null;
 let posizioneUtente = null;
-const livelloStazioni = L.layerGroup();
-const livelloAutostrada = L.layerGroup();
+// Se Leaflet non si carica la mappa resta vuota, ma il resto dell'app (pannello, barra
+// distanze, elenco) deve funzionare: senza L le funzioni qui sotto non fanno nulla
+const conLeaflet = typeof L !== 'undefined';
+const livelloStazioni = conLeaflet ? L.layerGroup() : null;
+const livelloAutostrada = conLeaflet ? L.layerGroup() : null;
 let autostradaEvidenziata = null;
 
 export function creaMappa(idElemento) {
+  if (!conLeaflet) {
+    console.warn('Leaflet non disponibile: mappa disattivata');
+    return;
+  }
   map = L.map(idElemento).setView([CENTRO_ITALIA.lat, CENTRO_ITALIA.lon], ZOOM_GUIDA);
   // Prima di aggiungere livelli: spostare il controllo lo ricrea e conterebbe due volte i
   // crediti già presenti, che poi non si potrebbero più sostituire
@@ -48,11 +55,13 @@ export function aggiornaDimensioniMappa() {
 }
 
 export function mostraPanoramicaItalia() {
+  if (!map) return;
   map.setView([CENTRO_ITALIA.lat, CENTRO_ITALIA.lon], 6);
 }
 
 /** Sposta il marker utente, ruota la freccia secondo l'heading e centra la mappa. */
 export function aggiornaUtente({ lat, lon }, heading) {
+  if (!map) return;
   // Se la mappa è ancora sulla panoramica (es. GPS arrivato in ritardo) torna allo zoom di guida
   const zoom = posizioneUtente ? map.getZoom() : ZOOM_GUIDA;
   posizioneUtente = { lat, lon };
@@ -80,7 +89,7 @@ export function aggiornaUtente({ lat, lon }, heading) {
  * nessuna). Si ridisegna solo quando l'autostrada cambia.
  */
 export function evidenziaAutostrada(indice) {
-  if (indice === autostradaEvidenziata) return;
+  if (!map || indice === autostradaEvidenziata) return;
   autostradaEvidenziata = indice;
   livelloAutostrada.clearLayers();
   if (indice == null) return;
@@ -101,6 +110,7 @@ const segnaposto = new Map();
  * fumetto aperto. Il testo del fumetto si compone quando lo si apre, con i dati più recenti.
  */
 export function disegnaStazioni(stazioni) {
+  if (!map) return;
   const presenti = new Set();
   for (const s of stazioni) {
     const chiave = s.id ?? `${s.lat},${s.lon}`;

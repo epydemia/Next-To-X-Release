@@ -34,6 +34,7 @@ Every push to `main` is published on GitHub Pages by `.github/workflows/static.y
 ## License
 
 - **App code**: MIT, see [`LICENSE`](LICENSE).
+- **Leaflet** (in `js/vendor/leaflet/`): BSD-2-Clause, see [`js/vendor/leaflet/LICENSE`](js/vendor/leaflet/LICENSE).
 - **Data** in `data/`: see [`data/README.md`](data/README.md). Parts derived from OpenStreetMap are © OpenStreetMap contributors, ODbL 1.0.
 
 Next-To-X is an independent project, not affiliated with Free To X, Autostrade per l'Italia, Autostrada del Brennero or any charging operator.
