@@ -1,6 +1,6 @@
 import { caricaAree, versioneDati } from '../core/dati.js';
 import { caricaReteAutostradale, preparaBivi } from '../core/reteAutostradale.js';
-import { filtraStazioni, tutteLeStazioni } from '../core/filtroStazioni.js';
+import { filtraStazioni, tutteLeStazioni, stazioniEntro } from '../core/filtroStazioni.js';
 import { avviaPosizione, attendiPrimaPosizione, getStato, motivoSenzaPosizione } from './posizione.js';
 import { caricaTracciaCSV, osservaProgresso, vaiAlPunto } from './simulazione.js';
 import { creaMappa, aggiornaUtente, disegnaStazioni, evidenziaAutostrada, mostraPanoramicaItalia, aggiornaDimensioniMappa } from './mappa.js';
@@ -12,7 +12,7 @@ import { attendiConsensoPosizione, mostraAvvisoPosizione, segnaPosizioneConcessa
 import { collegaOperatori, impostaAreeOperatori, passaFiltroOperatori, filtroOperatoriAttivo } from './operatori.js';
 import { t, traduciPagina } from '../i18n.js';
 import { VERSIONE_APP } from '../versione.js';
-import { aggiornaSegnalazione, collegaSegnalazione } from './segnalazione.js';
+import { aggiornaSegnalazione, collegaSegnalazione, RAGGIO_SEGNALAZIONE_KM } from './segnalazione.js';
 import { ATTESA_GPS_MS, CENTRO_ITALIA } from '../config.js';
 import {
   contaPagina, contaEvento, slugOperatori, statisticheAttive, impostaStatistiche, segnaSimulazione,
@@ -111,7 +111,7 @@ function aggiorna(stato) {
   const prossima = stazioni.find(s => s.isNearest);
   if (prossima) contaProssima(prossima);
   // Da fermi vicino a una stazione (qualsiasi, anche filtrata o alle spalle) o in autostrada
-  aggiornaSegnalazione({ ...stato.coords, velocita: stato.velocita }, tutteLeStazioni(aree, stato.coords), Boolean(stato.codiceAutostrada));
+  aggiornaSegnalazione({ ...stato.coords, velocita: stato.velocita }, stazioniEntro(aree, stato.coords, RAGGIO_SEGNALAZIONE_KM), Boolean(stato.codiceAutostrada));
 }
 
 /** In fondo alle impostazioni: versione dell'app (tag della release, "sviluppo" in locale). */

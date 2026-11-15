@@ -90,17 +90,64 @@ export function evidenziaAutostrada(indice) {
   L.polyline(tracciati, { color: '#3b9eff', weight: 4, opacity: 0.9, interactive: false, lineCap: 'round', lineJoin: 'round' }).addTo(livelloAutostrada);
 }
 
+// Segnaposto delle stazioni sulla mappa, per id: { marker, classe, stazione }
+const segnaposto = new Map();
+
+/**
+ * Aggiorna i segnaposto delle stazioni. A ogni posizione GPS cambiano poche cose, quindi si
+ * tocca solo quello che serve: si aggiungono le stazioni nuove, si tolgono quelle uscite
+ * dall'elenco e si cambia l'icona solo a chi cambia stato (prossima, davanti, dietro…).
+ * Ricrearli tutti ogni secondo costava quasi tutto il tempo di un aggiornamento e chiudeva il
+ * fumetto aperto. Il testo del fumetto si compone quando lo si apre, con i dati più recenti.
+ */
 export function disegnaStazioni(stazioni) {
-  livelloStazioni.clearLayers();
-  stazioni.forEach(s => {
+  const presenti = new Set();
+  for (const s of stazioni) {
+    const chiave = s.id ?? `${s.lat},${s.lon}`;
+    presenti.add(chiave);
     const [classe, lato] = stileMarker(s);
-    const icon = L.divIcon({
-      className: 'custom-marker',
-      html: `<div class="${classe}"></div>`,
-      iconSize: [lato, lato],
-      iconAnchor: [lato / 2, lato / 2],
-    });
-    L.marker([s.lat, s.lon], { icon }).bindPopup(testoPopup(s)).addTo(livelloStazioni);
+    const voce = segnaposto.get(chiave);
+    if (!voce) {
+      const nuova = { marker: L.marker([s.lat, s.lon], { icon: icona(classe, lato), zIndexOffset: sopra(s) }), classe, stazione: s };
+      nuova.marker.bindPopup(() => testoPopup(nuova.stazione)).addTo(livelloStazioni);
+      segnaposto.set(chiave, nuova);
+      continue;
+    }
+    voce.stazione = s;
+    if (voce.classe !== classe) {
+      voce.marker.setIcon(icona(classe, lato));
+      voce.marker.setZIndexOffset(sopra(s));
+      voce.classe = classe;
+    }
+    if (voce.marker.isPopupOpen()) aggiornaFumetto(voce.marker.getPopup());
+  }
+  for (const [chiave, voce] of segnaposto) {
+    if (presenti.has(chiave)) continue;
+    livelloStazioni.removeLayer(voce.marker);
+    segnaposto.delete(chiave);
+  }
+}
+
+/**
+ * Rinfresca il testo del fumetto aperto (distanza…) senza l'autoPan di Leaflet, che sposterebbe
+ * la mappa sul fumetto a ogni posizione mentre aggiornaUtente la ricentra sull'utente.
+ */
+function aggiornaFumetto(fumetto) {
+  const autoPan = fumetto.options.autoPan;
+  fumetto.options.autoPan = false;
+  fumetto.update();
+  fumetto.options.autoPan = autoPan;
+}
+
+// La prossima stazione sopra le altre, anche dove i segnaposto si sovrappongono
+const sopra = s => (s.isNearest ? 1000 : 0);
+
+function icona(classe, lato) {
+  return L.divIcon({
+    className: 'custom-marker',
+    html: `<div class="${classe}"></div>`,
+    iconSize: [lato, lato],
+    iconAnchor: [lato / 2, lato / 2],
   });
 }
 

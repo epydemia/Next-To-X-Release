@@ -47,6 +47,30 @@ export function tutteLeStazioni(aree, { lat, lon }) {
 }
 
 /**
+ * Funzione che dice se un'area può stare entro raggioKm dal punto: un controllo su latitudine
+ * e longitudine (rettangolo attorno al cerchio, con un po' di margine), molto più economico
+ * della distanza vera. Scarta in un attimo quasi tutto il database prima di calcolare
+ * distanze e creare oggetti; la distanza vera la controlla poi chi chiama.
+ */
+function nelRettangolo(lat, lon, raggioKm) {
+  const margine = 1.01;
+  const dLat = raggioKm * margine / 110.574;
+  const cosLat = Math.cos(Math.min(Math.abs(lat) + dLat, 89.9) * Math.PI / 180);
+  const dLon = raggioKm * margine / (111.32 * cosLat);
+  return area => Math.abs(area.lat - lat) <= dLat && Math.abs(area.lon - lon) <= dLon;
+}
+
+/** Stazioni entro raggioKm, ordinate per distanza (es. quella vicina per "Segnala"). */
+export function stazioniEntro(aree, { lat, lon }, raggioKm) {
+  const vicina = nelRettangolo(lat, lon, raggioKm);
+  return aree
+    .filter(vicina)
+    .map(a => versoStazione(a, lat, lon))
+    .filter(s => s.distanza <= raggioKm)
+    .sort((a, b) => a.distanza - b.distanza);
+}
+
+/**
  * Stazioni entro RAGGIO_STAZIONI_KM ordinate per distanza, con isAvanti calcolato da:
  * 1. strada compatibile: codice autostrada (es. "A14") se noto, altrimenti
  *    confronto testuale col nome restituito dal reverse geocoding;
@@ -56,9 +80,11 @@ export function tutteLeStazioni(aree, { lat, lon }) {
  */
 export function filtraStazioni(aree, { lat, lon, heading, strada, codiceAutostrada, paese, mostraTutte }) {
   const stradaUtente = normalizza(strada);
+  const vicina = mostraTutte ? null : nelRettangolo(lat, lon, RAGGIO_STAZIONI_KM);
 
   const candidati = aree
     .map(area => {
+      if (vicina && !vicina(area)) return null;
       const stazione = versoStazione(area, lat, lon);
       if (!mostraTutte && stazione.distanza > RAGGIO_STAZIONI_KM) return null;
 

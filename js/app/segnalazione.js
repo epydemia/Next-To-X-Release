@@ -18,6 +18,8 @@ const FERMO_RAGGIO_M = 40;
 // Sopra questa velocità del GPS (m/s, ~11 km/h) si è in movimento anche se la posizione oscilla poco
 const IN_MOVIMENTO_MS = 3;
 const VICINO_M = 300;
+/** Raggio in cui main.js cerca le stazioni da passare ad aggiornaSegnalazione. */
+export const RAGGIO_SEGNALAZIONE_KM = VICINO_M / 1000;
 
 export const TIPI = ['nonEsiste', 'guasta', 'potenza', 'operatore', 'posizione', 'nuova', 'altro'];
 // Tipi per cui la posizione serve davvero: la casella è già spuntata (si può togliere)

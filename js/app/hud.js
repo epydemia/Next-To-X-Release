@@ -27,6 +27,8 @@ export function collegaPannelli() {
   document.getElementById('stations-toggle-btn').addEventListener('click', () => {
     lista.hidden = !lista.hidden;
     chevron.classList.toggle('open', !lista.hidden);
+    // Chiuso l'elenco non si aggiorna: aprendolo lo si riempie con le stazioni attuali
+    if (!lista.hidden) aggiornaTabella(ultimeStazioni, ultimaConPosizione);
   });
 
   // La scritta del filtro per operatore nel pannello apre la scelta degli operatori
@@ -368,6 +370,15 @@ function chiudiFumetto() {
  * prime (distanze in linea d'aria, senza senso di marcia). Senza posizione tutte, per distanza.
  */
 function aggiornaTabella(stazioni, conPosizione) {
+  const etichetta = document.getElementById('stations-count-label');
+  const davanti = conPosizione ? stazioni.filter(s => s.isAvanti) : null;
+  etichetta.textContent = conPosizione
+    ? t('stazioniDavanti', { n: davanti.length })
+    : t('stazioni', { n: stazioni.length });
+  // Con l'elenco chiuso basta la scritta: ricostruire centinaia di righe a ogni posizione GPS
+  // era una buona parte del lavoro di un aggiornamento
+  if (document.getElementById('stations-list').hidden) return;
+
   const tbody = document.querySelector('#stations-table tbody');
   tbody.innerHTML = '';
   const riga = (s, classe = '') => {
@@ -380,13 +391,10 @@ function aggiornaTabella(stazioni, conPosizione) {
     `;
     tbody.appendChild(tr);
   };
-  const etichetta = document.getElementById('stations-count-label');
   if (!conPosizione) {
     stazioni.forEach(s => riga(s));
-    etichetta.textContent = t('stazioni', { n: stazioni.length });
     return;
   }
-  const davanti = stazioni.filter(s => s.isAvanti);
   const altre = stazioni.filter(s => !s.isAvanti);
   davanti.forEach(s => riga(s));
   if (altre.length) {
@@ -396,5 +404,4 @@ function aggiornaTabella(stazioni, conPosizione) {
     tbody.appendChild(separatore);
     altre.forEach(s => riga(s, 'tr-non-davanti'));
   }
-  etichetta.textContent = t('stazioniDavanti', { n: davanti.length });
 }
