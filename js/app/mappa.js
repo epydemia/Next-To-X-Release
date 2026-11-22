@@ -1,4 +1,4 @@
-import { TILE_GUIDA, CENTRO_ITALIA, ZOOM_GUIDA } from '../config.js';
+import { TILE_GUIDA, CENTRO_ITALIA, ZOOM_GUIDA, RICENTRA_DOPO_MS } from '../config.js';
 import { creaSfondo, preparaAttribuzioni } from '../sfondi.js';
 import { tracciatoAutostrada } from '../core/reteAutostradale.js';
 import { t, km, nomeRamo } from '../i18n.js';
@@ -13,6 +13,12 @@ const conLeaflet = typeof L !== 'undefined';
 const livelloStazioni = conLeaflet ? L.layerGroup() : null;
 const livelloAutostrada = conLeaflet ? L.layerGroup() : null;
 let autostradaEvidenziata = null;
+// Esplorazione: l'utente ha spostato, zoomato o toccato la mappa. Finché dura la mappa non
+// segue la posizione; finisce RICENTRA_DOPO_MS dopo l'ultimo tocco
+let esplorazione = false;
+let timerRicentra = null;
+// true mentre è l'app a muovere la mappa, per non scambiarlo per un gesto dell'utente
+let vistaAutomatica = false;
 
 export function creaMappa(idElemento) {
   if (!conLeaflet) {
@@ -28,10 +34,33 @@ export function creaMappa(idElemento) {
   livelloAutostrada.addTo(map);
   livelloStazioni.addTo(map);
 
-  // Dopo uno zoom Leaflet può spostare la vista: la ricentriamo sull'utente
-  map.on('zoomend', () => {
-    if (posizioneUtente) map.setView([posizioneUtente.lat, posizioneUtente.lon], map.getZoom());
-  });
+  // Trascinare, zoomare (dita, rotella, bottoni) o aprire un fumetto è esplorare: ogni nuovo
+  // gesto fa ripartire l'attesa
+  map.on('dragstart drag dragend popupopen', toccoUtente);
+  map.on('zoomstart', () => { if (!vistaAutomatica) toccoUtente(); });
+  // Anche ogni dito o rotella sulla mappa: i gesti lunghi (pizzico) rimandano il ricentro
+  for (const evento of ['pointerdown', 'pointerup', 'wheel']) {
+    map.getContainer().addEventListener(evento, toccoUtente, { passive: true });
+  }
+}
+
+function toccoUtente() {
+  esplorazione = true;
+  clearTimeout(timerRicentra);
+  timerRicentra = setTimeout(() => {
+    esplorazione = false;
+    if (posizioneUtente) muoviVista([posizioneUtente.lat, posizioneUtente.lon], map.getZoom());
+  }, RICENTRA_DOPO_MS);
+}
+
+/** setView fatto dall'app, non dall'utente (gli eventi di zoom partono durante la chiamata). */
+function muoviVista(centro, zoom) {
+  vistaAutomatica = true;
+  try {
+    map.setView(centro, zoom);
+  } finally {
+    vistaAutomatica = false;
+  }
 }
 
 /**
@@ -57,10 +86,10 @@ export function aggiornaDimensioniMappa() {
 
 export function mostraPanoramicaItalia() {
   if (!map) return;
-  map.setView([CENTRO_ITALIA.lat, CENTRO_ITALIA.lon], 6);
+  muoviVista([CENTRO_ITALIA.lat, CENTRO_ITALIA.lon], 6);
 }
 
-/** Sposta il marker utente, ruota la freccia secondo l'heading e centra la mappa. */
+/** Sposta il marker utente, ruota la freccia secondo l'heading e centra la mappa (se l'utente non la sta esplorando). */
 export function aggiornaUtente({ lat, lon }, heading) {
   if (!map) return;
   // Se la mappa è ancora sulla panoramica (es. GPS arrivato in ritardo) torna allo zoom di guida
@@ -82,7 +111,8 @@ export function aggiornaUtente({ lat, lon }, heading) {
   const freccia = markerUtente.getElement()?.querySelector('.freccia');
   if (freccia) freccia.style.transform = `rotate(${heading}deg)`;
 
-  map.setView([lat, lon], zoom);
+  // Mentre l'utente esplora la mappa si sposta solo il marker
+  if (!esplorazione) muoviVista([lat, lon], zoom);
 }
 
 /**

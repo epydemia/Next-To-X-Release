@@ -68,6 +68,8 @@ export async function attendiConsensoPosizione() {
 }
 
 function piattaforma() {
+  // App iPhone (WebView servita da nexttox://): il permesso è dell'app, non di Safari
+  if (location.protocol === 'nexttox:') return 'app';
   const ua = navigator.userAgent;
   // iPadOS si presenta come un Mac, ma con il touch
   if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) return 'ios';
@@ -104,9 +106,10 @@ export function mostraAvvisoPosizione(motivo, avviaGps) {
 
 function apriAiuto(motivo, { automatico = false } = {}) {
   const finestra = document.getElementById('aiuto-gps');
-  document.getElementById('aiuto-gps-motivo').textContent =
-    t(motivo === 'negato' ? 'aiutoGpsNegato' : 'aiutoGpsSegnale');
   const sistema = piattaforma();
+  document.getElementById('aiuto-gps-motivo').textContent = t(
+    motivo === 'negato' ? 'aiutoGpsNegato' : sistema === 'app' ? 'aiutoGpsSegnaleApp' : 'aiutoGpsSegnale',
+  );
   document.getElementById('aiuto-gps-passi').innerHTML = t(`aiutoGps_${sistema}`);
   finestra.hidden = false;
   contaEvento(`aiuto-gps/${automatico ? 'automatico' : 'aperto'}/${sistema}`);

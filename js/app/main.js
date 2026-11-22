@@ -116,7 +116,27 @@ function aggiorna(stato) {
 
 /** In fondo alle impostazioni: versione dell'app (tag della release, "sviluppo" in locale). */
 function mostraVersioneApp() {
-  document.getElementById('versione-app').textContent = t('versioneApp', { versione: VERSIONE_APP ?? t('versioneSviluppo') });
+  const versione = document.getElementById('versione-app');
+  versione.textContent = t('versioneApp', { versione: VERSIONE_APP ?? t('versioneSviluppo') }) + (MODALITA_DEBUG ? ' · debug' : '');
+  collegaTocchiDebug(versione);
+}
+
+const TOCCHI_DEBUG = 7;
+
+/** 7 tocchi di fila sulla versione (come su Android) attivano o spengono la modalità debug:
+ *  è il modo per arrivarci nell'app iPhone, che non ha la barra degli indirizzi per ?debug=true. */
+function collegaTocchiDebug(elemento) {
+  let tocchi = 0;
+  let azzera = null;
+  elemento.addEventListener('click', () => {
+    clearTimeout(azzera);
+    azzera = setTimeout(() => { tocchi = 0; }, 1500);
+    if (++tocchi < TOCCHI_DEBUG) return;
+    const url = new URL(location.href);
+    if (MODALITA_DEBUG) url.searchParams.delete('debug');
+    else url.searchParams.set('debug', 'true');
+    location.replace(url);
+  });
 }
 
 /** In fondo alle impostazioni: da quale compilazione di data/aree.json vengono le stazioni. */

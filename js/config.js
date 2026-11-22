@@ -48,6 +48,9 @@ export const ATTRIBUZIONE_OSM = 'Dati &copy; <a href="https://www.openstreetmap.
 
 export const CENTRO_ITALIA = { lat: 41.9, lon: 12.5 };
 export const ZOOM_GUIDA = 15;
+// Dopo che l'utente sposta, zooma o tocca la mappa, quanto aspettare senza altri tocchi
+// prima di ricentrarla sulla sua posizione
+export const RICENTRA_DOPO_MS = 5000;
 
 // Stazioni oltre questo raggio vengono ignorate (salvo "Mostra tutte")
 export const RAGGIO_STAZIONI_KM = 100;

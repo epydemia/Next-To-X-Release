@@ -106,6 +106,7 @@ body {
 .setting-hint { padding: 8px 16px 4px; font-size: .8em; color: var(--muted); }
 .lingue a { color: var(--blue); }
 .versioni span { display: block; }
+#versione-app { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
 .versioni span + span { margin-top: 2px; }
 button.setting-row {
   width: 100%;
@@ -1007,6 +1008,8 @@ button.setting-row {
 /* ── Permesso di posizione e istruzioni ─────────── */
 .finestra p { font-size: .9em; line-height: 1.45; color: var(--muted); margin-bottom: 10px; }
 .finestra p strong, .finestra li strong { color: var(--text); font-weight: 600; }
+/* Es. "Apri le impostazioni di Next-To-X" nell'aiuto sulla posizione (app iPhone) */
+.finestra li a, .finestra li a strong { color: var(--blue); }
 .finestra .finestra-nota { font-size: .85em; margin-bottom: 16px; }
 .finestra ol { padding-left: 1.3em; margin: 0 0 16px; display: flex; flex-direction: column; gap: 8px; font-size: .9em; line-height: 1.4; color: var(--muted); }
 .finestra-secondario {
