@@ -2,6 +2,7 @@ import { TILE_GUIDA, CENTRO_ITALIA, ZOOM_GUIDA } from '../config.js';
 import { creaSfondo, preparaAttribuzioni } from '../sfondi.js';
 import { tracciatoAutostrada } from '../core/reteAutostradale.js';
 import { t, km, nomeRamo } from '../i18n.js';
+import { simboliRistoroApp } from './ristoro.js';
 
 let map = null;
 let markerUtente = null;
@@ -174,5 +175,6 @@ function testoPopup(s) {
   const direzione = s.isNearest && s.direzione ? `<br>→ ${s.direzione}` : '';
   const operatore = s.operatore ? `<br>🔌 ${s.operatore}` : '';
   const bivio = s.bivio ? `<br>${nomeRamo(s.bivio)} · ${t('bivioTra', { km: km(s.bivio.distanza) })}` : '';
-  return `${intestazione}<strong>${s.nome}</strong><br>${s.strada}${direzione}${bivio}${operatore}<br>${km(s.distanza)}${uscita}`;
+  const ristoro = simboliRistoroApp(s);
+  return `${intestazione}<strong>${s.nome}</strong><br>${s.strada}${direzione}${bivio}${operatore}<br>${km(s.distanza)}${uscita}${ristoro ? `<br>${ristoro}` : ''}`;
 }

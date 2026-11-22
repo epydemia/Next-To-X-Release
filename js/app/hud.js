@@ -2,6 +2,7 @@ import { puntoCardinale } from '../core/geo.js';
 import { estraiCodice } from '../core/autostrade.js';
 import { contaEvento, slugOperatori } from '../statistiche.js';
 import { t, km, nomeRamo } from '../i18n.js';
+import { simboliRistoroApp, SERVIZI_NELL_APP } from './ristoro.js';
 import { filtroOperatoriAttivo, operatoreScelto, testoFiltro, apriOperatori } from './operatori.js';
 
 // Tutto ciò che nell'app di guida non è mappa: HUD, pannelli, barra distanze, tabella.
@@ -338,12 +339,14 @@ function aggiornaBarraDistanze(avanti, bivi) {
 function mostraFumetto(barra, ancora, s, pos) {
   barra.querySelector('.bar-tooltip')?.remove();
   const fumetto = elemento('div', 'bar-tooltip', pos);
+  const ristoro = simboliRistoroApp(s);
   fumetto.innerHTML = `
     <strong>${s.nome}</strong>
     <span>${s.strada}${s.direzione ? ` → ${s.direzione}` : ''}</span>
     ${s.bivio ? `<span class="bar-tooltip-bivio">${nomeRamo(s.bivio)} · ${t('bivioTra', { km: km(s.bivio.distanza) })}</span>` : ''}
     <span class="bar-tooltip-dist">${km(s.distanza)}${s.exitRequired ? ` · ⚠️ ${t('uscita')}` : ''}</span>
     <span>${s.operatore ? `${s.operatore} · ` : ''}${t('colonnine', { n: s.colonnine.length })}</span>
+    ${ristoro ? `<span class="bar-tooltip-ristoro">${ristoro}</span>` : ''}
   `;
   barra.appendChild(fumetto);
   if (SCHERMO_VERTICALE.matches) return;
@@ -380,6 +383,7 @@ function aggiornaTabella(stazioni, conPosizione) {
   if (document.getElementById('stations-list').hidden) return;
 
   const tbody = document.querySelector('#stations-table tbody');
+  document.querySelector('#stations-table .th-servizi').hidden = !SERVIZI_NELL_APP;
   tbody.innerHTML = '';
   const riga = (s, classe = '') => {
     const tr = document.createElement('tr');
@@ -387,6 +391,7 @@ function aggiornaTabella(stazioni, conPosizione) {
     tr.innerHTML = `
       <td>${s.nome}</td>
       <td class="td-road">${s.bivio ? `<span class="td-bivio">${s.bivio.lato === 'sx' ? '↖' : '↗'}</span> ` : ''}${s.strada}</td>
+      ${SERVIZI_NELL_APP ? `<td class="td-servizi">${simboliRistoroApp(s)}</td>` : ''}
       <td class="${s.exitRequired ? 'td-exit' : 'td-dist'}">${s.exitRequired ? '⚠️ ' : ''}${km(s.distanza)}</td>
     `;
     tbody.appendChild(tr);
@@ -400,7 +405,7 @@ function aggiornaTabella(stazioni, conPosizione) {
   if (altre.length) {
     const separatore = document.createElement('tr');
     separatore.className = 'tr-separatore';
-    separatore.innerHTML = `<td colspan="3">${t('nonDavanti')}</td>`;
+    separatore.innerHTML = `<td colspan="${SERVIZI_NELL_APP ? 4 : 3}">${t('nonDavanti')}</td>`;
     tbody.appendChild(separatore);
     altre.forEach(s => riga(s, 'tr-non-davanti'));
   }

@@ -698,6 +698,9 @@ button.setting-row {
 .bar-tooltip strong { color: var(--text); font-size: 1.05em; }
 .bar-tooltip-dist { color: var(--green); font-weight: 600; }
 .bar-tooltip-bivio { color: var(--viola); font-weight: 600; }
+/* Bar e ristorante dell'area (js/app/ristoro.js) */
+.ristoro { font-size: 1.25em; line-height: 1.2; }
+.bar-tooltip-ristoro { display: flex; gap: 6px; margin-top: 2px; }
 
 /* Schermo in verticale: striscia sul bordo destro della mappa, si sale verso la meta */
 #distance-bar-container.verticale {
@@ -808,12 +811,14 @@ button.setting-row {
   position: sticky;
   top: 0;
 }
-.th-dist { text-align: right; }
+#stations-table .th-dist { text-align: right; }
 #stations-table tbody tr { border-bottom: 1px solid var(--border); }
 #stations-table tbody tr:active { background: var(--surface2); }
 #stations-table td { padding: 10px 12px; vertical-align: middle; }
 #stations-table td:first-child { font-weight: 500; }
 #stations-table .td-road { color: var(--muted); }
+#stations-table .td-servizi, #stations-table .th-servizi { padding-left: 4px; padding-right: 4px; text-align: center; white-space: nowrap; }
+#stations-table .td-servizi .ristoro { font-size: 1.1em; }
 #stations-table .td-dist {
   color: var(--green);
   font-weight: 600;

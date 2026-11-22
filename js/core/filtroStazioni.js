@@ -8,6 +8,7 @@ import { RAGGIO_STAZIONI_KM } from '../config.js';
 /**
  * Stazione pronta per la UI:
  * { nome, strada, direzione, operatore (testo), operatori (elenco), lat, lon, distanza, colonnine, exitRequired,
+ *   ristoro: [{ tipo: 'bar' | 'ristorante', nome }] o null se non si sa,
  *   isAvanti: raggiungibile proseguendo sulla strada attuale o girando a un bivio davanti,
  *   isNearest: la più vicina tra quelle avanti sulla strada attuale,
  *   bivio: se si raggiunge girando a un bivio davanti, altrimenti null:
@@ -33,6 +34,7 @@ function versoStazione(area, lat, lon) {
     lon: area.lon,
     distanza: distanzaKm(lat, lon, area.lat, area.lon),
     colonnine: area.colonnine ?? [],
+    ristoro: area.ristoro ?? null,
     // Fuori dal casello (o fuori autostrada) si raggiunge da entrambe le direzioni
     exitRequired: area.accesso !== 'area_servizio',
     isAvanti: false,

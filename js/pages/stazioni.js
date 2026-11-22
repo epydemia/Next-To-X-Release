@@ -2,6 +2,7 @@ import { FONTI, TILE_EDITOR, TILE_SATELLITE, FILE_REVISIONI } from '../config.js
 import { creaSfondo, preparaAttribuzioni } from '../sfondi.js';
 import { contaPagina } from '../statistiche.js';
 import { caricaAreeOriginali, caricaRevisioni, applicaRevisione, revisioneDi, nomeStrada } from '../core/dati.js';
+import { simboliRistoro } from '../app/ristoro.js';
 
 // Editor delle aree: legge data/aree.json e salva ogni modifica (classificazione,
 // spostamento) in data/revisioni.json. I file delle fonti non vengono mai toccati,
@@ -191,6 +192,19 @@ function connettoreHtml(n) {
   return `<span class="connector-pill">${n.tipo}${n.potenzaKw ? ` ${n.potenzaKw} kW` : ''}</span>`;
 }
 
+const FONTI_RISTORO = { automap: 'automap.it', aspi: "Autostrade per l'Italia", osm: 'OpenStreetMap', correzione: 'correzione manuale', sarni: 'sarniristorazione.it' };
+
+/** Bar e ristoranti dell'area con il nome del locale e la fonte; null se non si sa. */
+function ristoroHtml(area) {
+  if (area.ristoro == null) return null;
+  const fonte = area.fonteRistoro?.split('+').map(f => FONTI_RISTORO[f] ?? f).join(', ');
+  const nota = fonte ? ` <span style="color:#999;">(${fonte})</span>` : '';
+  if (!area.ristoro.length) return `nessun bar o ristorante${nota}`;
+  const locali = area.ristoro.map(l => `${l.tipo === 'bar' ? '☕ Bar' : '🍽️ Ristorante'}${l.nome ? ` ${l.nome}` : ''}`);
+  const dubbio = area.dubbioRistoro ? `<div class="review-reason">⚠️ Da verificare: ${area.dubbioRistoro}</div>` : '';
+  return locali.join(' · ') + nota + dubbio;
+}
+
 function showDetail(area) {
   const totalConn = area.colonnine.reduce((s, c) => s + c.connettori.length, 0);
   const piuOperatori = area.operatori.length > 1;
@@ -228,6 +242,7 @@ function showDetail(area) {
     ${riga('Coordinate', posizione)}
     ${riga('Indirizzo', area.indirizzo)}
     ${riga('Connettori', `${totalConn} (${area.colonnine.length} colonnine)`)}
+    ${riga('Servizi', ristoroHtml(area))}
     ${revisioneHtml(area)}
     <div class="detail-section-title">Colonnine</div>
     ${chargersHtml || '<div style="color:#aaa;font-size:12px;">Nessuna colonnina registrata</div>'}
@@ -437,7 +452,9 @@ function showToast(msg) {
 function applyFilters() {
   const search = currentSearch.toLowerCase();
   filteredAree = allAree.filter(area => {
-    if (currentFilter === 'verifica' ? !inAttesa(area) : currentFilter !== 'all' && !area.fonti.includes(currentFilter)) return false;
+    if (currentFilter === 'verifica' ? !inAttesa(area)
+      : currentFilter === 'servizi' ? !area.dubbioRistoro
+      : currentFilter !== 'all' && !area.fonti.includes(currentFilter)) return false;
     if (search && !area.nome.toLowerCase().includes(search) && !(nomeStrada(area) ?? '').toLowerCase().includes(search)) return false;
     return true;
   });
@@ -450,6 +467,8 @@ function applyFilters() {
 
   const daVerificare = allAree.filter(inAttesa).length;
   document.querySelector('.filter-btn.verifica').textContent = `❓ Da verificare (${daVerificare})`;
+  const serviziDaVerificare = allAree.filter(a => a.dubbioRistoro).length;
+  document.querySelector('.filter-btn.servizi').textContent = `🍽️ Servizi da verificare (${serviziDaVerificare})`;
   renderList();
 }
 
@@ -469,12 +488,14 @@ function renderList() {
         <div class="station-item-meta">
           ${badgeFonti(area)}
           ${inAttesa(area) ? '<span class="verifica-badge">❓ da verificare</span>' : ''}
+          ${area.dubbioRistoro ? '<span class="verifica-badge">🍽️ servizi da verificare</span>' : ''}
           ${esito(area) === 'uscita' ? '<span class="exit-badge">⚠️ uscita</span>' : ''}
           ${esito(area) === 'esclusa' ? '<span class="exit-badge">🚫 esclusa</span>' : ''}
           <span>${nomeStrada(area) ?? ''}</span>
           ${area.destinazione ? `<span>→ ${area.destinazione}</span>` : ''}
           ${area.km != null ? `<span>km ${area.km}</span>` : ''}
           <span>⚡ ${area.colonnine.length}</span>
+          ${simboliRistoro(area) ? `<span>${simboliRistoro(area)}</span>` : ''}
         </div>
       </div>`).join('');
 
@@ -509,6 +530,7 @@ async function init() {
         mostraSatellite();
         if (filteredAree.length) selectStation(filteredAree[0].id);
       }
+      if (currentFilter === 'servizi' && filteredAree.length) selectStation(filteredAree[0].id);
     });
   });
 

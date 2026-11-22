@@ -14,6 +14,7 @@ import { t, traduciPagina } from '../i18n.js';
 import { VERSIONE_APP } from '../versione.js';
 import { aggiornaSegnalazione, collegaSegnalazione, RAGGIO_SEGNALAZIONE_KM } from './segnalazione.js';
 import { ATTESA_GPS_MS, CENTRO_ITALIA } from '../config.js';
+import { MODALITA_DEBUG } from './debug.js';
 import {
   contaPagina, contaEvento, slugOperatori, statisticheAttive, impostaStatistiche, segnaSimulazione,
 } from '../statistiche.js';
@@ -25,7 +26,6 @@ document.getElementById('link-guide').href = t('cartellaGuide');
 
 const CHIAVE_SIMULAZIONE = 'debugPosizione';
 // La simulazione è uno strumento di sviluppo: compare solo aprendo la pagina con ?debug=true
-const MODALITA_DEBUG = ['true', '1'].includes(new URLSearchParams(location.search).get('debug'));
 
 let aree = [];
 let mostraTutte = false;
