@@ -193,6 +193,21 @@
       "esito": "esclusa",
       "nota": "doppione di IONITY Gioia Tauro (osm:node/10576036514, a 860 m): nessuna colonnina nella PUN entro 600 m",
       "data": "2026-11-10"
+    },
+    "osm:way/1567116552": {
+      "esito": "uscita",
+      "nota": "area colonnine fuori dall'autostrada ad Affi, con altri operatori (verificato a mano)",
+      "data": "2026-11-22"
+    },
+    "osm:way/1175768896": {
+      "esito": "uscita",
+      "nota": "colonnine Plenitude fuori dall'autostrada vicino a Pesaro, non è un'area di servizio (verificato a mano)",
+      "data": "2026-11-22"
+    },
+    "osm:way/333309475": {
+      "esito": "esclusa",
+      "nota": "\"Green Blue\" in Sicilia: non è in autostrada (verificato a mano)",
+      "data": "2026-11-22"
     }
   }
 }
